@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0102DE941C3EB83900AEE1EA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102DE931C3EB83900AEE1EA /* SignUpViewController.swift */; };
+		0102DE961C3ED9CC00AEE1EA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102DE951C3ED9CC00AEE1EA /* SignUpViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		240AA0FA1C1D46D200CE21EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240AA0F91C1D46D200CE21EB /* AppDelegate.swift */; };
 		240AA0FC1C1D46D200CE21EB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240AA0FB1C1D46D200CE21EB /* FirstViewController.swift */; };
 		240AA0FE1C1D46D200CE21EB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240AA0FD1C1D46D200CE21EB /* SecondViewController.swift */; };
@@ -22,6 +22,7 @@
 		4834789D1C3EBFBA005B2BD3 /* rank2.png in Resources */ = {isa = PBXBuildFile; fileRef = 483478991C3EBFBA005B2BD3 /* rank2.png */; };
 		4834789E1C3EBFBA005B2BD3 /* settings48.png in Resources */ = {isa = PBXBuildFile; fileRef = 4834789A1C3EBFBA005B2BD3 /* settings48.png */; };
 		4834789F1C3EBFBA005B2BD3 /* user168.png in Resources */ = {isa = PBXBuildFile; fileRef = 4834789B1C3EBFBA005B2BD3 /* user168.png */; };
+		E19BE89A50F491B5D5FE5E4D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52655CC1927D0562E0BF6496 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0102DE951C3ED9CC00AEE1EA /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		07A008B3A37830813AB510C3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		240AA0F61C1D46D100CE21EB /* MovieChallange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieChallange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		240AA0F91C1D46D200CE21EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		240AA0FB1C1D46D200CE21EB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +65,8 @@
 		483478991C3EBFBA005B2BD3 /* rank2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rank2.png; sourceTree = "<group>"; };
 		4834789A1C3EBFBA005B2BD3 /* settings48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings48.png; sourceTree = "<group>"; };
 		4834789B1C3EBFBA005B2BD3 /* user168.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user168.png; sourceTree = "<group>"; };
+		52655CC1927D0562E0BF6496 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E5910D716528DBC9645F6F0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C91A81E56CCA0895A407FF16 /* Pods.framework in Frameworks */,
+				E19BE89A50F491B5D5FE5E4D /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,8 +112,8 @@
 				240AA10F1C1D46D300CE21EB /* MovieChallangeTests */,
 				240AA11A1C1D46D300CE21EB /* MovieChallangeUITests */,
 				240AA0F71C1D46D200CE21EB /* Products */,
-				778E33E2B4963BC954658514 /* Pods */,
-				FF435CC82CE6F8EEB976D700 /* Frameworks */,
+				EAA90C076DD1D8D04694F3B2 /* Pods */,
+				D8FA91FA9560697F8F842CFB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,7 +130,7 @@
 		240AA0F81C1D46D200CE21EB /* MovieChallange */ = {
 			isa = PBXGroup;
 			children = (
-				241B3C521C3EC48800D33237 /* SignUpViewController.swift */,
+				0102DE951C3ED9CC00AEE1EA /* SignUpViewController.swift */,
 				240AA0F91C1D46D200CE21EB /* AppDelegate.swift */,
 				240AA0FB1C1D46D200CE21EB /* FirstViewController.swift */,
 				240AA0FD1C1D46D200CE21EB /* SecondViewController.swift */,
@@ -173,6 +178,23 @@
 				4834789B1C3EBFBA005B2BD3 /* user168.png */,
 			);
 			name = ProfileImages;
+			sourceTree = "<group>";
+		};
+		D8FA91FA9560697F8F842CFB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				52655CC1927D0562E0BF6496 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EAA90C076DD1D8D04694F3B2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7E5910D716528DBC9645F6F0 /* Pods.debug.xcconfig */,
+				07A008B3A37830813AB510C3 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,7 +388,7 @@
 				240AA0FE1C1D46D200CE21EB /* SecondViewController.swift in Sources */,
 				240AA0FA1C1D46D200CE21EB /* AppDelegate.swift in Sources */,
 				240AA0FC1C1D46D200CE21EB /* FirstViewController.swift in Sources */,
-				241B3C531C3EC48800D33237 /* SignUpViewController.swift in Sources */,
+				0102DE961C3ED9CC00AEE1EA /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,7 +528,7 @@
 		};
 		240AA1211C1D46D300CE21EB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F0B808C1DB45E135F507DA6C /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 7E5910D716528DBC9645F6F0 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -523,7 +545,7 @@
 		};
 		240AA1221C1D46D300CE21EB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC02D58F6FA3A238FACB74A4 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 07A008B3A37830813AB510C3 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				FRAMEWORK_SEARCH_PATHS = (
