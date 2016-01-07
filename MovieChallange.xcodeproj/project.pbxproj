@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0102DE941C3EB83900AEE1EA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102DE931C3EB83900AEE1EA /* SignUpViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		240AA0FA1C1D46D200CE21EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240AA0F91C1D46D200CE21EB /* AppDelegate.swift */; };
 		240AA0FC1C1D46D200CE21EB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240AA0FB1C1D46D200CE21EB /* FirstViewController.swift */; };
 		240AA0FE1C1D46D200CE21EB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240AA0FD1C1D46D200CE21EB /* SecondViewController.swift */; };
@@ -18,8 +17,6 @@
 		240AA11C1C1D46D300CE21EB /* MovieChallangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240AA11B1C1D46D300CE21EB /* MovieChallangeUITests.swift */; };
 		241B3C1C1C3E8C5E00D33237 /* screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 241B3C1B1C3E8C5E00D33237 /* screen.png */; };
 		241B3C1E1C3EACC600D33237 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241B3C1D1C3EACC600D33237 /* SigninViewController.swift */; };
-		241B3C211C3EB17400D33237 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241B3C1F1C3EB17400D33237 /* Bolts.framework */; };
-		241B3C221C3EB17400D33237 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241B3C201C3EB17400D33237 /* Parse.framework */; };
 		241B3C241C3EB24B00D33237 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241B3C231C3EB24B00D33237 /* AudioToolbox.framework */; };
 		241B3C261C3EB25100D33237 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241B3C251C3EB25100D33237 /* CFNetwork.framework */; };
 		241B3C281C3EB26500D33237 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241B3C271C3EB26500D33237 /* CoreGraphics.framework */; };
@@ -30,6 +27,9 @@
 		241B3C321C3EB2C300D33237 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241B3C311C3EB2C300D33237 /* SystemConfiguration.framework */; };
 		241B3C341C3EB2D500D33237 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 241B3C331C3EB2D500D33237 /* libz.tbd */; };
 		241B3C361C3EB2E300D33237 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 241B3C351C3EB2E300D33237 /* libsqlite3.tbd */; };
+		241B3C501C3EC33C00D33237 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241B3C4E1C3EC33C00D33237 /* Bolts.framework */; };
+		241B3C511C3EC33C00D33237 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 241B3C4F1C3EC33C00D33237 /* Parse.framework */; };
+		241B3C531C3EC48800D33237 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241B3C521C3EC48800D33237 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0102DE931C3EB83900AEE1EA /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		240AA0F61C1D46D100CE21EB /* MovieChallange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieChallange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		240AA0F91C1D46D200CE21EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		240AA0FB1C1D46D200CE21EB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -67,8 +66,6 @@
 		240AA11D1C1D46D300CE21EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		241B3C1B1C3E8C5E00D33237 /* screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen.png; sourceTree = "<group>"; };
 		241B3C1D1C3EACC600D33237 /* SigninViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
-		241B3C1F1C3EB17400D33237 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		241B3C201C3EB17400D33237 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		241B3C231C3EB24B00D33237 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		241B3C251C3EB25100D33237 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		241B3C271C3EB26500D33237 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -79,6 +76,9 @@
 		241B3C311C3EB2C300D33237 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		241B3C331C3EB2D500D33237 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		241B3C351C3EB2E300D33237 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		241B3C4E1C3EC33C00D33237 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		241B3C4F1C3EC33C00D33237 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		241B3C521C3EC48800D33237 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +94,10 @@
 				241B3C2C1C3EB27D00D33237 /* QuartzCore.framework in Frameworks */,
 				241B3C2A1C3EB27600D33237 /* CoreLocation.framework in Frameworks */,
 				241B3C281C3EB26500D33237 /* CoreGraphics.framework in Frameworks */,
+				241B3C501C3EC33C00D33237 /* Bolts.framework in Frameworks */,
 				241B3C261C3EB25100D33237 /* CFNetwork.framework in Frameworks */,
+				241B3C511C3EC33C00D33237 /* Parse.framework in Frameworks */,
 				241B3C241C3EB24B00D33237 /* AudioToolbox.framework in Frameworks */,
-				241B3C221C3EB17400D33237 /* Parse.framework in Frameworks */,
-				241B3C211C3EB17400D33237 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +152,7 @@
 		240AA0F81C1D46D200CE21EB /* MovieChallange */ = {
 			isa = PBXGroup;
 			children = (
+				241B3C521C3EC48800D33237 /* SignUpViewController.swift */,
 				240AA0F91C1D46D200CE21EB /* AppDelegate.swift */,
 				240AA0FB1C1D46D200CE21EB /* FirstViewController.swift */,
 				240AA0FD1C1D46D200CE21EB /* SecondViewController.swift */,
@@ -194,6 +195,8 @@
 			children = (
 				241B3C351C3EB2E300D33237 /* libsqlite3.tbd */,
 				241B3C331C3EB2D500D33237 /* libz.tbd */,
+				241B3C4E1C3EC33C00D33237 /* Bolts.framework */,
+				241B3C4F1C3EC33C00D33237 /* Parse.framework */,
 				241B3C311C3EB2C300D33237 /* SystemConfiguration.framework */,
 				241B3C2F1C3EB2A000D33237 /* StoreKit.framework */,
 				241B3C2D1C3EB29000D33237 /* Security.framework */,
@@ -202,8 +205,6 @@
 				241B3C271C3EB26500D33237 /* CoreGraphics.framework */,
 				241B3C251C3EB25100D33237 /* CFNetwork.framework */,
 				241B3C231C3EB24B00D33237 /* AudioToolbox.framework */,
-				241B3C1F1C3EB17400D33237 /* Bolts.framework */,
-				241B3C201C3EB17400D33237 /* Parse.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -344,7 +345,7 @@
 				240AA0FE1C1D46D200CE21EB /* SecondViewController.swift in Sources */,
 				240AA0FA1C1D46D200CE21EB /* AppDelegate.swift in Sources */,
 				240AA0FC1C1D46D200CE21EB /* FirstViewController.swift in Sources */,
-				0102DE941C3EB83900AEE1EA /* SignUpViewController.swift in Sources */,
+				241B3C531C3EC48800D33237 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
