@@ -23,8 +23,13 @@ class SigninViewController: UIViewController {
                     // Do stuff after successful login.
                     print("successfull")
                 } else {
-                    print("error")
-                    // The login failed. Check error to see why.
+                    let alertController = UIAlertController(title: "Invalide Credentials", message: "Incorrect Username or Password", preferredStyle: .Alert)
+                    alertController.addAction(UIAlertAction(title: "Retry", style: .Default, handler: { (action) in
+                        self.username.text = ""
+                        self.password.text = ""
+                        self.username.becomeFirstResponder()
+                    }))
+                    self.presentViewController(alertController, animated: true, completion: nil)
                 }
             }
         }else{
@@ -35,6 +40,7 @@ class SigninViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        username.becomeFirstResponder()
 //        let testObject = PFObject(className: "TestObject")
 //        testObject["foo"] = "bar"
 //        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
