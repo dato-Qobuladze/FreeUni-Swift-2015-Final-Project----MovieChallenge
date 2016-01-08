@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="SZB-iw-WUX">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="OTw-Rq-2XQ">
+            <objects>
+                <viewController id="SZB-iw-WUX" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1iW-4A-ngs"/>
+                        <viewControllerLayoutGuide type="bottom" id="s4a-va-9yQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Pt-cL-ayW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agI-MD-6xB">
+                                <rect key="frame" x="20" y="550" width="560" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVQ-iv-Nzl">
+                                <rect key="frame" x="20" y="512" width="280" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeY-bZ-h56">
+                                <rect key="frame" x="308" y="512" width="272" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lin-2X-c3D">
+                                <rect key="frame" x="308" y="474" width="272" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="274" id="cPJ-aS-qqS"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="cPJ-aS-qqS"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VNr-Nv-3UR">
+                                <rect key="frame" x="91" y="20" width="418" height="418"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="VNr-Nv-3UR" secondAttribute="height" multiplier="1:1" id="7hG-fI-9EI"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yh6-fJ-cjh">
+                                <rect key="frame" x="20" y="474" width="280" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="272" id="K8B-Xw-iHY"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="K8B-Xw-iHY"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFE-Y5-8l3">
+                                <rect key="frame" x="20" y="446" width="560" height="20"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="pCJ-Jz-0UD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="pCJ-Jz-0UD"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aFE-Y5-8l3" firstAttribute="top" secondItem="VNr-Nv-3UR" secondAttribute="bottom" constant="8" symbolic="YES" id="2VU-r9-CMh"/>
+                            <constraint firstItem="yh6-fJ-cjh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="aFE-Y5-8l3" secondAttribute="bottom" constant="8" symbolic="YES" id="3zl-fZ-0zK"/>
+                            <constraint firstItem="VNr-Nv-3UR" firstAttribute="leading" secondItem="0Pt-cL-ayW" secondAttribute="leadingMargin" id="Den-Ug-RJS"/>
+                            <constraint firstItem="yh6-fJ-cjh" firstAttribute="width" secondItem="agI-MD-6xB" secondAttribute="width" multiplier="0.5" id="F5i-qn-a7s"/>
+                            <constraint firstItem="yeY-bZ-h56" firstAttribute="top" secondItem="lin-2X-c3D" secondAttribute="bottom" constant="8" symbolic="YES" id="GmK-mV-q5z"/>
+                            <constraint firstItem="yeY-bZ-h56" firstAttribute="leading" secondItem="YVQ-iv-Nzl" secondAttribute="trailing" constant="8" symbolic="YES" id="HvO-Ob-ZXs"/>
+                            <constraint firstItem="YVQ-iv-Nzl" firstAttribute="baseline" secondItem="yeY-bZ-h56" secondAttribute="firstBaseline" id="IXT-Hk-ErA"/>
+                            <constraint firstItem="VNr-Nv-3UR" firstAttribute="leading" secondItem="0Pt-cL-ayW" secondAttribute="leadingMargin" priority="750" id="PEg-Xb-yFM"/>
+                            <constraint firstItem="s4a-va-9yQ" firstAttribute="top" secondItem="agI-MD-6xB" secondAttribute="bottom" constant="20" id="T6l-T6-d8b"/>
+                            <constraint firstItem="yh6-fJ-cjh" firstAttribute="leading" secondItem="aFE-Y5-8l3" secondAttribute="leading" id="UFX-KO-HDH"/>
+                            <constraint firstItem="yh6-fJ-cjh" firstAttribute="top" secondItem="lin-2X-c3D" secondAttribute="top" id="Vvq-Zm-9g9"/>
+                            <constraint firstItem="lin-2X-c3D" firstAttribute="trailing" secondItem="yeY-bZ-h56" secondAttribute="trailing" id="Xkb-Gq-sFY"/>
+                            <constraint firstItem="agI-MD-6xB" firstAttribute="top" secondItem="YVQ-iv-Nzl" secondAttribute="bottom" constant="8" symbolic="YES" id="Ydp-UC-jP3"/>
+                            <constraint firstItem="VNr-Nv-3UR" firstAttribute="centerX" secondItem="0Pt-cL-ayW" secondAttribute="centerX" id="Yw2-iI-2ZT"/>
+                            <constraint firstItem="lin-2X-c3D" firstAttribute="width" secondItem="0Pt-cL-ayW" secondAttribute="width" id="aH2-5g-cts"/>
+                            <constraint firstItem="YVQ-iv-Nzl" firstAttribute="top" secondItem="yh6-fJ-cjh" secondAttribute="bottom" constant="8" symbolic="YES" id="dRL-oz-mIF"/>
+                            <constraint firstItem="yh6-fJ-cjh" firstAttribute="leading" secondItem="YVQ-iv-Nzl" secondAttribute="leading" id="dSC-Z3-LHS"/>
+                            <constraint firstItem="lin-2X-c3D" firstAttribute="trailing" secondItem="aFE-Y5-8l3" secondAttribute="trailing" id="gte-6a-EQE"/>
+                            <constraint firstItem="VNr-Nv-3UR" firstAttribute="centerX" secondItem="aFE-Y5-8l3" secondAttribute="centerX" id="hV7-r2-y62"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="agI-MD-6xB" secondAttribute="leading" id="hr2-tH-D4c"/>
+                            <constraint firstItem="lin-2X-c3D" firstAttribute="width" secondItem="agI-MD-6xB" secondAttribute="width" id="khI-5j-hHu"/>
+                            <constraint firstItem="YVQ-iv-Nzl" firstAttribute="leading" secondItem="agI-MD-6xB" secondAttribute="leading" id="my5-9p-ivb"/>
+                            <constraint firstItem="lin-2X-c3D" firstAttribute="leading" secondItem="yh6-fJ-cjh" secondAttribute="trailing" constant="8" symbolic="YES" id="nav-6S-Agk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VNr-Nv-3UR" secondAttribute="trailing" priority="750" id="pSf-M9-UbF"/>
+                            <constraint firstItem="yeY-bZ-h56" firstAttribute="trailing" secondItem="agI-MD-6xB" secondAttribute="trailing" id="pVt-7U-rpz"/>
+                            <constraint firstItem="VNr-Nv-3UR" firstAttribute="top" secondItem="1iW-4A-ngs" secondAttribute="bottom" id="syV-3w-sTn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="agI-MD-6xB" secondAttribute="trailing" id="trs-St-YW6"/>
+                            <constraint firstItem="lin-2X-c3D" firstAttribute="leading" secondItem="yeY-bZ-h56" secondAttribute="leading" id="ybo-20-o8N"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Den-Ug-RJS"/>
+                                <exclude reference="hV7-r2-y62"/>
+                                <exclude reference="aH2-5g-cts"/>
+                                <exclude reference="khI-5j-hHu"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Eb-Ap-i7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="592" y="366"/>
+        </scene>
+    </scenes>
+</document>
