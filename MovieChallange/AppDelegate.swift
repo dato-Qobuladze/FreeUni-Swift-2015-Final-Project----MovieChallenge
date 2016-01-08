@@ -17,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // lokaluri bazistvis
-//        Parse.enableLocalDatastore()
+        // If local database is needed
+        // Parse.enableLocalDatastore()
         
         Parse.setApplicationId("aftguPzi44VYpemedODm6uVopqk4qX6yo2vLYmUD",
             clientKey: "yNPj6BxCJTrE5pnNSZuoELujPNkgcqkLhc6W3Hoi")
