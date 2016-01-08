@@ -22,7 +22,6 @@
 		4834789D1C3EBFBA005B2BD3 /* rank2.png in Resources */ = {isa = PBXBuildFile; fileRef = 483478991C3EBFBA005B2BD3 /* rank2.png */; };
 		4834789E1C3EBFBA005B2BD3 /* settings48.png in Resources */ = {isa = PBXBuildFile; fileRef = 4834789A1C3EBFBA005B2BD3 /* settings48.png */; };
 		4834789F1C3EBFBA005B2BD3 /* user168.png in Resources */ = {isa = PBXBuildFile; fileRef = 4834789B1C3EBFBA005B2BD3 /* user168.png */; };
-		486783A81C3FCABB00FCFB36 /* StoryboardSecond.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 486783A71C3FCABB00FCFB36 /* StoryboardSecond.storyboard */; };
 		E19BE89A50F491B5D5FE5E4D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52655CC1927D0562E0BF6496 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +65,6 @@
 		483478991C3EBFBA005B2BD3 /* rank2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rank2.png; sourceTree = "<group>"; };
 		4834789A1C3EBFBA005B2BD3 /* settings48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings48.png; sourceTree = "<group>"; };
 		4834789B1C3EBFBA005B2BD3 /* user168.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user168.png; sourceTree = "<group>"; };
-		486783A71C3FCABB00FCFB36 /* StoryboardSecond.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StoryboardSecond.storyboard; sourceTree = "<group>"; };
 		52655CC1927D0562E0BF6496 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E5910D716528DBC9645F6F0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,7 +138,6 @@
 				240AA0FF1C1D46D200CE21EB /* Main.storyboard */,
 				241B3C1A1C3E8C1A00D33237 /* Resources */,
 				0102DE921C3EA96300AEE1EA /* Supporting Files */,
-				486783A71C3FCABB00FCFB36 /* StoryboardSecond.storyboard */,
 			);
 			path = MovieChallange;
 			sourceTree = "<group>";
@@ -310,7 +307,6 @@
 				4834789C1C3EBFBA005B2BD3 /* email19.png in Resources */,
 				240AA1061C1D46D200CE21EB /* LaunchScreen.storyboard in Resources */,
 				241B3C1C1C3E8C5E00D33237 /* screen.png in Resources */,
-				486783A81C3FCABB00FCFB36 /* StoryboardSecond.storyboard in Resources */,
 				240AA1031C1D46D200CE21EB /* Assets.xcassets in Resources */,
 				4834789F1C3EBFBA005B2BD3 /* user168.png in Resources */,
 				4834789D1C3EBFBA005B2BD3 /* rank2.png in Resources */,
