@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class SignUpViewController: UIViewController {
     
@@ -16,6 +17,40 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     
     @IBAction func register(sender: UIButton) {
+        if password.text == repeatPassword.text {
+            let user = PFUser()
+            user.username = username.text
+            user.password = password.text
+            user.email = email.text
+            
+            user.signUpInBackgroundWithBlock {
+                (succeeded: Bool, error: NSError?) -> Void in
+                if let error = error {
+                    // Show the errorString somewhere and let the user try again.
+                    let errorString = error.userInfo["error"] as? NSString
+                    print(errorString)
+                } else {
+                    // Hooray! Let them use the app now.
+                    print("Hooray! \(user.username!) use the app now.")
+                }
+            }
+            
+        } else {
+            let alertController = UIAlertController(title: "Invalid Credentials", message: "Passwords do not match!", preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "Retry", style: .Default, handler: { (action) in
+                self.clearFields()
+                self.username.becomeFirstResponder()
+            }))
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+
+    }
+    
+    private func clearFields() {
+        self.username.text = "";
+        self.password.text = "";
+        self.repeatPassword.text = "";
+        self.email.text = "";
     }
     
 }
