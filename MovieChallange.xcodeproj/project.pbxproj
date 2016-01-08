@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0102DE961C3ED9CC00AEE1EA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102DE951C3ED9CC00AEE1EA /* SignUpViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		0102DE961C3ED9CC00AEE1EA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102DE951C3ED9CC00AEE1EA /* SignUpViewController.swift */; };
 		240AA0FA1C1D46D200CE21EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240AA0F91C1D46D200CE21EB /* AppDelegate.swift */; };
 		240AA0FC1C1D46D200CE21EB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240AA0FB1C1D46D200CE21EB /* FirstViewController.swift */; };
 		240AA0FE1C1D46D200CE21EB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240AA0FD1C1D46D200CE21EB /* SecondViewController.swift */; };

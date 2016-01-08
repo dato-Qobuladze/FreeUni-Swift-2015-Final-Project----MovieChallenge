@@ -10,6 +10,29 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    @IBOutlet weak var usernameLabel: UILabel!
+    
+    @IBOutlet weak var scoreLabel: UILabel!
+    
+    @IBOutlet weak var mailLabel: UILabel!
+    
+    
+    @IBAction func settingsAction(sender: UIButton) {
+        
+    }
+    
+    @IBAction func ratingAction(sender: UIButton) {
+    }
+    
+
+    func makeAlert(alertName: String){
+        let alertController = UIAlertController(title: alertName, message: "",
+            preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +43,7 @@ class SecondViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
 
 }
 
