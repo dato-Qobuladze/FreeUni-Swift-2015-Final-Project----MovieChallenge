@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0102DE961C3ED9CC00AEE1EA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102DE951C3ED9CC00AEE1EA /* SignUpViewController.swift */; };
+		017664BC1C40133C001E8740 /* AudioQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017664BB1C40133C001E8740 /* AudioQuestionViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		240AA0FA1C1D46D200CE21EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240AA0F91C1D46D200CE21EB /* AppDelegate.swift */; };
 		240AA0FC1C1D46D200CE21EB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240AA0FB1C1D46D200CE21EB /* FirstViewController.swift */; };
 		240AA0FE1C1D46D200CE21EB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240AA0FD1C1D46D200CE21EB /* SecondViewController.swift */; };
@@ -45,7 +46,7 @@
 /* Begin PBXFileReference section */
 		0102DE951C3ED9CC00AEE1EA /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		017664B71C40108A001E8740 /* Interstellar Soundtrack - Docking Scene.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Interstellar Soundtrack - Docking Scene.mp3"; sourceTree = "<group>"; };
-		017664B91C40111B001E8740 /* AudioQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioQuestionViewController.swift; sourceTree = "<group>"; };
+		017664BB1C40133C001E8740 /* AudioQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioQuestionViewController.swift; sourceTree = "<group>"; };
 		07A008B3A37830813AB510C3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		240AA0F61C1D46D100CE21EB /* MovieChallange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieChallange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		240AA0F91C1D46D200CE21EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,7 +116,7 @@
 				240AA0FB1C1D46D200CE21EB /* FirstViewController.swift */,
 				240AA0FD1C1D46D200CE21EB /* SecondViewController.swift */,
 				241B3C1D1C3EACC600D33237 /* SigninViewController.swift */,
-				017664B91C40111B001E8740 /* AudioQuestionViewController.swift */,
+				017664BB1C40133C001E8740 /* AudioQuestionViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -343,7 +344,6 @@
 				4834789C1C3EBFBA005B2BD3 /* email19.png in Resources */,
 				240AA1061C1D46D200CE21EB /* LaunchScreen.storyboard in Resources */,
 				241B3C1C1C3E8C5E00D33237 /* screen.png in Resources */,
-				017664B81C40108A001E8740 /* Interstellar Soundtrack - Docking Scene.mp3 in Resources */,
 				240AA1031C1D46D200CE21EB /* Assets.xcassets in Resources */,
 				4834789F1C3EBFBA005B2BD3 /* user168.png in Resources */,
 				4834789D1C3EBFBA005B2BD3 /* rank2.png in Resources */,
@@ -422,7 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				241B3C1E1C3EACC600D33237 /* SigninViewController.swift in Sources */,
-				017664BA1C40111B001E8740 /* AudioQuestionViewController.swift in Sources */,
+				017664BC1C40133C001E8740 /* AudioQuestionViewController.swift in Sources */,
 				240AA0FE1C1D46D200CE21EB /* SecondViewController.swift in Sources */,
 				240AA0FA1C1D46D200CE21EB /* AppDelegate.swift in Sources */,
 				240AA0FC1C1D46D200CE21EB /* FirstViewController.swift in Sources */,

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pUH-0z-j4u">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="K8g-CH-GCv">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -664,10 +664,10 @@
             </objects>
             <point key="canvasLocation" x="76" y="66"/>
         </scene>
-        <!--View Controller-->
+        <!--Audio Question View Controller-->
         <scene sceneID="BPj-q2-HBa">
             <objects>
-                <viewController id="K8g-CH-GCv" sceneMemberID="viewController">
+                <viewController id="K8g-CH-GCv" customClass="AudioQuestionViewController" customModule="MovieChallange" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LTl-FH-asH"/>
                         <viewControllerLayoutGuide type="bottom" id="TKd-pJ-9lF"/>
@@ -683,17 +683,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgm-hg-cYr">
-                                <rect key="frame" x="308" y="512" width="272" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6w-fq-BJV">
                                 <rect key="frame" x="20" y="512" width="280" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="answered:" destination="K8g-CH-GCv" eventType="touchUpInside" id="Px6-Fr-7HC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oCl-dZ-FMm">
                                 <rect key="frame" x="20" y="550" width="560" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="next:" destination="K8g-CH-GCv" eventType="touchUpInside" id="ZnD-IT-gsu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEp-lk-sHt">
                                 <rect key="frame" x="308" y="474" width="272" height="30"/>
@@ -706,6 +708,9 @@
                                         <exclude reference="xKM-SS-qVk"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="answered:" destination="K8g-CH-GCv" eventType="touchUpInside" id="sun-xP-hDJ"/>
+                                </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ldq-Rv-u88">
                                 <rect key="frame" x="18" y="374" width="564" height="31"/>
@@ -717,6 +722,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                 <state key="normal" title="Play ▶️"/>
+                                <connections>
+                                    <action selector="playMusic:" destination="K8g-CH-GCv" eventType="touchUpInside" id="Z6H-cT-GDo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AMY-ZB-YHk">
                                 <rect key="frame" x="20" y="474" width="280" height="30"/>
@@ -729,6 +737,16 @@
                                         <exclude reference="1Dh-JN-UMb"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="answered:" destination="K8g-CH-GCv" eventType="touchUpInside" id="Ktc-Yh-EzG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgm-hg-cYr">
+                                <rect key="frame" x="308" y="512" width="272" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="answered:" destination="K8g-CH-GCv" eventType="touchUpInside" id="gFB-Vd-yRX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -760,6 +778,14 @@
                             <constraint firstItem="ldq-Rv-u88" firstAttribute="top" secondItem="TdT-Rl-tEJ" secondAttribute="bottom" constant="8" symbolic="YES" id="zdy-CI-ynL"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="answerA" destination="AMY-ZB-YHk" id="usI-Wi-VJD"/>
+                        <outlet property="answerB" destination="lEp-lk-sHt" id="cK1-Wa-Mkr"/>
+                        <outlet property="answerC" destination="c6w-fq-BJV" id="XcR-yC-QKz"/>
+                        <outlet property="answerD" destination="Sgm-hg-cYr" id="8Bl-a5-yyd"/>
+                        <outlet property="musicSlider" destination="ldq-Rv-u88" id="qZA-kC-8Ka"/>
+                        <outlet property="questionText" destination="TdT-Rl-tEJ" id="8bh-JY-gsk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nVo-EK-X3r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
