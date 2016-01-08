@@ -45,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		0102DE951C3ED9CC00AEE1EA /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		017664B31C3FE483001E8740 /* AudioQuestion.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AudioQuestion.storyboard; sourceTree = "<group>"; };
 		07A008B3A37830813AB510C3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		240AA0F61C1D46D100CE21EB /* MovieChallange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieChallange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		240AA0F91C1D46D200CE21EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -329,6 +330,7 @@
 				241B3C1C1C3E8C5E00D33237 /* screen.png in Resources */,
 				240AA1031C1D46D200CE21EB /* Assets.xcassets in Resources */,
 				4834789F1C3EBFBA005B2BD3 /* user168.png in Resources */,
+				017664B41C3FE483001E8740 /* AudioQuestion.storyboard in Resources */,
 				4834789D1C3EBFBA005B2BD3 /* rank2.png in Resources */,
 				4834789E1C3EBFBA005B2BD3 /* settings48.png in Resources */,
 				240AA1011C1D46D200CE21EB /* Main.storyboard in Resources */,

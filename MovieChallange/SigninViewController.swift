@@ -41,27 +41,5 @@ class SigninViewController: UIViewController {
     
     override func viewDidLoad() {
         username.becomeFirstResponder()
-//        let testObject = PFObject(className: "TestObject")
-//        testObject["foo"] = "bar"
-//        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-//            print("Object has been saved.")
-//        }
-        
-//        let user = PFUser()
-//        user.username = "username"
-//        user.password = "password"
-//        user.email = "email@example.com"
-//        
-//        user.signUpInBackgroundWithBlock {
-//            (succeeded: Bool, error: NSError?) -> Void in
-//            if let error = error {
-//                let errorString = error.userInfo["error"] as? NSString
-//                print(errorString)
-//                // Show the errorString somewhere and let the user try again.
-//            } else {
-//                print("signed up")
-//                // Hooray! Let them use the app now.
-//            }
-//        }
     }
 }
