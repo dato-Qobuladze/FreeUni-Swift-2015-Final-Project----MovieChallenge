@@ -98,11 +98,31 @@
 		0102DE921C3EA96300AEE1EA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				240AA0F91C1D46D200CE21EB /* AppDelegate.swift */,
 				240AA1021C1D46D200CE21EB /* Assets.xcassets */,
 				240AA1041C1D46D200CE21EB /* LaunchScreen.storyboard */,
 				240AA1071C1D46D200CE21EB /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		017664AF1C3FCCAC001E8740 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0102DE951C3ED9CC00AEE1EA /* SignUpViewController.swift */,
+				240AA0FB1C1D46D200CE21EB /* FirstViewController.swift */,
+				240AA0FD1C1D46D200CE21EB /* SecondViewController.swift */,
+				241B3C1D1C3EACC600D33237 /* SigninViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		017664B01C3FCD69001E8740 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				240AA0FF1C1D46D200CE21EB /* Main.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 		240AA0ED1C1D46D100CE21EB = {
@@ -130,12 +150,8 @@
 		240AA0F81C1D46D200CE21EB /* MovieChallange */ = {
 			isa = PBXGroup;
 			children = (
-				0102DE951C3ED9CC00AEE1EA /* SignUpViewController.swift */,
-				240AA0F91C1D46D200CE21EB /* AppDelegate.swift */,
-				240AA0FB1C1D46D200CE21EB /* FirstViewController.swift */,
-				240AA0FD1C1D46D200CE21EB /* SecondViewController.swift */,
-				241B3C1D1C3EACC600D33237 /* SigninViewController.swift */,
-				240AA0FF1C1D46D200CE21EB /* Main.storyboard */,
+				017664B01C3FCD69001E8740 /* Storyboards */,
+				017664AF1C3FCCAC001E8740 /* ViewControllers */,
 				241B3C1A1C3E8C1A00D33237 /* Resources */,
 				0102DE921C3EA96300AEE1EA /* Supporting Files */,
 			);
