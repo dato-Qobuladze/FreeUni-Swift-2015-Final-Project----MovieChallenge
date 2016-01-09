@@ -8,7 +8,9 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, UIPopoverPresentationControllerDelegate {
+    
+    
 
     @IBOutlet weak var usernameLabel: UILabel!
     
@@ -18,20 +20,36 @@ class SecondViewController: UIViewController {
     
     
     @IBAction func settingsAction(sender: UIButton) {
+        self.performSegueWithIdentifier("settingsPopover", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+            let dest = segue.destinationViewController
+            if let popoverController = dest.popoverPresentationController
+            {
+                popoverController.delegate = self
+                if segue.identifier == "settingsPopover"
+                {
+//                    popoverController.preferredContentSize = CGSize(width: 300, height: 3 * 40 + 40)
+                }
+                else if segue.identifier == "ratingPopover"
+                {
+                
+                }
+            }
         
     }
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        
+        return .None
+    }
+    
     
     @IBAction func ratingAction(sender: UIButton) {
     }
     
 
-    func makeAlert(alertName: String){
-        let alertController = UIAlertController(title: alertName, message: "",
-            preferredStyle: UIAlertControllerStyle.Alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

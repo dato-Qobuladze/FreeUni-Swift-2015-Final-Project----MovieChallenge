@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0102DE961C3ED9CC00AEE1EA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102DE951C3ED9CC00AEE1EA /* SignUpViewController.swift */; };
-		017664BC1C40133C001E8740 /* AudioQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017664BB1C40133C001E8740 /* AudioQuestionViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		017664BC1C40133C001E8740 /* AudioQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017664BB1C40133C001E8740 /* AudioQuestionViewController.swift */; };
 		240AA0FA1C1D46D200CE21EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240AA0F91C1D46D200CE21EB /* AppDelegate.swift */; };
 		240AA0FC1C1D46D200CE21EB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240AA0FB1C1D46D200CE21EB /* FirstViewController.swift */; };
 		240AA0FE1C1D46D200CE21EB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240AA0FD1C1D46D200CE21EB /* SecondViewController.swift */; };
@@ -23,6 +23,7 @@
 		4834789D1C3EBFBA005B2BD3 /* rank2.png in Resources */ = {isa = PBXBuildFile; fileRef = 483478991C3EBFBA005B2BD3 /* rank2.png */; };
 		4834789E1C3EBFBA005B2BD3 /* settings48.png in Resources */ = {isa = PBXBuildFile; fileRef = 4834789A1C3EBFBA005B2BD3 /* settings48.png */; };
 		4834789F1C3EBFBA005B2BD3 /* user168.png in Resources */ = {isa = PBXBuildFile; fileRef = 4834789B1C3EBFBA005B2BD3 /* user168.png */; };
+		486354951C4020FB00786A12 /* closed.png in Resources */ = {isa = PBXBuildFile; fileRef = 486354941C4020FB00786A12 /* closed.png */; };
 		E19BE89A50F491B5D5FE5E4D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52655CC1927D0562E0BF6496 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		483478991C3EBFBA005B2BD3 /* rank2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rank2.png; sourceTree = "<group>"; };
 		4834789A1C3EBFBA005B2BD3 /* settings48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings48.png; sourceTree = "<group>"; };
 		4834789B1C3EBFBA005B2BD3 /* user168.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user168.png; sourceTree = "<group>"; };
+		486354941C4020FB00786A12 /* closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closed.png; sourceTree = "<group>"; };
 		52655CC1927D0562E0BF6496 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E5910D716528DBC9645F6F0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -209,6 +211,7 @@
 		483478971C3EBFA5005B2BD3 /* Profile Images */ = {
 			isa = PBXGroup;
 			children = (
+				486354941C4020FB00786A12 /* closed.png */,
 				483478981C3EBFBA005B2BD3 /* email19.png */,
 				483478991C3EBFBA005B2BD3 /* rank2.png */,
 				4834789A1C3EBFBA005B2BD3 /* settings48.png */,
@@ -343,6 +346,7 @@
 			files = (
 				4834789C1C3EBFBA005B2BD3 /* email19.png in Resources */,
 				240AA1061C1D46D200CE21EB /* LaunchScreen.storyboard in Resources */,
+				486354951C4020FB00786A12 /* closed.png in Resources */,
 				241B3C1C1C3E8C5E00D33237 /* screen.png in Resources */,
 				240AA1031C1D46D200CE21EB /* Assets.xcassets in Resources */,
 				4834789F1C3EBFBA005B2BD3 /* user168.png in Resources */,
