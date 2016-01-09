@@ -10,6 +10,10 @@ import UIKit
 
 class SecondViewController: UIViewController, UIPopoverPresentationControllerDelegate {
     
+    var popoverStartPoint : CGPoint!
+    var settingsPopoverSize : CGSize {
+        return CGSize(width: 200, height: 200)
+    }
     
 
     @IBOutlet weak var usernameLabel: UILabel!
@@ -20,7 +24,7 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
     
     
     @IBAction func settingsAction(sender: UIButton) {
-        self.performSegueWithIdentifier("settingsPopover", sender: self)
+//        self.performSegueWithIdentifier("settingsPopover", sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -28,14 +32,20 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
             if let popoverController = dest.popoverPresentationController
             {
                 popoverController.delegate = self
+                
+                popoverController.sourceRect = CGRect(x: popoverStartPoint.x, y: popoverStartPoint.y,
+                                                        width: settingsPopoverSize.width, height: settingsPopoverSize.height)
+               
                 if segue.identifier == "settingsPopover"
                 {
-//                    popoverController.preferredContentSize = CGSize(width: 300, height: 3 * 40 + 40)
+
                 }
                 else if segue.identifier == "ratingPopover"
                 {
                 
                 }
+                
+                
             }
         
     }
@@ -54,6 +64,22 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        popoverStartPoint = calculateStartPoint()
+    }
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+        print("after rotate")
+        popoverStartPoint = calculateStartPoint()
+    }
+    
+    func calculateStartPoint() -> CGPoint {
+        
+        print("x: \(view.bounds.midX)  y: \(view.bounds.midY)")
+        
+        return  CGPoint(x: view.bounds.midX - settingsPopoverSize.width / 2,
+                        y: view.bounds.midY - settingsPopoverSize.height / 2)
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,6 +88,8 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
     }
 
     
+    
 
+    
 }
 

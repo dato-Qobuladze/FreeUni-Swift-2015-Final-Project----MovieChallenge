@@ -673,26 +673,26 @@
         <!--View Controller-->
         <scene sceneID="vON-bb-BQ0">
             <objects>
-                <viewController id="TN1-B7-lc4" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="formSheet" id="TN1-B7-lc4" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="x3l-U1-w38"/>
                         <viewControllerLayoutGuide type="bottom" id="jBv-iv-ROk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eEY-dN-6jZ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QL6-QG-zhz">
-                                <rect key="frame" x="20" y="172" width="560" height="30"/>
+                                <rect key="frame" x="16" y="172" width="168" height="30"/>
                                 <state key="normal" title="Change"/>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gDK-13-DIT">
-                                <rect key="frame" x="68" y="76" width="512" height="40"/>
+                                <rect key="frame" x="64" y="76" width="120" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm new password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Esg-7o-1eZ">
-                                <rect key="frame" x="68" y="124" width="512" height="40"/>
+                                <rect key="frame" x="64" y="124" width="120" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="wpy-CZ-sAk"/>
                                 </constraints>
@@ -704,32 +704,32 @@
                                     </mask>
                                 </variation>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email19.png" translatesAutoresizingMaskIntoConstraints="NO" id="Agt-fX-jkH">
-                                <rect key="frame" x="20" y="28" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="6QN-xD-htI"/>
-                                    <constraint firstAttribute="width" constant="40" id="g3K-mo-ox4"/>
-                                </constraints>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="closed.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ez3-BV-Qp5">
-                                <rect key="frame" x="20" y="76" width="40" height="40"/>
+                                <rect key="frame" x="16" y="76" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="3x8-T1-jlz"/>
                                     <constraint firstAttribute="height" constant="40" id="HZb-wD-m1X"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="closed.png" translatesAutoresizingMaskIntoConstraints="NO" id="8re-SP-WLh">
-                                <rect key="frame" x="20" y="124" width="40" height="40"/>
+                                <rect key="frame" x="16" y="124" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="P2M-jn-NFD"/>
                                     <constraint firstAttribute="width" constant="40" id="Q2P-ev-W2t"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter new email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FmT-jN-9is">
-                                <rect key="frame" x="68" y="28" width="512" height="40"/>
+                                <rect key="frame" x="64" y="28" width="120" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email19.png" translatesAutoresizingMaskIntoConstraints="NO" id="Agt-fX-jkH">
+                                <rect key="frame" x="16" y="28" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="6QN-xD-htI"/>
+                                    <constraint firstAttribute="width" constant="40" id="g3K-mo-ox4"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -770,6 +770,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="200" height="200"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NSR-Q2-TMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -793,7 +794,7 @@
                                     <constraint firstAttribute="height" constant="50" id="3iT-Rw-Dml"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Single playing history:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEO-PF-4zl">
@@ -1060,7 +1061,7 @@
                                     <constraint firstAttribute="height" constant="30" id="LzC-jo-Prs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
