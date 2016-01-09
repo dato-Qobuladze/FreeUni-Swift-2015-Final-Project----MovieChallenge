@@ -23,6 +23,7 @@
 		4834789D1C3EBFBA005B2BD3 /* rank2.png in Resources */ = {isa = PBXBuildFile; fileRef = 483478991C3EBFBA005B2BD3 /* rank2.png */; };
 		4834789E1C3EBFBA005B2BD3 /* settings48.png in Resources */ = {isa = PBXBuildFile; fileRef = 4834789A1C3EBFBA005B2BD3 /* settings48.png */; };
 		4834789F1C3EBFBA005B2BD3 /* user168.png in Resources */ = {isa = PBXBuildFile; fileRef = 4834789B1C3EBFBA005B2BD3 /* user168.png */; };
+		485D09B31C416C000092B742 /* SettingsPopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485D09B21C416C000092B742 /* SettingsPopoverController.swift */; };
 		486354951C4020FB00786A12 /* closed.png in Resources */ = {isa = PBXBuildFile; fileRef = 486354941C4020FB00786A12 /* closed.png */; };
 		E19BE89A50F491B5D5FE5E4D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52655CC1927D0562E0BF6496 /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -69,6 +70,7 @@
 		483478991C3EBFBA005B2BD3 /* rank2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rank2.png; sourceTree = "<group>"; };
 		4834789A1C3EBFBA005B2BD3 /* settings48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings48.png; sourceTree = "<group>"; };
 		4834789B1C3EBFBA005B2BD3 /* user168.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user168.png; sourceTree = "<group>"; };
+		485D09B21C416C000092B742 /* SettingsPopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPopoverController.swift; sourceTree = "<group>"; };
 		486354941C4020FB00786A12 /* closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closed.png; sourceTree = "<group>"; };
 		52655CC1927D0562E0BF6496 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E5910D716528DBC9645F6F0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				240AA0FD1C1D46D200CE21EB /* SecondViewController.swift */,
 				241B3C1D1C3EACC600D33237 /* SigninViewController.swift */,
 				017664BB1C40133C001E8740 /* AudioQuestionViewController.swift */,
+				485D09B21C416C000092B742 /* SettingsPopoverController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				240AA0FE1C1D46D200CE21EB /* SecondViewController.swift in Sources */,
 				240AA0FA1C1D46D200CE21EB /* AppDelegate.swift in Sources */,
 				240AA0FC1C1D46D200CE21EB /* FirstViewController.swift in Sources */,
+				485D09B31C416C000092B742 /* SettingsPopoverController.swift in Sources */,
 				0102DE961C3ED9CC00AEE1EA /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
