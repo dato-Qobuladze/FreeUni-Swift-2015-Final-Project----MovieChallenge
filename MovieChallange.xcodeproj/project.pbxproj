@@ -24,6 +24,7 @@
 		4834789E1C3EBFBA005B2BD3 /* settings48.png in Resources */ = {isa = PBXBuildFile; fileRef = 4834789A1C3EBFBA005B2BD3 /* settings48.png */; };
 		4834789F1C3EBFBA005B2BD3 /* user168.png in Resources */ = {isa = PBXBuildFile; fileRef = 4834789B1C3EBFBA005B2BD3 /* user168.png */; };
 		486354951C4020FB00786A12 /* closed.png in Resources */ = {isa = PBXBuildFile; fileRef = 486354941C4020FB00786A12 /* closed.png */; };
+		8362E6001C415B9300AC15B2 /* Racxa.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8362E5FF1C415B9300AC15B2 /* Racxa.storyboard */; settings = {ASSET_TAGS = (); }; };
 		E19BE89A50F491B5D5FE5E4D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52655CC1927D0562E0BF6496 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		486354941C4020FB00786A12 /* closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closed.png; sourceTree = "<group>"; };
 		52655CC1927D0562E0BF6496 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E5910D716528DBC9645F6F0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		8362E5FF1C415B9300AC15B2 /* Racxa.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Racxa.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 		017664B01C3FCD69001E8740 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				8362E5FF1C415B9300AC15B2 /* Racxa.storyboard */,
 				240AA0FF1C1D46D200CE21EB /* Main.storyboard */,
 			);
 			name = Storyboards;
@@ -346,6 +349,7 @@
 			files = (
 				4834789C1C3EBFBA005B2BD3 /* email19.png in Resources */,
 				240AA1061C1D46D200CE21EB /* LaunchScreen.storyboard in Resources */,
+				8362E6001C415B9300AC15B2 /* Racxa.storyboard in Resources */,
 				486354951C4020FB00786A12 /* closed.png in Resources */,
 				241B3C1C1C3E8C5E00D33237 /* screen.png in Resources */,
 				240AA1031C1D46D200CE21EB /* Assets.xcassets in Resources */,
