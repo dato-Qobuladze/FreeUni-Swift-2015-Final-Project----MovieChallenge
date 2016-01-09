@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1sc-p8-VBr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hae-r9-r8J">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -206,7 +206,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sPq-QY-Qxj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1832" y="-320"/>
+            <point key="canvasLocation" x="2404" y="1049"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="B6L-ec-k6M">
@@ -609,7 +609,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BvR-cr-8XD" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="588"/>
+            <point key="canvasLocation" x="332" y="570"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4JR-hC-feB">
@@ -628,7 +628,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUQ-Pr-CUZ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="146" y="-408"/>
+            <point key="canvasLocation" x="-440" y="174"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="vON-bb-BQ0">
@@ -734,7 +734,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NSR-Q2-TMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="718" y="933"/>
+            <point key="canvasLocation" x="988" y="849"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="By9-Gw-kVf">
@@ -832,7 +832,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSp-0x-szg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="718" y="284"/>
+            <point key="canvasLocation" x="1188" y="340"/>
         </scene>
         <!--Audio Question View Controller-->
         <scene sceneID="BPj-q2-HBa">
@@ -959,7 +959,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nVo-EK-X3r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2450" y="346"/>
+            <point key="canvasLocation" x="2404" y="-356"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="bCG-qj-jOU">
@@ -1073,7 +1073,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MAM-Oz-hJR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2450" y="-320"/>
+            <point key="canvasLocation" x="2404" y="340"/>
         </scene>
         <!--First-->
         <scene sceneID="vd7-mY-1v5">
@@ -1093,7 +1093,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="center" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zfP-ja-fw7">
+                            <pickerView contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="zfP-ja-fw7">
                                 <rect key="frame" x="20" y="41" width="560" height="207"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="95" id="JC7-lo-C2e"/>
@@ -1101,31 +1101,31 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="rf1-Gn-sRC"/>
                                         <exclude reference="JC7-lo-C2e"/>
+                                        <exclude reference="rf1-Gn-sRC"/>
                                     </mask>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="FYw-TN-CBD" id="YA5-Pt-wrh"/>
                                 </connections>
                             </pickerView>
-                            <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="749" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SGw-mH-qtT">
+                            <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="SGw-mH-qtT">
                                 <rect key="frame" x="20" y="269" width="560" height="206"/>
                                 <connections>
                                     <outlet property="dataSource" destination="FYw-TN-CBD" id="FU9-ll-9Is"/>
                                 </connections>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zol-Ov-bob">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zol-Ov-bob">
                                 <rect key="frame" x="20" y="475" width="560" height="30"/>
                                 <state key="normal" title="Single Play"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Quest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5C-Zp-VME">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5C-Zp-VME">
                                 <rect key="frame" x="20" y="248" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r68-3f-PQ0">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r68-3f-PQ0">
                                 <rect key="frame" x="20" y="513" width="560" height="30"/>
                                 <state key="normal" title="Multy Play"/>
                             </button>
@@ -1176,7 +1176,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </pickerView>
             </objects>
-            <point key="canvasLocation" x="1033" y="-420"/>
+            <point key="canvasLocation" x="332" y="-218"/>
         </scene>
     </scenes>
     <resources>
