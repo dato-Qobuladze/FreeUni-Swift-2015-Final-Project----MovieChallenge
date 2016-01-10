@@ -33,8 +33,8 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
             {
                 popoverController.delegate = self
                 
-                popoverController.sourceRect = CGRect(x: popoverStartPoint.x, y: popoverStartPoint.y,
-                                                        width: settingsPopoverSize.width, height: settingsPopoverSize.height)
+//                popoverController.sourceRect = CGRect(x: popoverStartPoint.x, y: popoverStartPoint.y,
+//                                                        width: settingsPopoverSize.width, height: settingsPopoverSize.height)
                
                 if segue.identifier == "settingsPopover"
                 {

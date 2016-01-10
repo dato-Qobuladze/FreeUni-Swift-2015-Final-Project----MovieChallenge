@@ -12,6 +12,10 @@ class SettingsPopoverController: UIViewController {
     
     typealias closure = () -> Void
     var actionsDict : [String : closure]? = [String : closure]()
+    var alertText : String = ""
+    var alertStyle : UIAlertActionStyle = UIAlertActionStyle.Cancel
+    var titleOfHandler : String = ""
+    var makeAnyChanged : Bool = false
 
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -34,7 +38,10 @@ class SettingsPopoverController: UIViewController {
     
     @IBAction func changeButtonAction(sender: UIButton) {
         emailAction()
-        passwordAction()
+//        passwordAction()
+        if makeAnyChanged {
+            showAlertWithMessage(alertText, style: alertStyle, handlerTitle: titleOfHandler)
+        }
         // close popover . . .
     }
     
@@ -52,31 +59,37 @@ class SettingsPopoverController: UIViewController {
     }
     
     func emailAction(){
-        if let _ = emailTextField.text {
-            showAlertWithMessage(Messages.emptyFieldMsg.rawValue,
-                                    alertStyle: UIAlertActionStyle.Default, handlerTitle: "Yes")
+        if let newEmail = emailTextField.text {
+            if newEmail != "" {
+                
+                alertText += Messages.emailFieldMsg.rawValue;
+                alertStyle = UIAlertActionStyle.Default
+                titleOfHandler = "Yes"
+                
+                makeAnyChanged = true
+            }
         }
     }
     
     func passwordAction(){
         let passwordText = passwordField.text
-        let confirmText = confirmPasswordField.text
+        let confirmText  = confirmPasswordField.text
         
         if  passwordText != nil && confirmText != nil {
             if passwordText == confirmText {
                 showAlertWithMessage(Messages.changePasswordMsg.rawValue,
-                                        alertStyle: UIAlertActionStyle.Default, handlerTitle: "Yes")
+                                        style: UIAlertActionStyle.Default, handlerTitle: "Yes")
             }
             showAlertWithMessage(Messages.notSameFieldMsg.rawValue,
-                                    alertStyle: UIAlertActionStyle.Cancel, handlerTitle: "Cancel")
+                                    style: UIAlertActionStyle.Cancel, handlerTitle: "Cancel")
         }
         else {
             showAlertWithMessage(Messages.emptyFieldMsg.rawValue,
-                                    alertStyle: UIAlertActionStyle.Cancel, handlerTitle: "Cancel")
+                                    style: UIAlertActionStyle.Cancel, handlerTitle: "Cancel")
         }
     }
     
-    func showAlertWithMessage(message: String, alertStyle: UIAlertActionStyle, handlerTitle: String){
+    func showAlertWithMessage(message: String, style: UIAlertActionStyle, handlerTitle: String){
         
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: handlerTitle, style: alertStyle, handler: { action in
@@ -92,7 +105,7 @@ class SettingsPopoverController: UIViewController {
             }
         }))
         
-        if alertStyle == UIAlertActionStyle.Default {
+        if style == UIAlertActionStyle.Default {
             alert.addAction(UIAlertAction(title: "No", style: .Default, handler: nil))
         }
         
