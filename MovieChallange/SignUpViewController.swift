@@ -11,6 +11,8 @@ import Parse
 
 class SignUpViewController: UIViewController {
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var repeatPassword: UITextField!
@@ -22,12 +24,16 @@ class SignUpViewController: UIViewController {
             user.username = username.text
             user.password = password.text
             user.email = email.text
-            
+            spinner.startAnimating()
             user.signUpInBackgroundWithBlock {
                 (succeeded: Bool, error: NSError?) -> Void in
+                self.spinner.stopAnimating()
                 if let error = error {
                     // Show the errorString somewhere and let the user try again.
-                    let errorString = error.userInfo["error"] as? NSString
+                    let errorString = error.userInfo["error"] as? NSString ?? ""
+                    let alertController = UIAlertController(title: "Invalid Credentials", message: "\(errorString)", preferredStyle: .Alert)
+                    alertController.addAction(UIAlertAction(title: "Retry", style: .Default, handler: nil))
+                    self.presentViewController(alertController, animated: true, completion: nil)
                     print(errorString)
                 } else {
                     // Hooray! Let them use the app now.
