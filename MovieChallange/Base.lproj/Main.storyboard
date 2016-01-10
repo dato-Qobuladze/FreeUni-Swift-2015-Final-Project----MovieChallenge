@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pUH-0z-j4u">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1sc-p8-VBr">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -1342,6 +1342,9 @@
                                 <animations/>
                                 <state key="normal" title="Multy Play"/>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kNZ-VJ-fvO">
+                                <rect key="frame" x="20" y="20" width="560" height="531"/>
+                            </activityIndicatorView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -1354,12 +1357,16 @@
                             <constraint firstAttribute="leadingMargin" secondItem="SGw-mH-qtT" secondAttribute="leading" id="FRo-6a-fUZ"/>
                             <constraint firstItem="SGw-mH-qtT" firstAttribute="top" secondItem="F5C-Zp-VME" secondAttribute="bottom" id="I9v-EI-2uH"/>
                             <constraint firstAttribute="leadingMargin" secondItem="zol-Ov-bob" secondAttribute="leading" id="J6T-6H-ilm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kNZ-VJ-fvO" secondAttribute="trailing" id="JtT-oa-lq4"/>
+                            <constraint firstItem="Hbs-ia-AF1" firstAttribute="top" secondItem="kNZ-VJ-fvO" secondAttribute="bottom" id="Jyh-Mf-Ctl"/>
                             <constraint firstItem="r68-3f-PQ0" firstAttribute="top" secondItem="SGw-mH-qtT" secondAttribute="bottom" constant="33" id="LJ9-iX-fEX"/>
                             <constraint firstItem="SGw-mH-qtT" firstAttribute="height" secondItem="zfP-ja-fw7" secondAttribute="height" id="Oud-oN-ScP"/>
                             <constraint firstItem="zol-Ov-bob" firstAttribute="top" secondItem="SGw-mH-qtT" secondAttribute="bottom" id="SEW-vj-fxl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SGw-mH-qtT" secondAttribute="trailing" id="YJa-Kg-OZH"/>
+                            <constraint firstItem="kNZ-VJ-fvO" firstAttribute="leading" secondItem="UMi-uL-VGP" secondAttribute="leadingMargin" id="fCw-Xh-HcG"/>
                             <constraint firstItem="cHI-Er-Pmg" firstAttribute="top" secondItem="cr8-ul-1Z1" secondAttribute="bottom" id="g86-Rc-v76"/>
                             <constraint firstItem="F5C-Zp-VME" firstAttribute="top" secondItem="zfP-ja-fw7" secondAttribute="bottom" id="h5J-Rp-lJs"/>
+                            <constraint firstItem="kNZ-VJ-fvO" firstAttribute="top" secondItem="cr8-ul-1Z1" secondAttribute="bottom" id="i7F-Hf-D7D"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cHI-Er-Pmg" secondAttribute="trailing" id="lLH-7J-Jze"/>
                             <constraint firstItem="cHI-Er-Pmg" firstAttribute="centerY" secondItem="UMi-uL-VGP" secondAttribute="centerY" id="m13-Gy-4lX"/>
                             <constraint firstItem="F5C-Zp-VME" firstAttribute="leading" secondItem="UMi-uL-VGP" secondAttribute="leadingMargin" id="mKf-7U-aOD"/>
@@ -1381,6 +1388,7 @@
                     <tabBarItem key="tabBarItem" title="First" image="first" id="opN-sR-agc"/>
                     <connections>
                         <outlet property="SecondPicker" destination="SGw-mH-qtT" id="M4z-9S-Iez"/>
+                        <outlet property="Spinner" destination="kNZ-VJ-fvO" id="3J8-FK-b6P"/>
                         <outlet property="myPickerView" destination="zfP-ja-fw7" id="eBl-aX-BuZ"/>
                     </connections>
                 </viewController>
@@ -1391,7 +1399,7 @@
                     <animations/>
                 </pickerView>
             </objects>
-            <point key="canvasLocation" x="332" y="-218"/>
+            <point key="canvasLocation" x="338" y="-240"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="3aR-pV-aQ6">
