@@ -70,6 +70,7 @@
 		241B3C1B1C3E8C5E00D33237 /* screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen.png; sourceTree = "<group>"; };
 		241B3C1D1C3EACC600D33237 /* SigninViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		24F58B8D1C426ED7001AD8EB /* QuestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
+		24F58B8F1C42880F001AD8EB /* BEMAnalogClock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BEMAnalogClock.framework; path = "Pods/../build/Debug-iphoneos/BEMAnalogClock.framework"; sourceTree = "<group>"; };
 		483478981C3EBFBA005B2BD3 /* email19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email19.png; sourceTree = "<group>"; };
 		483478991C3EBFBA005B2BD3 /* rank2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rank2.png; sourceTree = "<group>"; };
 		4834789A1C3EBFBA005B2BD3 /* settings48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings48.png; sourceTree = "<group>"; };
@@ -232,6 +233,7 @@
 		D8FA91FA9560697F8F842CFB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				24F58B8F1C42880F001AD8EB /* BEMAnalogClock.framework */,
 				52655CC1927D0562E0BF6496 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -588,6 +590,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = MovieChallange/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -605,6 +608,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = MovieChallange/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
