@@ -12,13 +12,16 @@ import Parse
 class SigninViewController: UIViewController {
 
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var username: UITextField!
     
     @IBOutlet weak var password: UITextField!
     @IBAction func signIn(sender: UIButton) {
         if let name = username.text, let pass = password.text{
+            spinner.startAnimating()
             PFUser.logInWithUsernameInBackground(name, password: pass) {
                 (user: PFUser?, error: NSError?) -> Void in
+                self.spinner.stopAnimating()
                 if user != nil {
                     // Do stuff after successful login.
                     print("successfull")

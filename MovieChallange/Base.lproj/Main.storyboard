@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="W5U-PB-bGH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pUH-0z-j4u">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -104,11 +104,10 @@
                                     <rect key="frame" x="20" y="72" width="360" height="30"/>
                                 </variation>
                             </label>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uUy-xh-1A6">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="0PC-Xd-fJm">
+                                <rect key="frame" x="20" y="72" width="560" height="520"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            </activityIndicatorView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -121,17 +120,22 @@
                             <constraint firstItem="QDf-31-eSB" firstAttribute="centerX" secondItem="qif-Uj-GKs" secondAttribute="centerX" id="OeI-y5-3Ti"/>
                             <constraint firstItem="hUy-ai-ebG" firstAttribute="trailing" secondItem="7e0-Mq-fWe" secondAttribute="trailing" id="TKA-6g-gqK"/>
                             <constraint firstItem="qif-Uj-GKs" firstAttribute="top" secondItem="QDf-31-eSB" secondAttribute="bottom" constant="8" symbolic="YES" id="YOd-i3-jQy"/>
+                            <constraint firstItem="obq-S2-RJ6" firstAttribute="top" secondItem="0PC-Xd-fJm" secondAttribute="bottom" constant="8" symbolic="YES" id="YX5-Jm-x6d"/>
                             <constraint firstItem="QDf-31-eSB" firstAttribute="top" secondItem="IcW-ca-Tx9" secondAttribute="bottom" constant="8" symbolic="YES" id="bww-Ht-qBa"/>
                             <constraint firstItem="hUy-ai-ebG" firstAttribute="trailing" secondItem="GzS-MY-TtE" secondAttribute="trailing" id="gUy-1j-iKx"/>
                             <constraint firstItem="qif-Uj-GKs" firstAttribute="leading" secondItem="7e0-Mq-fWe" secondAttribute="leading" id="hNF-R6-UM7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0PC-Xd-fJm" secondAttribute="trailing" id="hy9-pd-zOs"/>
+                            <constraint firstItem="0PC-Xd-fJm" firstAttribute="top" secondItem="IcW-ca-Tx9" secondAttribute="bottom" constant="8" symbolic="YES" id="iuH-9b-Oj3"/>
                             <constraint firstItem="7e0-Mq-fWe" firstAttribute="trailing" secondItem="qif-Uj-GKs" secondAttribute="trailing" id="jzA-c4-2cn"/>
                             <constraint firstItem="7e0-Mq-fWe" firstAttribute="top" secondItem="qif-Uj-GKs" secondAttribute="bottom" constant="8" symbolic="YES" id="lPi-dy-4zJ"/>
                             <constraint firstItem="GzS-MY-TtE" firstAttribute="top" secondItem="hUy-ai-ebG" secondAttribute="bottom" constant="8" symbolic="YES" id="rrh-KM-HLg"/>
+                            <constraint firstItem="0PC-Xd-fJm" firstAttribute="leading" secondItem="I0n-ye-4EA" secondAttribute="leadingMargin" id="vvw-UM-iXW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QHL-yK-c6K"/>
                     <connections>
                         <outlet property="password" destination="7e0-Mq-fWe" id="1gn-6q-Jbv"/>
+                        <outlet property="spinner" destination="0PC-Xd-fJm" id="fOP-4s-CRD"/>
                         <outlet property="username" destination="qif-Uj-GKs" id="mZb-Qz-vIj"/>
                     </connections>
                 </viewController>
@@ -282,6 +286,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kgB-oH-Fhz">
+                                <rect key="frame" x="20" y="72" width="560" height="520"/>
+                                <animations/>
+                            </activityIndicatorView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -293,15 +301,19 @@
                             <constraint firstItem="WFF-hH-8zX" firstAttribute="trailing" secondItem="0bp-kJ-kVq" secondAttribute="trailing" id="Igy-ON-NK3"/>
                             <constraint firstItem="GCv-9L-WjG" firstAttribute="leading" secondItem="0bp-kJ-kVq" secondAttribute="leading" id="VIi-Cl-Ms0"/>
                             <constraint firstItem="GCv-9L-WjG" firstAttribute="top" secondItem="0bp-kJ-kVq" secondAttribute="bottom" constant="8" symbolic="YES" id="Whc-id-JPa"/>
+                            <constraint firstItem="kgB-oH-Fhz" firstAttribute="leading" secondItem="59q-7l-He4" secondAttribute="leadingMargin" id="XMh-EJ-jWc"/>
                             <constraint firstItem="0bp-kJ-kVq" firstAttribute="trailing" secondItem="GCv-9L-WjG" secondAttribute="trailing" id="YEb-mN-cRc"/>
                             <constraint firstItem="0bp-kJ-kVq" firstAttribute="centerX" secondItem="59q-7l-He4" secondAttribute="centerX" id="bwW-nI-Xax"/>
                             <constraint firstItem="ET3-qb-CfS" firstAttribute="trailing" secondItem="WFF-hH-8zX" secondAttribute="trailing" id="eHh-Oj-Cfw"/>
                             <constraint firstItem="WFF-hH-8zX" firstAttribute="top" secondItem="ET3-qb-CfS" secondAttribute="bottom" constant="8" symbolic="YES" id="gdl-pX-cr6"/>
                             <constraint firstItem="ET3-qb-CfS" firstAttribute="top" secondItem="S1B-3g-aqG" secondAttribute="bottom" constant="8" symbolic="YES" id="hDE-Sg-Ul4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kgB-oH-Fhz" secondAttribute="trailing" id="ila-b4-Uor"/>
                             <constraint firstItem="S1B-3g-aqG" firstAttribute="top" secondItem="pbn-6H-4U2" secondAttribute="bottom" constant="8" symbolic="YES" id="lJf-U8-PcZ"/>
                             <constraint firstItem="Fnc-N9-MSa" firstAttribute="top" secondItem="ZJT-GH-7I0" secondAttribute="bottom" constant="268" id="qj5-l5-JWq"/>
                             <constraint firstItem="WFF-hH-8zX" firstAttribute="leading" secondItem="0bp-kJ-kVq" secondAttribute="leading" id="u65-Lz-8p7"/>
+                            <constraint firstItem="kgB-oH-Fhz" firstAttribute="top" secondItem="pbn-6H-4U2" secondAttribute="bottom" constant="8" symbolic="YES" id="wUT-vk-VQO"/>
                             <constraint firstItem="ET3-qb-CfS" firstAttribute="centerX" secondItem="S1B-3g-aqG" secondAttribute="centerX" id="wcv-Pe-pWO"/>
+                            <constraint firstItem="Fnc-N9-MSa" firstAttribute="top" secondItem="kgB-oH-Fhz" secondAttribute="bottom" constant="8" symbolic="YES" id="wo6-XY-aUj"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -313,6 +325,7 @@
                         <outlet property="email" destination="GCv-9L-WjG" id="7I0-4u-wNx"/>
                         <outlet property="password" destination="WFF-hH-8zX" id="ZLH-28-Hd7"/>
                         <outlet property="repeatPassword" destination="0bp-kJ-kVq" id="F7d-4j-GA7"/>
+                        <outlet property="spinner" destination="kgB-oH-Fhz" id="OF6-x9-SCY"/>
                         <outlet property="username" destination="ET3-qb-CfS" id="w6v-Ai-XS8"/>
                     </connections>
                 </viewController>
