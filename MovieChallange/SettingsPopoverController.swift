@@ -52,8 +52,8 @@ class SettingsPopoverController: UIViewController {
     }
     
     func emailAction(){
-        if let emailText = emailTextField.text {
-            showAlertWithMessage("Do you want to change email?  \(emailText)",
+        if let _ = emailTextField.text {
+            showAlertWithMessage(Messages.emptyFieldMsg.rawValue,
                                     alertStyle: UIAlertActionStyle.Default, handlerTitle: "Yes")
         }
     }
@@ -64,14 +64,14 @@ class SettingsPopoverController: UIViewController {
         
         if  passwordText != nil && confirmText != nil {
             if passwordText == confirmText {
-                showAlertWithMessage("Do you want to change password?",
+                showAlertWithMessage(Messages.changePasswordMsg.rawValue,
                                         alertStyle: UIAlertActionStyle.Default, handlerTitle: "Yes")
             }
-            showAlertWithMessage("There are not the same password and confirm password text.",
+            showAlertWithMessage(Messages.notSameFieldMsg.rawValue,
                                     alertStyle: UIAlertActionStyle.Cancel, handlerTitle: "Cancel")
         }
         else {
-            showAlertWithMessage("Please enter text in both fields: \n password and confirm password.",
+            showAlertWithMessage(Messages.emptyFieldMsg.rawValue,
                                     alertStyle: UIAlertActionStyle.Cancel, handlerTitle: "Cancel")
         }
     }
@@ -99,6 +99,12 @@ class SettingsPopoverController: UIViewController {
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
+    enum Messages : String{
+        case emailFieldMsg = "Do you want to change email?"
+        case changePasswordMsg = "Do you want to change password?"
+        case notSameFieldMsg = "There are not the same password and confirm password text."
+        case emptyFieldMsg = "Please enter text in both fields: \n password and confirm password."
+    }
 
     /*
     // MARK: - Navigation
