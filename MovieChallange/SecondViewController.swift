@@ -95,15 +95,17 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
         }
     }
     
-    func setUserProfileTexts(userObject user: PFUser){
-        let userName = user.objectForKey("name") as! String
-        let userEmail = user.objectForKey("email") as! String
-        let currentScore = user.objectForKey("currentScore") as! Int
+    func setUserProfileTexts(userObject user: PFUser) {
+        if user.objectForKey("name") != nil {
+            let userName = user.objectForKey("name") as! String
+            let userEmail = user.objectForKey("email") as! String
+            let currentScore = user.objectForKey("currentScore") as! Int
         
         
-        usernameLabel.text = userName
-        mailLabel.text = userEmail
-        scoreLabel.text = String(currentScore)
+            usernameLabel.text = userName
+            mailLabel.text = userEmail
+            scoreLabel.text = String(currentScore)
+        }
     }
     
     
