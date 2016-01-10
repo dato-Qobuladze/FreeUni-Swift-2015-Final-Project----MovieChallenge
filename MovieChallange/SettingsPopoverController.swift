@@ -79,7 +79,7 @@ class SettingsPopoverController: UIViewController {
         if  passwordText != nil && confirmText != nil {
             if passwordText == confirmText {
                 if passwordText != "" {
-                    alertText += "\n and \n" + Messages.changePasswordMsg.rawValue
+                    alertText += "\n" + Messages.changePasswordMsg.rawValue
                     alertStyle = UIAlertActionStyle.Default
                     titleOfHandler = "Yes"
                 }
