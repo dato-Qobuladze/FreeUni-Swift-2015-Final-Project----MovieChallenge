@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class SecondViewController: UIViewController, UIPopoverPresentationControllerDelegate,
                             UIImagePickerControllerDelegate,UINavigationControllerDelegate {
@@ -45,21 +46,21 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
         
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-            let dest = segue.destinationViewController
-            if let popoverController = dest.popoverPresentationController
+        let dest = segue.destinationViewController
+        if let popoverController = dest.popoverPresentationController
+        {
+            popoverController.delegate = self
+            
+            if segue.identifier == "settingsPopover"
             {
-                popoverController.delegate = self
-                
-                if segue.identifier == "settingsPopover"
-                {
 
-                }
-                else if segue.identifier == "ratingPopover"
-                {
-                
-                }
-                
             }
+            else if segue.identifier == "ratingPopover"
+            {
+            
+            }
+            
+        }
         
     }
     
@@ -72,6 +73,8 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         profileImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         self.dismissViewControllerAnimated(true, completion: nil)
+        
+        
     }
     
     @IBAction func ratingAction(sender: UIButton) {
@@ -82,7 +85,37 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
         popoverStartPoint = calculateStartPoint()
+        
+        if let user = PFUser.currentUser() {
+            setUserProfileTexts(userObject: user)
+            setUserProfileImage(userObject: user)
+        }
+    }
+    
+    func setUserProfileTexts(userObject user: PFUser){
+        let userName = user.objectForKey("name") as! String
+        let userEmail = user.objectForKey("email") as! String
+        let currentScore = user.objectForKey("currentScore") as! Int
+        
+        
+        usernameLabel.text = userName
+        mailLabel.text = userEmail
+        scoreLabel.text = String(currentScore)
+    }
+    
+    
+    func setUserProfileImage(userObject user: PFUser){
+        if let imageFile = user.objectForKey("picture") as? PFFile {
+            imageFile.getDataInBackgroundWithBlock({(imageData: NSData?, error: NSError?) -> Void in
+                if let imgData = imageData {
+                    self.profileImage.image = UIImage(data: imgData)
+                }
+                
+            })
+        }
     }
     
     
