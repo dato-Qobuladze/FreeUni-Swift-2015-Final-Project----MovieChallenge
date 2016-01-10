@@ -38,11 +38,12 @@ class SettingsPopoverController: UIViewController {
     
     @IBAction func changeButtonAction(sender: UIButton) {
         emailAction()
-//        passwordAction()
+        passwordAction()
         if makeAnyChanged {
             showAlertWithMessage(alertText, style: alertStyle, handlerTitle: titleOfHandler)
         }
-        // close popover . . .
+        alertText = ""
+        makeAnyChanged = false
     }
     
     
@@ -77,16 +78,28 @@ class SettingsPopoverController: UIViewController {
         
         if  passwordText != nil && confirmText != nil {
             if passwordText == confirmText {
-                showAlertWithMessage(Messages.changePasswordMsg.rawValue,
-                                        style: UIAlertActionStyle.Default, handlerTitle: "Yes")
+                if passwordText != "" {
+                    alertText += "\n and \n" + Messages.changePasswordMsg.rawValue
+                    alertStyle = UIAlertActionStyle.Default
+                    titleOfHandler = "Yes"
+                }
             }
-            showAlertWithMessage(Messages.notSameFieldMsg.rawValue,
-                                    style: UIAlertActionStyle.Cancel, handlerTitle: "Cancel")
+            else {
+                alertText = Messages.notSameFieldMsg.rawValue
+                alertStyle = UIAlertActionStyle.Cancel
+                titleOfHandler = "Cancel"
+                makeAnyChanged = true
+                
+                // empty password fields
+                passwordField.text = ""
+                confirmPasswordField.text = ""
+                
+            }
         }
-        else {
-            showAlertWithMessage(Messages.emptyFieldMsg.rawValue,
-                                    style: UIAlertActionStyle.Cancel, handlerTitle: "Cancel")
-        }
+//        else {
+//            showAlertWithMessage(Messages.emptyFieldMsg.rawValue,
+//                                    style: UIAlertActionStyle.Cancel, handlerTitle: "Cancel")
+//        }
     }
     
     func showAlertWithMessage(message: String, style: UIAlertActionStyle, handlerTitle: String){
@@ -96,6 +109,7 @@ class SettingsPopoverController: UIViewController {
             switch action.style{
             case .Default:
                 print("default")
+                self.dismissViewControllerAnimated(false, completion: nil) // close popover
                 
             case .Cancel:
                 print("cancel")
