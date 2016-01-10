@@ -8,13 +8,15 @@
 
 import UIKit
 
-class SecondViewController: UIViewController, UIPopoverPresentationControllerDelegate {
+class SecondViewController: UIViewController, UIPopoverPresentationControllerDelegate,
+                            UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     var popoverStartPoint : CGPoint!
     var settingsPopoverSize : CGSize {
         return CGSize(width: 200, height: 200)
     }
     
+    @IBOutlet weak var profileImage: UIImageView!
 
     @IBOutlet weak var usernameLabel: UILabel!
     
@@ -27,15 +29,27 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
 //        self.performSegueWithIdentifier("settingsPopover", sender: self)
     }
     
+    @IBAction func changeProfileImage(sender: UIButton) {
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        pickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        self.presentViewController(pickerController, animated: true, completion: nil)
+    }
+    
+    @IBAction func longPressed(sender: UILongPressGestureRecognizer) {
+//        print(sender.view)
+//        
+//        if let targetView = sender.view as? UIImageView{
+//            print("click images")
+//        }
+        
+    }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
             let dest = segue.destinationViewController
             if let popoverController = dest.popoverPresentationController
             {
                 popoverController.delegate = self
                 
-                popoverController.sourceRect = CGRect(x: popoverStartPoint.x, y: popoverStartPoint.y,
-                                                        width: settingsPopoverSize.width, height: settingsPopoverSize.height)
-               
                 if segue.identifier == "settingsPopover"
                 {
 
@@ -44,7 +58,6 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
                 {
                 
                 }
-                
                 
             }
         
@@ -56,6 +69,11 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
     }
     
     
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        profileImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     @IBAction func ratingAction(sender: UIButton) {
     }
     
@@ -66,6 +84,8 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
         // Do any additional setup after loading the view, typically from a nib.
         popoverStartPoint = calculateStartPoint()
     }
+    
+    
     
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         
