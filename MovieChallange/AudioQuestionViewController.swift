@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import AVFoundation
 
-class AudioQuestionViewController: UIViewController {
+class AudioQuestionViewController: UIViewController, AVAudioPlayerDelegate {
 
     @IBOutlet weak var questionText: UITextView!
     @IBOutlet weak var musicSlider: UISlider!
@@ -48,21 +48,38 @@ class AudioQuestionViewController: UIViewController {
             if error == nil {
                 let audio = objects?[0]
                 let audioFile = audio?["audio"] as? PFFile
-                let filePath = audioFile?.url
-                let url = NSURL(fileURLWithPath: filePath!)
-                let soundData = NSData(contentsOfURL: url)
-                if soundData != nil {
-                    do {
-                        self.audioPlayer = try AVAudioPlayer(data: soundData!) // AVAudioPlayer(contentsOfURL: url)
-                        self.audioPlayer.prepareToPlay()
-                        self.audioPlayer.volume = 1.0
-                        self.audioPlayer.play()
-                    } catch {
-                        print("Error occured while playing music!")
+                audioFile?.getDataInBackgroundWithBlock({ (audio: NSData?, error: NSError?) -> Void in
+                    if audio != nil {
+                        do {
+                            self.audioPlayer = try AVAudioPlayer(data: audio!)
+                            self.audioPlayer.prepareToPlay()
+                            self.audioPlayer.delegate = self
+                            self.audioPlayer.volume = 1.0
+                            self.audioPlayer.play()
+                        } catch {
+                            print("Error occured while playing music!")
+                        }
+                    } else {
+                        print ("Somehow audio is nil!")
                     }
-                } else {
-                    print("Error occured while getting data!")
-                }
+                })
+                
+                
+//                let filePath = audioFile?.url
+//                let url = NSURL(fileURLWithPath: filePath!)
+//                let soundData = NSData(contentsOfURL: url)
+//                if soundData != nil {
+//                    do {
+//                        self.audioPlayer = try AVAudioPlayer(data: soundData!) // AVAudioPlayer(contentsOfURL: url)
+//                        self.audioPlayer.prepareToPlay()
+//                        self.audioPlayer.volume = 1.0
+//                        self.audioPlayer.play()
+//                    } catch {
+//                        print("Error occured while playing music!")
+//                    }
+//                } else {
+//                    print("Error occured while getting data!")
+//                }
             } else {
                 print("Error occured while downloading file!")
             }
