@@ -767,14 +767,6 @@
             </objects>
             <point key="canvasLocation" x="988" y="849"/>
         </scene>
-        <!--Questions Pager Controller-->
-        <scene sceneID="LDo-ZG-ck1">
-            <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="vXH-lo-eZG" customClass="QuestionsPagerController" customModule="MovieChallange" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AN9-Pg-Gnq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1188" y="-356"/>
-        </scene>
         <!--Questions View Controller-->
         <scene sceneID="F8l-Sf-5E2">
             <objects>
@@ -803,28 +795,62 @@
                                 <color key="pageIndicatorTintColor" red="0.35871714353561401" green="0.72032082080841064" blue="0.91054731607437134" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="0.028147399425506592" green="0.00066057738149538636" blue="0.0038848142139613628" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzQ-v5-mkc">
+                                <rect key="frame" x="20" y="20" width="200" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="238" id="M12-Dq-1DB"/>
+                                    <constraint firstAttribute="width" constant="200" id="UH9-vs-Kdw"/>
+                                </constraints>
+                                <state key="normal" title="Submit"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="M12-Dq-1DB"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZg-9f-cyA">
+                                <rect key="frame" x="228" y="20" width="352" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="314" id="o9R-4F-txG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="o9R-4F-txG"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="HRz-wB-Smo" firstAttribute="leading" secondItem="WIi-ga-aMa" secondAttribute="leading" id="22F-aM-Dfs"/>
-                            <constraint firstItem="lzQ-v5-mkc" firstAttribute="leading" secondItem="k7A-L1-UlA" secondAttribute="leadingMargin" id="4ZA-Zq-LFU"/>
                             <constraint firstItem="WIi-ga-aMa" firstAttribute="trailing" secondItem="k7A-L1-UlA" secondAttribute="trailingMargin" id="9jY-D7-KXO"/>
                             <constraint firstAttribute="bottom" secondItem="WIi-ga-aMa" secondAttribute="bottom" constant="20" symbolic="YES" id="9zl-5y-Vbo"/>
-                            <constraint firstItem="HRz-wB-Smo" firstAttribute="top" secondItem="lzQ-v5-mkc" secondAttribute="bottom" constant="8" symbolic="YES" id="J3p-7x-aFm"/>
+                            <constraint firstItem="HRz-wB-Smo" firstAttribute="top" secondItem="lzQ-v5-mkc" secondAttribute="bottom" constant="8" symbolic="YES" id="LSg-0P-NHe"/>
+                            <constraint firstItem="lzQ-v5-mkc" firstAttribute="top" secondItem="nMC-KB-aSQ" secondAttribute="bottom" id="OUl-iO-G8I"/>
+                            <constraint firstItem="lzQ-v5-mkc" firstAttribute="leading" secondItem="HRz-wB-Smo" secondAttribute="leading" id="PJe-6g-vGW"/>
+                            <constraint firstItem="lzQ-v5-mkc" firstAttribute="leading" secondItem="k7A-L1-UlA" secondAttribute="leadingMargin" id="XFz-00-lWe"/>
                             <constraint firstItem="WIi-ga-aMa" firstAttribute="trailing" secondItem="HRz-wB-Smo" secondAttribute="trailing" id="Xge-Q5-Dka"/>
-                            <constraint firstItem="HRz-wB-Smo" firstAttribute="leading" secondItem="lzQ-v5-mkc" secondAttribute="leading" id="cUb-vT-xdV"/>
                             <constraint firstItem="WIi-ga-aMa" firstAttribute="top" secondItem="HRz-wB-Smo" secondAttribute="bottom" constant="8" symbolic="YES" id="ceB-Tt-mAD"/>
-                            <constraint firstItem="lzQ-v5-mkc" firstAttribute="top" secondItem="nMC-KB-aSQ" secondAttribute="bottom" id="sUV-42-UR2"/>
+                            <constraint firstItem="lzQ-v5-mkc" firstAttribute="top" secondItem="lZg-9f-cyA" secondAttribute="top" id="i64-2K-JDP"/>
+                            <constraint firstItem="lZg-9f-cyA" firstAttribute="trailing" secondItem="HRz-wB-Smo" secondAttribute="trailing" id="jg0-pZ-PIN"/>
+                            <constraint firstItem="HRz-wB-Smo" firstAttribute="top" secondItem="lZg-9f-cyA" secondAttribute="bottom" constant="8" symbolic="YES" id="kN2-Po-MH9"/>
+                            <constraint firstItem="lZg-9f-cyA" firstAttribute="leading" secondItem="lzQ-v5-mkc" secondAttribute="trailing" constant="8" symbolic="YES" id="xf5-wY-9nE"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="pagerControlls" destination="WIi-ga-aMa" id="oMH-rF-cby"/>
+                        <outlet property="pagerControls" destination="WIi-ga-aMa" id="S3T-Yq-qLk"/>
                         <outlet property="pagerView" destination="HRz-wB-Smo" id="mfL-2X-luI"/>
+                        <outlet property="timer_lbl" destination="lZg-9f-cyA" id="PvI-7i-BWp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YmD-j9-wcR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1188" y="-1029"/>
+            <point key="canvasLocation" x="1188" y="-356"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="By9-Gw-kVf">
