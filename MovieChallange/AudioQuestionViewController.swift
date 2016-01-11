@@ -54,7 +54,7 @@ class AudioQuestionViewController: UIViewController, AVAudioPlayerDelegate {
                             self.audioPlayer = try AVAudioPlayer(data: audio!)
                             self.audioPlayer.prepareToPlay()
                             self.audioPlayer.delegate = self
-                            self.audioPlayer.volume = 1.0
+                            self.audioPlayer.volume = 10.0
                             self.audioPlayer.play()
                         } catch {
                             print("Error occured while playing music!")
@@ -63,23 +63,6 @@ class AudioQuestionViewController: UIViewController, AVAudioPlayerDelegate {
                         print ("Somehow audio is nil!")
                     }
                 })
-                
-                
-//                let filePath = audioFile?.url
-//                let url = NSURL(fileURLWithPath: filePath!)
-//                let soundData = NSData(contentsOfURL: url)
-//                if soundData != nil {
-//                    do {
-//                        self.audioPlayer = try AVAudioPlayer(data: soundData!) // AVAudioPlayer(contentsOfURL: url)
-//                        self.audioPlayer.prepareToPlay()
-//                        self.audioPlayer.volume = 1.0
-//                        self.audioPlayer.play()
-//                    } catch {
-//                        print("Error occured while playing music!")
-//                    }
-//                } else {
-//                    print("Error occured while getting data!")
-//                }
             } else {
                 print("Error occured while downloading file!")
             }

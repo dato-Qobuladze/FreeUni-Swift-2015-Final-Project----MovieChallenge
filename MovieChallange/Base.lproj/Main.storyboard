@@ -816,7 +816,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NSR-Q2-TMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="988" y="849"/>
+            <point key="canvasLocation" x="842" y="511"/>
         </scene>
         <!--Questions View Controller-->
         <scene sceneID="F8l-Sf-5E2">
@@ -870,6 +870,11 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="10" translatesAutoresizingMaskIntoConstraints="NO" id="WIi-ga-aMa">
+                                <rect key="frame" x="20" y="543" width="560" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.35871714353561401" green="0.72032082080841064" blue="0.91054731607437134" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.028147399425506592" green="0.00066057738149538636" blue="0.0038848142139613628" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -899,10 +904,10 @@
             </objects>
             <point key="canvasLocation" x="1188" y="-356"/>
         </scene>
-        <!--View Controller-->
+        <!--Rating View Controller-->
         <scene sceneID="By9-Gw-kVf">
             <objects>
-                <viewController id="Sqi-bF-ugN" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="formSheet" id="Sqi-bF-ugN" customClass="RatingViewController" customModule="MovieChallange" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BiK-QH-sf7"/>
                         <viewControllerLayoutGuide type="bottom" id="bQq-tX-Mfl"/>
@@ -911,11 +916,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Multiplayer history:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddR-S2-XPw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Multiplayer history:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddR-S2-XPw">
                                 <rect key="frame" x="18" y="88" width="560" height="20"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="eNe-Yu-iAx"/>
+                                    <constraint firstAttribute="height" constant="20" id="DKy-Z5-DMS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -949,7 +954,6 @@
                                 <rect key="frame" x="91" y="20" width="489" height="21"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="489" id="MFv-Mi-8n3"/>
                                     <constraint firstAttribute="width" constant="489" id="tsn-JN-4Mk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -961,17 +965,47 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vvG-cf-NDf">
+                                <rect key="frame" x="20" y="116" width="560" height="260"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="278" id="jeU-cd-Rwp"/>
+                                    <constraint firstAttribute="height" constant="260" id="ymJ-2S-SAn"/>
+                                    <constraint firstAttribute="height" constant="260" id="zw8-b1-BuB"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" id="gFJ-UZ-JsX">
+                                        <rect key="frame" x="0.0" y="28" width="560" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gFJ-UZ-JsX" id="SlT-Zz-PQf">
+                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="jeU-cd-Rwp"/>
+                                        <exclude reference="ymJ-2S-SAn"/>
+                                    </mask>
+                                </variation>
+                            </tableView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ddR-S2-XPw" firstAttribute="leading" secondItem="1ng-ka-558" secondAttribute="leadingMargin" constant="-2" id="9rk-3c-3eH"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="fbl-ZP-nWX" secondAttribute="leading" id="SrI-oE-1GN"/>
-                            <constraint firstItem="j1D-D7-TOL" firstAttribute="top" secondItem="BiK-QH-sf7" secondAttribute="bottom" id="dWV-mZ-7wo"/>
-                            <constraint firstItem="fbl-ZP-nWX" firstAttribute="top" secondItem="BiK-QH-sf7" secondAttribute="bottom" constant="8" id="hNq-Q6-3Wz"/>
-                            <constraint firstItem="ddR-S2-XPw" firstAttribute="top" secondItem="fbl-ZP-nWX" secondAttribute="bottom" constant="39" id="hhK-Wo-9Hb"/>
+                            <constraint firstItem="vvG-cf-NDf" firstAttribute="leading" secondItem="1ng-ka-558" secondAttribute="leadingMargin" id="2Uk-7p-8OJ"/>
+                            <constraint firstItem="vvG-cf-NDf" firstAttribute="leading" secondItem="fbl-ZP-nWX" secondAttribute="leading" id="2eZ-MX-83B"/>
+                            <constraint firstItem="j1D-D7-TOL" firstAttribute="trailing" secondItem="1ng-ka-558" secondAttribute="trailingMargin" id="2lr-JX-Nxt"/>
+                            <constraint firstItem="vvG-cf-NDf" firstAttribute="trailing" secondItem="j1D-D7-TOL" secondAttribute="trailing" id="Cvs-vi-YRk"/>
+                            <constraint firstItem="vvG-cf-NDf" firstAttribute="top" secondItem="ddR-S2-XPw" secondAttribute="bottom" constant="8" symbolic="YES" id="Loi-Fp-06j"/>
+                            <constraint firstItem="j1D-D7-TOL" firstAttribute="baseline" secondItem="fbl-ZP-nWX" secondAttribute="baseline" id="Nda-vA-H94"/>
+                            <constraint firstItem="ddR-S2-XPw" firstAttribute="leading" secondItem="1ng-ka-558" secondAttribute="leadingMargin" constant="-2" id="STn-Tz-411"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ddR-S2-XPw" secondAttribute="trailing" constant="2" id="VZa-7R-Alv"/>
+                            <constraint firstItem="j1D-D7-TOL" firstAttribute="top" secondItem="BiK-QH-sf7" secondAttribute="bottom" id="ZaS-gc-ZjI"/>
+                            <constraint firstItem="ddR-S2-XPw" firstAttribute="top" secondItem="fbl-ZP-nWX" secondAttribute="bottom" constant="47" id="nX4-Xi-lgR"/>
+                            <constraint firstItem="j1D-D7-TOL" firstAttribute="leading" secondItem="fbl-ZP-nWX" secondAttribute="trailing" constant="13" id="uN6-Gk-OO7"/>
                             <constraint firstItem="bQq-tX-Mfl" firstAttribute="top" secondItem="vvG-cf-NDf" secondAttribute="bottom" constant="123" id="wkt-A0-aaH"/>
-                            <constraint firstItem="j1D-D7-TOL" firstAttribute="trailing" secondItem="1ng-ka-558" secondAttribute="trailingMargin" id="y6I-0q-76G"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -979,10 +1013,15 @@
                             </mask>
                         </variation>
                     </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="250" height="270"/>
+                    <connections>
+                        <outlet property="multiplayerHistoryTable" destination="vvG-cf-NDf" id="bd5-PN-cVO"/>
+                        <outlet property="userRatingLabel" destination="j1D-D7-TOL" id="tyl-bP-DQp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSp-0x-szg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1188" y="340"/>
+            <point key="canvasLocation" x="1258" y="711"/>
         </scene>
         <!--Audio Question View Controller-->
         <scene sceneID="BPj-q2-HBa">
