@@ -26,6 +26,7 @@
 		4834789E1C3EBFBA005B2BD3 /* settings48.png in Resources */ = {isa = PBXBuildFile; fileRef = 4834789A1C3EBFBA005B2BD3 /* settings48.png */; };
 		4834789F1C3EBFBA005B2BD3 /* user168.png in Resources */ = {isa = PBXBuildFile; fileRef = 4834789B1C3EBFBA005B2BD3 /* user168.png */; };
 		485873761C440400000BE9F0 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485873751C440400000BE9F0 /* RatingViewController.swift */; };
+		485873781C440B2A000BE9F0 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485873771C440B2A000BE9F0 /* HistoryTableViewController.swift */; };
 		485D09B31C416C000092B742 /* SettingsPopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485D09B21C416C000092B742 /* SettingsPopoverController.swift */; };
 		486354951C4020FB00786A12 /* closed.png in Resources */ = {isa = PBXBuildFile; fileRef = 486354941C4020FB00786A12 /* closed.png */; };
 		E19BE89A50F491B5D5FE5E4D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52655CC1927D0562E0BF6496 /* Pods.framework */; };
@@ -77,6 +78,7 @@
 		4834789A1C3EBFBA005B2BD3 /* settings48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings48.png; sourceTree = "<group>"; };
 		4834789B1C3EBFBA005B2BD3 /* user168.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user168.png; sourceTree = "<group>"; };
 		485873751C440400000BE9F0 /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
+		485873771C440B2A000BE9F0 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		485D09B21C416C000092B742 /* SettingsPopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPopoverController.swift; sourceTree = "<group>"; };
 		486354941C4020FB00786A12 /* closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closed.png; sourceTree = "<group>"; };
 		52655CC1927D0562E0BF6496 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +134,7 @@
 				485D09B21C416C000092B742 /* SettingsPopoverController.swift */,
 				014666901C416ACE00294575 /* ImageQuestionViewController.swift */,
 				485873751C440400000BE9F0 /* RatingViewController.swift */,
+				485873771C440B2A000BE9F0 /* HistoryTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				240AA0FA1C1D46D200CE21EB /* AppDelegate.swift in Sources */,
 				24F58B8E1C426ED7001AD8EB /* QuestionsViewController.swift in Sources */,
 				240AA0FC1C1D46D200CE21EB /* FirstViewController.swift in Sources */,
+				485873781C440B2A000BE9F0 /* HistoryTableViewController.swift in Sources */,
 				485D09B31C416C000092B742 /* SettingsPopoverController.swift in Sources */,
 				0102DE961C3ED9CC00AEE1EA /* SignUpViewController.swift in Sources */,
 			);
