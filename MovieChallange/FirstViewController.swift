@@ -20,12 +20,15 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     var pickerData: [String] = [String]()
     var pickerData1: [String] = [String]()
     
+    @IBOutlet weak var Spinner: UIActivityIndicatorView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.myPickerView.delegate = self
         self.myPickerView.dataSource = self
         self.SecondPicker.delegate = self
         self.SecondPicker.dataSource = self
+        Spinner.startAnimating()
         var query = PFQuery(className: "Films")
         query.whereKeyExists("film")
         var objects : [PFObject]? = [PFObject]?()
@@ -54,7 +57,7 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             pickerData1.append(questStr!)
         }
         
-        
+        Spinner.stopAnimating()
         // Do any additional setup after loading the view, typically from a nib.
     }
     
