@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class SettingsPopoverController: UIViewController {
     
@@ -61,13 +62,14 @@ class SettingsPopoverController: UIViewController {
     
     func emailAction(){
         if let newEmail = emailTextField.text {
-            if newEmail != "" {
+            if !newEmail.isEmpty {
                 
                 alertText += Messages.emailFieldMsg.rawValue;
                 alertStyle = UIAlertActionStyle.Default
                 titleOfHandler = "Yes"
                 
                 makeAnyChanged = true
+                
             }
         }
     }
@@ -77,7 +79,7 @@ class SettingsPopoverController: UIViewController {
         let confirmText  = confirmPasswordField.text
         
         if  passwordText != nil && confirmText != nil {
-            if passwordText == confirmText {
+            if passwordText == confirmText { // ??????????????????????????????????????????????????????
                 if passwordText != "" {
                     alertText += "\n" + Messages.changePasswordMsg.rawValue
                     alertStyle = UIAlertActionStyle.Default
