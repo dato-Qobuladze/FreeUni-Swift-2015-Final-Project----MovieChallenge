@@ -10,12 +10,16 @@ import UIKit
 
 class RatingViewController: UIViewController {
 
+    @IBOutlet weak var userRatingLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
+    @IBOutlet weak var multiplayerHistoryTable: UITableView!
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

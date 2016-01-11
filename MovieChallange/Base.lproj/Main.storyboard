@@ -908,7 +908,7 @@
                                     <constraint firstAttribute="height" constant="260" id="zw8-b1-BuB"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gFJ-UZ-JsX">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" id="gFJ-UZ-JsX">
                                         <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gFJ-UZ-JsX" id="SlT-Zz-PQf">
@@ -947,6 +947,10 @@
                         </variation>
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="250" height="270"/>
+                    <connections>
+                        <outlet property="multiplayerHistoryTable" destination="vvG-cf-NDf" id="bd5-PN-cVO"/>
+                        <outlet property="userRatingLabel" destination="j1D-D7-TOL" id="tyl-bP-DQp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSp-0x-szg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
