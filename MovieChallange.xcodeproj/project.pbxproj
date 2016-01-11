@@ -28,6 +28,7 @@
 		485873761C440400000BE9F0 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485873751C440400000BE9F0 /* RatingViewController.swift */; };
 		485D09B31C416C000092B742 /* SettingsPopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485D09B21C416C000092B742 /* SettingsPopoverController.swift */; };
 		486354951C4020FB00786A12 /* closed.png in Resources */ = {isa = PBXBuildFile; fileRef = 486354941C4020FB00786A12 /* closed.png */; };
+		83098B961C44112000982FC4 /* MultyPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83098B951C44112000982FC4 /* MultyPlayerViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		E19BE89A50F491B5D5FE5E4D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52655CC1927D0562E0BF6496 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		486354941C4020FB00786A12 /* closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closed.png; sourceTree = "<group>"; };
 		52655CC1927D0562E0BF6496 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E5910D716528DBC9645F6F0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		83098B951C44112000982FC4 /* MultyPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultyPlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				485D09B21C416C000092B742 /* SettingsPopoverController.swift */,
 				014666901C416ACE00294575 /* ImageQuestionViewController.swift */,
 				485873751C440400000BE9F0 /* RatingViewController.swift */,
+				83098B951C44112000982FC4 /* MultyPlayerViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83098B961C44112000982FC4 /* MultyPlayerViewController.swift in Sources */,
 				014666911C416ACF00294575 /* ImageQuestionViewController.swift in Sources */,
 				485873761C440400000BE9F0 /* RatingViewController.swift in Sources */,
 				241B3C1E1C3EACC600D33237 /* SigninViewController.swift in Sources */,
