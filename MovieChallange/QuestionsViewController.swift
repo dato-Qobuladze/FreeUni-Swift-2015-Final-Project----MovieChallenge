@@ -7,12 +7,26 @@
 //
 
 import UIKit
+import Parse
+
+
+public class Types {
+    public static let INFO_ID : String = "5fa6TbPRUz"
+    public static let IMAGE_ID: String = "lZF2Xizu0j"
+    public static let AUDIO_ID: String = "pmz1lP5DVp"
+}
 
 class QuestionsViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
 
     @IBOutlet weak var timer_lbl: UILabel!
     @IBOutlet weak var pagerView: UIView!
     @IBOutlet weak var pagerControls: UIPageControl!
+    
+    private let vcIDforTypeID:[String:String] = [
+        Types.INFO_ID   : "q_simple",
+        Types.IMAGE_ID  : "q_image",
+        Types.AUDIO_ID  : "q_audio"
+    ]
     
     var timeElapsed: Int = 0 {
         didSet{
@@ -29,13 +43,16 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadQuestionsViewControllers()
+        loadQuestionsViewControllers(withBlock: {
+            print("callback")
+            self.pageViewController!.setViewControllers([self.questionViewControllers![0]], direction: .Forward, animated: false, completion: nil)
+        })
         
         pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
         pageViewController!.dataSource = self
         pageViewController?.delegate = self
         
-        pageViewController!.setViewControllers([questionViewControllers![0]], direction: .Forward, animated: false, completion: nil)
+//        pageViewController!.setViewControllers([questionViewControllers![0]], direction: .Forward, animated: false, completion: nil)
         pageViewController!.view.frame = CGRectMake(0, 0, pagerView.frame.size.width, pagerView.frame.size.height);
         
         addChildViewController(pageViewController!)
@@ -52,12 +69,31 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
         timeElapsed++
     }
     
-    func loadQuestionsViewControllers(){
-        let q1 = storyboard?.instantiateViewControllerWithIdentifier("q_simple")
-        let q2 = storyboard?.instantiateViewControllerWithIdentifier("q_image")
-        let q3 = storyboard?.instantiateViewControllerWithIdentifier("q_audio")
-        let q4 = storyboard?.instantiateViewControllerWithIdentifier("q_image")
-        questionViewControllers = [q1!, q2!, q3!, q4!]
+    func loadQuestionsViewControllers(withBlock callback: ()->()){
+//        let q1 = storyboard?.instantiateViewControllerWithIdentifier("q_simple")
+//        let q2 = storyboard?.instantiateViewControllerWithIdentifier("q_image")
+//        let q3 = storyboard?.instantiateViewControllerWithIdentifier("q_audio")
+//        let q4 = storyboard?.instantiateViewControllerWithIdentifier("q_image")
+        questionViewControllers = []
+        
+        PFCloud.callFunctionInBackground("getInfoQuestions", withParameters: nil) { (result, error) -> Void in
+            if (error != nil){
+                print(error!)
+            }else{
+                if let questions = result as? [PFObject]{
+                    print(questions.count)
+                    for var question in questions{
+                        let vc_id = self.vcIDforTypeID[question["type"].objectId!!]
+                        print(vc_id)
+                        if let vc = self.storyboard?.instantiateViewControllerWithIdentifier(vc_id!) as? QuestionViewController{
+                            vc.dataObject = question
+                            self.questionViewControllers?.append(vc)
+                        }
+                    }
+                    callback()
+                }
+            }
+        }
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {

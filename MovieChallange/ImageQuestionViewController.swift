@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageQuestionViewController: UIViewController {
+class ImageQuestionViewController: QuestionViewController {
 
     
     
