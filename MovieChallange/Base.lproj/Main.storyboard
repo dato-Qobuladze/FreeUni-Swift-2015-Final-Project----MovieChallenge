@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FYw-TN-CBD">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -143,10 +143,10 @@
             </objects>
             <point key="canvasLocation" x="830" y="1614"/>
         </scene>
-        <!--View Controller-->
+        <!--Info Question View Controller-->
         <scene sceneID="LUE-dd-db1">
             <objects>
-                <viewController storyboardIdentifier="q_simple" id="4V6-SY-oem" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="q_simple" id="4V6-SY-oem" customClass="InfoQuestionViewController" customModule="MovieChallange" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tht-bo-vrD"/>
                         <viewControllerLayoutGuide type="bottom" id="Fw5-4u-XSa"/>
@@ -155,14 +155,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nVK-hz-EDh">
-                                <rect key="frame" x="20" y="28" width="560" height="488"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fky-YM-mJu">
                                 <rect key="frame" x="20" y="524" width="276" height="30"/>
                                 <animations/>
@@ -191,6 +183,14 @@
                                 <animations/>
                                 <state key="normal" title="Button"/>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nVK-hz-EDh">
+                                <rect key="frame" x="20" y="28" width="560" height="488"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -213,6 +213,9 @@
                             <constraint firstItem="Rnm-Xr-neg" firstAttribute="leading" secondItem="Fky-YM-mJu" secondAttribute="trailing" constant="8" symbolic="YES" id="ybH-iw-3fS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="nVK-hz-EDh" id="bFA-Yb-ooC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sPq-QY-Qxj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -826,12 +829,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="10" translatesAutoresizingMaskIntoConstraints="NO" id="WIi-ga-aMa">
-                                <rect key="frame" x="20" y="543" width="560" height="37"/>
-                                <animations/>
-                                <color key="pageIndicatorTintColor" red="0.35871714353561401" green="0.72032082080841064" blue="0.91054731607437134" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="0.028147399425506592" green="0.00066057738149538636" blue="0.0038848142139613628" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lzQ-v5-mkc">
                                 <rect key="frame" x="20" y="20" width="200" height="30"/>
                                 <animations/>
@@ -863,9 +860,21 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HRz-wB-Smo">
                                 <rect key="frame" x="20" y="58" width="560" height="477"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Vit-Ff-Xy8">
+                                        <rect key="frame" x="0.0" y="-38" width="560" height="580"/>
+                                        <animations/>
+                                    </activityIndicatorView>
+                                </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="10" translatesAutoresizingMaskIntoConstraints="NO" id="WIi-ga-aMa">
+                                <rect key="frame" x="20" y="543" width="560" height="37"/>
+                                <animations/>
+                                <color key="pageIndicatorTintColor" red="0.35871714353561401" green="0.72032082080841064" blue="0.91054731607437134" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.028147399425506592" green="0.00066057738149538636" blue="0.0038848142139613628" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -873,21 +882,26 @@
                             <constraint firstItem="HRz-wB-Smo" firstAttribute="leading" secondItem="WIi-ga-aMa" secondAttribute="leading" id="22F-aM-Dfs"/>
                             <constraint firstItem="WIi-ga-aMa" firstAttribute="trailing" secondItem="k7A-L1-UlA" secondAttribute="trailingMargin" id="9jY-D7-KXO"/>
                             <constraint firstAttribute="bottom" secondItem="WIi-ga-aMa" secondAttribute="bottom" constant="20" symbolic="YES" id="9zl-5y-Vbo"/>
+                            <constraint firstItem="CPL-nh-NRy" firstAttribute="top" secondItem="Vit-Ff-Xy8" secondAttribute="bottom" id="Blh-j5-gBQ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Vit-Ff-Xy8" secondAttribute="leading" id="Gae-dY-kLr"/>
                             <constraint firstItem="HRz-wB-Smo" firstAttribute="top" secondItem="lzQ-v5-mkc" secondAttribute="bottom" constant="8" symbolic="YES" id="LSg-0P-NHe"/>
                             <constraint firstItem="lzQ-v5-mkc" firstAttribute="top" secondItem="nMC-KB-aSQ" secondAttribute="bottom" id="OUl-iO-G8I"/>
                             <constraint firstItem="lzQ-v5-mkc" firstAttribute="leading" secondItem="HRz-wB-Smo" secondAttribute="leading" id="PJe-6g-vGW"/>
                             <constraint firstItem="lzQ-v5-mkc" firstAttribute="leading" secondItem="k7A-L1-UlA" secondAttribute="leadingMargin" id="XFz-00-lWe"/>
                             <constraint firstItem="WIi-ga-aMa" firstAttribute="trailing" secondItem="HRz-wB-Smo" secondAttribute="trailing" id="Xge-Q5-Dka"/>
+                            <constraint firstItem="Vit-Ff-Xy8" firstAttribute="top" secondItem="nMC-KB-aSQ" secondAttribute="bottom" id="bam-ZL-O2u"/>
                             <constraint firstItem="WIi-ga-aMa" firstAttribute="top" secondItem="HRz-wB-Smo" secondAttribute="bottom" constant="8" symbolic="YES" id="ceB-Tt-mAD"/>
                             <constraint firstItem="lzQ-v5-mkc" firstAttribute="top" secondItem="lZg-9f-cyA" secondAttribute="top" id="i64-2K-JDP"/>
                             <constraint firstItem="lZg-9f-cyA" firstAttribute="trailing" secondItem="HRz-wB-Smo" secondAttribute="trailing" id="jg0-pZ-PIN"/>
                             <constraint firstItem="HRz-wB-Smo" firstAttribute="top" secondItem="lZg-9f-cyA" secondAttribute="bottom" constant="8" symbolic="YES" id="kN2-Po-MH9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vit-Ff-Xy8" secondAttribute="trailing" id="w4E-RF-SiY"/>
                             <constraint firstItem="lZg-9f-cyA" firstAttribute="leading" secondItem="lzQ-v5-mkc" secondAttribute="trailing" constant="8" symbolic="YES" id="xf5-wY-9nE"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="pagerControls" destination="WIi-ga-aMa" id="S3T-Yq-qLk"/>
                         <outlet property="pagerView" destination="HRz-wB-Smo" id="mfL-2X-luI"/>
+                        <outlet property="spinner" destination="Vit-Ff-Xy8" id="pq9-RL-MW9"/>
                         <outlet property="timer_lbl" destination="lZg-9f-cyA" id="PvI-7i-BWp"/>
                     </connections>
                 </viewController>
@@ -1120,10 +1134,10 @@
             </objects>
             <point key="canvasLocation" x="2404" y="-356"/>
         </scene>
-        <!--View Controller-->
+        <!--Image Question View Controller-->
         <scene sceneID="bCG-qj-jOU">
             <objects>
-                <viewController id="Hae-r9-r8J" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="q_image" id="Hae-r9-r8J" customClass="ImageQuestionViewController" customModule="MovieChallange" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cuc-rP-hos"/>
                         <viewControllerLayoutGuide type="bottom" id="aKy-L7-cBe"/>
@@ -1234,6 +1248,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="fDA-yA-ixl" id="k2h-QF-Wv6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MAM-Oz-hJR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1432,6 +1449,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5ZG-NJ-Tqv" firstAttribute="height" secondItem="6nr-2X-6Nq" secondAttribute="height" multiplier="0.5" id="10s-H3-oSA"/>
@@ -1495,7 +1513,7 @@
         <!--View Controller-->
         <scene sceneID="3aR-pV-aQ6">
             <objects>
-                <viewController storyboardIdentifier="q_image" id="5nA-6D-xf7" sceneMemberID="viewController">
+                <viewController id="5nA-6D-xf7" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PcE-7C-heB"/>
                         <viewControllerLayoutGuide type="bottom" id="9sn-nh-EqL"/>

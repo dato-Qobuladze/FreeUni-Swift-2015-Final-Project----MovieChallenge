@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import AVFoundation
 
-class AudioQuestionViewController: UIViewController, AVAudioPlayerDelegate {
+class AudioQuestionViewController: QuestionViewController, AVAudioPlayerDelegate {
 
     @IBOutlet weak var questionText: UITextView!
     @IBOutlet weak var musicSlider: UISlider!

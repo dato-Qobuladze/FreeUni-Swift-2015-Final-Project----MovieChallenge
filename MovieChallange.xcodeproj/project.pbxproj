@@ -20,15 +20,18 @@
 		240AA11C1C1D46D300CE21EB /* MovieChallangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240AA11B1C1D46D300CE21EB /* MovieChallangeUITests.swift */; };
 		241B3C1C1C3E8C5E00D33237 /* screen.png in Resources */ = {isa = PBXBuildFile; fileRef = 241B3C1B1C3E8C5E00D33237 /* screen.png */; };
 		241B3C1E1C3EACC600D33237 /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241B3C1D1C3EACC600D33237 /* SigninViewController.swift */; };
+		24C0B0851C453A7C00B8E406 /* InfoQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C0B0841C453A7C00B8E406 /* InfoQuestionViewController.swift */; };
+		24C0B0871C453ABC00B8E406 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C0B0861C453ABC00B8E406 /* QuestionViewController.swift */; };
 		24F58B8E1C426ED7001AD8EB /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F58B8D1C426ED7001AD8EB /* QuestionsViewController.swift */; };
 		4834789C1C3EBFBA005B2BD3 /* email19.png in Resources */ = {isa = PBXBuildFile; fileRef = 483478981C3EBFBA005B2BD3 /* email19.png */; };
 		4834789D1C3EBFBA005B2BD3 /* rank2.png in Resources */ = {isa = PBXBuildFile; fileRef = 483478991C3EBFBA005B2BD3 /* rank2.png */; };
 		4834789E1C3EBFBA005B2BD3 /* settings48.png in Resources */ = {isa = PBXBuildFile; fileRef = 4834789A1C3EBFBA005B2BD3 /* settings48.png */; };
 		4834789F1C3EBFBA005B2BD3 /* user168.png in Resources */ = {isa = PBXBuildFile; fileRef = 4834789B1C3EBFBA005B2BD3 /* user168.png */; };
 		485873761C440400000BE9F0 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485873751C440400000BE9F0 /* RatingViewController.swift */; };
+		485873781C440B2A000BE9F0 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485873771C440B2A000BE9F0 /* HistoryTableViewController.swift */; };
 		485D09B31C416C000092B742 /* SettingsPopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485D09B21C416C000092B742 /* SettingsPopoverController.swift */; };
 		486354951C4020FB00786A12 /* closed.png in Resources */ = {isa = PBXBuildFile; fileRef = 486354941C4020FB00786A12 /* closed.png */; };
-		83098B961C44112000982FC4 /* MultyPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83098B951C44112000982FC4 /* MultyPlayerViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		83098B961C44112000982FC4 /* MultyPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83098B951C44112000982FC4 /* MultyPlayerViewController.swift */; };
 		E19BE89A50F491B5D5FE5E4D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52655CC1927D0562E0BF6496 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +74,8 @@
 		240AA11D1C1D46D300CE21EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		241B3C1B1C3E8C5E00D33237 /* screen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = screen.png; sourceTree = "<group>"; };
 		241B3C1D1C3EACC600D33237 /* SigninViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
+		24C0B0841C453A7C00B8E406 /* InfoQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoQuestionViewController.swift; sourceTree = "<group>"; };
+		24C0B0861C453ABC00B8E406 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		24F58B8D1C426ED7001AD8EB /* QuestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		24F58B8F1C42880F001AD8EB /* BEMAnalogClock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BEMAnalogClock.framework; path = "Pods/../build/Debug-iphoneos/BEMAnalogClock.framework"; sourceTree = "<group>"; };
 		483478981C3EBFBA005B2BD3 /* email19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email19.png; sourceTree = "<group>"; };
@@ -78,6 +83,7 @@
 		4834789A1C3EBFBA005B2BD3 /* settings48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings48.png; sourceTree = "<group>"; };
 		4834789B1C3EBFBA005B2BD3 /* user168.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user168.png; sourceTree = "<group>"; };
 		485873751C440400000BE9F0 /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
+		485873771C440B2A000BE9F0 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		485D09B21C416C000092B742 /* SettingsPopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPopoverController.swift; sourceTree = "<group>"; };
 		486354941C4020FB00786A12 /* closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closed.png; sourceTree = "<group>"; };
 		52655CC1927D0562E0BF6496 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -126,6 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				0102DE951C3ED9CC00AEE1EA /* SignUpViewController.swift */,
+				24C0B0841C453A7C00B8E406 /* InfoQuestionViewController.swift */,
+				24C0B0861C453ABC00B8E406 /* QuestionViewController.swift */,
 				24F58B8D1C426ED7001AD8EB /* QuestionsViewController.swift */,
 				240AA0FB1C1D46D200CE21EB /* FirstViewController.swift */,
 				240AA0FD1C1D46D200CE21EB /* SecondViewController.swift */,
@@ -135,6 +143,7 @@
 				014666901C416ACE00294575 /* ImageQuestionViewController.swift */,
 				485873751C440400000BE9F0 /* RatingViewController.swift */,
 				83098B951C44112000982FC4 /* MultyPlayerViewController.swift */,
+				485873771C440B2A000BE9F0 /* HistoryTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -444,13 +453,16 @@
 			files = (
 				83098B961C44112000982FC4 /* MultyPlayerViewController.swift in Sources */,
 				014666911C416ACF00294575 /* ImageQuestionViewController.swift in Sources */,
+				24C0B0871C453ABC00B8E406 /* QuestionViewController.swift in Sources */,
 				485873761C440400000BE9F0 /* RatingViewController.swift in Sources */,
 				241B3C1E1C3EACC600D33237 /* SigninViewController.swift in Sources */,
 				017664BC1C40133C001E8740 /* AudioQuestionViewController.swift in Sources */,
 				240AA0FE1C1D46D200CE21EB /* SecondViewController.swift in Sources */,
+				24C0B0851C453A7C00B8E406 /* InfoQuestionViewController.swift in Sources */,
 				240AA0FA1C1D46D200CE21EB /* AppDelegate.swift in Sources */,
 				24F58B8E1C426ED7001AD8EB /* QuestionsViewController.swift in Sources */,
 				240AA0FC1C1D46D200CE21EB /* FirstViewController.swift in Sources */,
+				485873781C440B2A000BE9F0 /* HistoryTableViewController.swift in Sources */,
 				485D09B31C416C000092B742 /* SettingsPopoverController.swift in Sources */,
 				0102DE961C3ED9CC00AEE1EA /* SignUpViewController.swift in Sources */,
 			);
