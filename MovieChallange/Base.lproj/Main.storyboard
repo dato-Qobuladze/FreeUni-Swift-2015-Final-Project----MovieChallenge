@@ -159,11 +159,17 @@
                                 <rect key="frame" x="20" y="524" width="276" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="answer:" destination="4V6-SY-oem" eventType="touchUpInside" id="1Nc-nU-Mad"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woE-gl-nd5">
                                 <rect key="frame" x="304" y="562" width="276" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="answer:" destination="4V6-SY-oem" eventType="touchUpInside" id="Dcd-Ry-Z85"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rnm-Xr-neg">
                                 <rect key="frame" x="304" y="524" width="276" height="30"/>
@@ -177,11 +183,17 @@
                                         <exclude reference="ijH-62-Ve3"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="answer:" destination="4V6-SY-oem" eventType="touchUpInside" id="1wB-NM-Alr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWx-9Y-FCY">
                                 <rect key="frame" x="20" y="562" width="276" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="answer:" destination="4V6-SY-oem" eventType="touchUpInside" id="4uX-pK-NFo"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nVK-hz-EDh">
                                 <rect key="frame" x="20" y="28" width="560" height="488"/>
@@ -214,6 +226,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="a" destination="Fky-YM-mJu" id="Ic9-pB-8Zy"/>
+                        <outlet property="b" destination="Rnm-Xr-neg" id="OYH-OD-LSP"/>
+                        <outlet property="c" destination="DWx-9Y-FCY" id="gZh-JB-CCL"/>
+                        <outlet property="d" destination="woE-gl-nd5" id="TlT-bX-I67"/>
                         <outlet property="textView" destination="nVK-hz-EDh" id="bFA-Yb-ooC"/>
                     </connections>
                 </viewController>
@@ -1034,7 +1050,7 @@
                                 <animations/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="answered:" destination="K8g-CH-GCv" eventType="touchUpInside" id="Px6-Fr-7HC"/>
+                                    <action selector="answer:" destination="K8g-CH-GCv" eventType="touchUpInside" id="h6m-la-XIh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEp-lk-sHt">
@@ -1050,7 +1066,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="answered:" destination="K8g-CH-GCv" eventType="touchUpInside" id="sun-xP-hDJ"/>
+                                    <action selector="answer:" destination="K8g-CH-GCv" eventType="touchUpInside" id="v0n-3j-Bcp"/>
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ldq-Rv-u88">
@@ -1082,7 +1098,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="answered:" destination="K8g-CH-GCv" eventType="touchUpInside" id="Ktc-Yh-EzG"/>
+                                    <action selector="answer:" destination="K8g-CH-GCv" eventType="touchUpInside" id="18t-so-jcd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgm-hg-cYr">
@@ -1090,7 +1106,7 @@
                                 <animations/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="answered:" destination="K8g-CH-GCv" eventType="touchUpInside" id="gFB-Vd-yRX"/>
+                                    <action selector="answer:" destination="K8g-CH-GCv" eventType="touchUpInside" id="TGT-nv-KiA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1122,10 +1138,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="answerA" destination="AMY-ZB-YHk" id="usI-Wi-VJD"/>
-                        <outlet property="answerB" destination="lEp-lk-sHt" id="cK1-Wa-Mkr"/>
-                        <outlet property="answerC" destination="c6w-fq-BJV" id="XcR-yC-QKz"/>
-                        <outlet property="answerD" destination="Sgm-hg-cYr" id="8Bl-a5-yyd"/>
+                        <outlet property="a" destination="AMY-ZB-YHk" id="QI9-kn-CtL"/>
+                        <outlet property="b" destination="lEp-lk-sHt" id="42D-ky-rDH"/>
+                        <outlet property="c" destination="c6w-fq-BJV" id="kXx-ef-cea"/>
+                        <outlet property="d" destination="Sgm-hg-cYr" id="mio-1c-YsL"/>
                         <outlet property="musicSlider" destination="ldq-Rv-u88" id="qZA-kC-8Ka"/>
                         <outlet property="questionText" destination="TdT-Rl-tEJ" id="8bh-JY-gsk"/>
                     </connections>
@@ -1150,6 +1166,9 @@
                                 <rect key="frame" x="304" y="562" width="276" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="answer:" destination="Hae-r9-r8J" eventType="touchUpInside" id="FAZ-HG-CV7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mWl-zl-f9f">
                                 <rect key="frame" x="20" y="524" width="276" height="30"/>
@@ -1164,6 +1183,9 @@
                                         <exclude reference="gwf-ad-N5x"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="answer:" destination="Hae-r9-r8J" eventType="touchUpInside" id="uCM-8Q-u2y"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQz-SM-cXZ">
                                 <rect key="frame" x="20" y="496" width="560" height="20"/>
@@ -1180,11 +1202,6 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDA-yA-ixl">
-                                <rect key="frame" x="20" y="20" width="560" height="468"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cL0-pq-mpq">
                                 <rect key="frame" x="304" y="524" width="276" height="30"/>
                                 <animations/>
@@ -1197,6 +1214,9 @@
                                         <exclude reference="lH0-8b-9SO"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="answer:" destination="Hae-r9-r8J" eventType="touchUpInside" id="FJc-5r-bgY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LKh-gu-m6r">
                                 <rect key="frame" x="20" y="562" width="276" height="30"/>
@@ -1205,7 +1225,14 @@
                                     <constraint firstAttribute="height" constant="30" id="Y2B-Xm-Eg1"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="answer:" destination="Hae-r9-r8J" eventType="touchUpInside" id="cqP-Wj-Pxh"/>
+                                </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fDA-yA-ixl">
+                                <rect key="frame" x="20" y="20" width="560" height="468"/>
+                                <animations/>
+                            </scrollView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1249,6 +1276,10 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="a" destination="mWl-zl-f9f" id="6Zf-Va-mz4"/>
+                        <outlet property="b" destination="cL0-pq-mpq" id="SYc-pT-Mzm"/>
+                        <outlet property="c" destination="LKh-gu-m6r" id="c2t-Yx-7SL"/>
+                        <outlet property="d" destination="V8U-gk-PZK" id="agD-Ot-UWi"/>
                         <outlet property="scrollView" destination="fDA-yA-ixl" id="k2h-QF-Wv6"/>
                     </connections>
                 </viewController>

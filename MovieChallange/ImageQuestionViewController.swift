@@ -32,6 +32,7 @@ class ImageQuestionViewController: QuestionViewController, UIScrollViewDelegate 
             imageView.image = newValue
             imageView.sizeToFit()
             scrollView?.contentSize = imageView.frame.size
+            scrollView.zoomToRect(imageView.frame, animated: true)
         }
     }
     

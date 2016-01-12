@@ -71,10 +71,6 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
     }
     
     func loadQuestionsViewControllers(withBlock callback: ()->()){
-//        let q1 = storyboard?.instantiateViewControllerWithIdentifier("q_simple")
-//        let q2 = storyboard?.instantiateViewControllerWithIdentifier("q_image")
-//        let q3 = storyboard?.instantiateViewControllerWithIdentifier("q_audio")
-//        let q4 = storyboard?.instantiateViewControllerWithIdentifier("q_image")
         questionViewControllers = []
         
         PFCloud.callFunctionInBackground("getInfoQuestions", withParameters: nil) { (result, error) -> Void in
