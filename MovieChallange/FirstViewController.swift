@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UIPopoverPresentationControllerDelegate {
     
     
     
@@ -91,6 +91,21 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
         
         return pickerData[row]
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dest = segue.destinationViewController
+        if let popoverController = dest.popoverPresentationController
+        {
+            popoverController.delegate = self
+            
+        }
+        
+    }
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        
+        return .None
     }
     
     
