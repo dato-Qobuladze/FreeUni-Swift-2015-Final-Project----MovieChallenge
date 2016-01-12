@@ -65,5 +65,10 @@ class AudioQuestionViewController: QuestionViewController, AVAudioPlayerDelegate
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.audioPlayer.stop()
+    }
 
 }
