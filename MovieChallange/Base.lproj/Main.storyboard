@@ -1120,10 +1120,10 @@
             </objects>
             <point key="canvasLocation" x="2404" y="-356"/>
         </scene>
-        <!--View Controller-->
+        <!--Image Question View Controller-->
         <scene sceneID="bCG-qj-jOU">
             <objects>
-                <viewController id="Hae-r9-r8J" sceneMemberID="viewController">
+                <viewController id="Hae-r9-r8J" customClass="ImageQuestionViewController" customModule="MovieChallange" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cuc-rP-hos"/>
                         <viewControllerLayoutGuide type="bottom" id="aKy-L7-cBe"/>
@@ -1234,6 +1234,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="fDA-yA-ixl" id="k2h-QF-Wv6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MAM-Oz-hJR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
