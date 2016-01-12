@@ -21,6 +21,7 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
     @IBOutlet weak var timer_lbl: UILabel!
     @IBOutlet weak var pagerView: UIView!
     @IBOutlet weak var pagerControls: UIPageControl!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     private let vcIDforTypeID:[String:String] = [
         Types.INFO_ID   : "q_simple",
@@ -43,16 +44,19 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        spinner.startAnimating()
         loadQuestionsViewControllers(withBlock: {
-            print("callback")
             self.pageViewController!.setViewControllers([self.questionViewControllers![0]], direction: .Forward, animated: false, completion: nil)
+            
+            self.pagerControls.numberOfPages = (self.questionViewControllers?.count)!
+            self.spinner.stopAnimating()
+            NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "timerTick", userInfo: nil, repeats: true)
         })
         
         pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
         pageViewController!.dataSource = self
         pageViewController?.delegate = self
         
-//        pageViewController!.setViewControllers([questionViewControllers![0]], direction: .Forward, animated: false, completion: nil)
         pageViewController!.view.frame = CGRectMake(0, 0, pagerView.frame.size.width, pagerView.frame.size.height);
         
         addChildViewController(pageViewController!)
@@ -61,9 +65,6 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
         
     }
     
-    override func viewDidAppear(animated: Bool) {
-        NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "timerTick", userInfo: nil, repeats: true)
-    }
     
     func timerTick(){
         timeElapsed++
@@ -82,7 +83,7 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
             }else{
                 if let questions = result as? [PFObject]{
                     print(questions.count)
-                    for var question in questions{
+                    for question in questions {
                         let vc_id = self.vcIDforTypeID[question["type"].objectId!!]
                         print(vc_id)
                         if let vc = self.storyboard?.instantiateViewControllerWithIdentifier(vc_id!) as? QuestionViewController{

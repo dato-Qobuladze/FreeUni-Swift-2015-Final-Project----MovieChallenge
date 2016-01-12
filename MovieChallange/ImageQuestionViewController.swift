@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class ImageQuestionViewController: QuestionViewController {
+class ImageQuestionViewController: QuestionViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView! {
         didSet {
@@ -39,6 +39,16 @@ class ImageQuestionViewController: QuestionViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         scrollView.addSubview(imageView)
+        if let data = dataObject{
+            if let file = data["data"] as? PFFile{
+                file.getDataInBackgroundWithBlock({(imageData: NSData?, error: NSError?) -> Void in
+                    if let imgData = imageData {
+                        self.image = UIImage(data: imgData)
+                    }
+                })
+            }
+            
+        }
     }
 
 }

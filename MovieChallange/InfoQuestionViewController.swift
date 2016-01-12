@@ -10,9 +10,13 @@ import UIKit
 
 class InfoQuestionViewController: QuestionViewController {
 
+    @IBOutlet weak var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let data = dataObject{
+            textView.text = data["text"] as! String
+        }
         // Do any additional setup after loading the view.
     }
 
