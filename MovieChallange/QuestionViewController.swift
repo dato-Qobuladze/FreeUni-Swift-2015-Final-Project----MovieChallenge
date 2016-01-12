@@ -19,26 +19,26 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var d: UIButton!
     
     private var correct: Int?
-    var answeredCorrectly: Bool?
+    var isCorrect: Bool?
     
     @IBAction func answer(sender: UIButton) {
         if (sender.isEqual(a)) {
             print("shemovida a chemisa")
-            answeredCorrectly = (correct == 0)
+            isCorrect = (correct == 0)
         }
         if (sender.isEqual(b)) {
             print("shemovida b chemisa")
-            answeredCorrectly = (correct == 1)
+            isCorrect = (correct == 1)
         }
         if (sender.isEqual(c)) {
             print("shemovida c chemisa")
-            answeredCorrectly = (correct == 2)
+            isCorrect = (correct == 2)
         }
         if (sender.isEqual(d)) {
             print("shemovida d chemisa")
-            answeredCorrectly = (correct == 3)
+            isCorrect = (correct == 3)
         }
-        print(answeredCorrectly)
+        print(isCorrect)
     }
     
     override func viewDidLoad() {

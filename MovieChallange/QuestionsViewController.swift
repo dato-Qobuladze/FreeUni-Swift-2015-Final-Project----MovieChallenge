@@ -39,9 +39,31 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
         }
     }
     
-    var pageViewController: UIPageViewController?
-    var questionViewControllers: [UIViewController]?
+    var pageViewController: UIPageViewController!
+    var questionViewControllers: [QuestionViewController]!
+    var timer:NSTimer!
     
+    @IBAction func submit(sender: UIButton) {
+        timer.invalidate()
+        var correctCounter = 0
+        var unansweredCounter = 0
+        for controller in questionViewControllers{
+            if let correct = controller.isCorrect {
+                if correct{
+                    correctCounter++
+                }
+            }else{
+                unansweredCounter++
+            }
+        }
+        
+        let alertController = UIAlertController(title: "Finnished", message: "You have \(correctCounter)/\(10 - unansweredCounter) answered correctly", preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) in
+            // go to home
+        }))
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         spinner.startAnimating()
@@ -50,7 +72,7 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
             
             self.pagerControls.numberOfPages = (self.questionViewControllers?.count)!
             self.spinner.stopAnimating()
-            NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "timerTick", userInfo: nil, repeats: true)
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "timerTick", userInfo: nil, repeats: true)
         })
         
         pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
@@ -94,7 +116,7 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        let index = (questionViewControllers?.indexOf(viewController))! + 1
+        let index = (questionViewControllers?.indexOf(viewController as! QuestionViewController))! + 1
         if index >= questionViewControllers?.count {
             return nil
         }
@@ -102,7 +124,7 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        let index = (questionViewControllers?.indexOf(viewController))! - 1
+        let index = (questionViewControllers?.indexOf(viewController as! QuestionViewController))! - 1
         if index < 0 {
             return nil
         }
@@ -111,7 +133,7 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
     
     func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         let currentController = pageViewController.viewControllers?.first
-        let index = questionViewControllers?.indexOf(currentController!)
+        let index = questionViewControllers?.indexOf(currentController as! QuestionViewController)
         pagerControls.currentPage = index!
     }
     

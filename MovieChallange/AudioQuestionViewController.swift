@@ -14,28 +14,10 @@ class AudioQuestionViewController: QuestionViewController, AVAudioPlayerDelegate
 
     @IBOutlet weak var questionText: UITextView!
     @IBOutlet weak var musicSlider: UISlider!
-//    @IBOutlet weak var answerA: UIButton!
-//    @IBOutlet weak var answerB: UIButton!
-//    @IBOutlet weak var answerC: UIButton!
-//    @IBOutlet weak var answerD: UIButton!
     
     private var audioPlayer: AVAudioPlayer!
     private var player: AVPlayer!
     
-//    @IBAction func answered(sender: UIButton) {
-//        if (sender.isEqual(answerA)) {
-//            print("shemovida a chemisa")
-//        }
-//        if (sender.isEqual(answerB)) {
-//            print("shemovida b chemisa")
-//        }
-//        if (sender.isEqual(answerC)) {
-//            print("shemovida c chemisa")
-//        }
-//        if (sender.isEqual(answerD)) {
-//            print("shemovida d chemisa")
-//        }
-//    }
     
     @IBAction func next(sender: UIButton) {
         
