@@ -21,7 +21,7 @@ class AudioQuestionViewController: QuestionViewController, AVAudioPlayerDelegate
     
     private var audioPlayer: AVAudioPlayer!
     private var player: AVPlayer!
-    
+    private var isPlaying = false
 //    @IBAction func answered(sender: UIButton) {
 //        if (sender.isEqual(answerA)) {
 //            print("shemovida a chemisa")
@@ -52,6 +52,7 @@ class AudioQuestionViewController: QuestionViewController, AVAudioPlayerDelegate
                     self.audioPlayer.delegate = self
                     self.audioPlayer.volume = 10.0
                     self.audioPlayer.play()
+                    self.isPlaying = true
                 } catch {
                     print("Error occured while playing music!")
                 }
@@ -68,7 +69,9 @@ class AudioQuestionViewController: QuestionViewController, AVAudioPlayerDelegate
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        self.audioPlayer.stop()
+        if self.isPlaying {
+            self.audioPlayer.stop()
+        }
     }
 
 }
