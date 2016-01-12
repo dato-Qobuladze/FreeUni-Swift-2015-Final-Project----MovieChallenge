@@ -50,16 +50,7 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
         if let popoverController = dest.popoverPresentationController
         {
             popoverController.delegate = self
-            
-            if segue.identifier == "settingsPopover"
-            {
-
-            }
-            else if segue.identifier == "ratingPopover"
-            {
-            
-            }
-            
+                        
         }
         
     }
