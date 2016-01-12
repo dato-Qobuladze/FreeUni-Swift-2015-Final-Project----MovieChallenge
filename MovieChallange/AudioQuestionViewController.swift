@@ -17,11 +17,7 @@ class AudioQuestionViewController: QuestionViewController, AVAudioPlayerDelegate
     
     private var audioPlayer: AVAudioPlayer!
     private var player: AVPlayer!
-    
-    
-    @IBAction func next(sender: UIButton) {
-        
-    }
+    private var isPlaying = false
     
     @IBAction func playMusic(sender: AnyObject) {
         let audio = dataObject

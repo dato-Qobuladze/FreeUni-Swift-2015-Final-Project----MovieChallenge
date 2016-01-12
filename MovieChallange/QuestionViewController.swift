@@ -21,6 +21,7 @@ class QuestionViewController: UIViewController {
     private var correct: Int?
     var isCorrect: Bool?
     
+    
     @IBAction func answer(sender: UIButton) {
         if (sender.isEqual(a)) {
             print("shemovida a chemisa")
