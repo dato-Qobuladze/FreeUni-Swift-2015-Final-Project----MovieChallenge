@@ -24,36 +24,33 @@ class AudioQuestionViewController: QuestionViewController, AVAudioPlayerDelegate
     }
     
     @IBAction func playMusic(sender: AnyObject) {
-        let query = PFQuery(className: "AudioFile")
-        query.whereKeyExists("audio")
-        query.findObjectsInBackgroundWithBlock { (objects:[PFObject]?, error: NSError?) -> Void in
-            if error == nil {
-                let audio = objects?[0]
-                let audioFile = audio?["audio"] as? PFFile
-                audioFile?.getDataInBackgroundWithBlock({ (audio: NSData?, error: NSError?) -> Void in
-                    if audio != nil {
-                        do {
-                            self.audioPlayer = try AVAudioPlayer(data: audio!)
-                            self.audioPlayer.prepareToPlay()
-                            self.audioPlayer.delegate = self
-                            self.audioPlayer.volume = 10.0
-                            self.audioPlayer.play()
-                        } catch {
-                            print("Error occured while playing music!")
-                        }
-                    } else {
-                        print ("Somehow audio is nil!")
-                    }
-                })
+        let audio = dataObject
+        let audioFile = audio?["data"] as? PFFile
+        audioFile?.getDataInBackgroundWithBlock({ (audio: NSData?, error: NSError?) -> Void in
+            if audio != nil {
+                do {
+                    self.audioPlayer = try AVAudioPlayer(data: audio!)
+                    self.audioPlayer.prepareToPlay()
+                    self.audioPlayer.delegate = self
+                    self.audioPlayer.volume = 10.0
+                    self.audioPlayer.play()
+                } catch {
+                    print("Error occured while playing music!")
+                }
             } else {
-                print("Error occured while downloading file!")
+                print ("Somehow audio is nil!")
             }
-        }
+        })
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.audioPlayer.stop()
     }
 
 }
