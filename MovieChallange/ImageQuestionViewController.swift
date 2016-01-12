@@ -15,8 +15,8 @@ class ImageQuestionViewController: QuestionViewController, UIScrollViewDelegate 
         didSet {
             scrollView.contentSize = imageView.frame.size
             scrollView.delegate = self
-            scrollView.minimumZoomScale = 0.03
-            scrollView.maximumZoomScale = 1.0
+            scrollView.minimumZoomScale = 0.04
+            scrollView.maximumZoomScale = 4.0
         }
     }
     
