@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class ImageQuestionViewController: UIViewController {
 
@@ -14,8 +15,8 @@ class ImageQuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        let query = PFQuery(className: "AudioFile")
     }
 
 }
