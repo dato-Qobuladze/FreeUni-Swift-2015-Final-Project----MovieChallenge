@@ -19,9 +19,27 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     var pickerData: [String] = [String]()
     var pickerData1: [String] = [String]()
+    var filmObjects: [PFObject]?
+    var questObjects: [PFObject]?
     
     @IBOutlet weak var Spinner: UIActivityIndicatorView!
 
+    @IBAction func singlePlay(sender: UIButton) {
+        let filmIndex = myPickerView.selectedRowInComponent(0)
+        let questIndex = SecondPicker.selectedRowInComponent(0)
+//        let filmStr = pickerData[filmIndex]
+//        let questStr = pickerData1[questIndex]
+//        print(filmStr)
+//        print(questStr)
+        let vc = storyboard?.instantiateViewControllerWithIdentifier("questions") as? QuestionsViewController
+        vc?.selectedFilm = filmObjects?[filmIndex].objectId
+        vc?.selectedQuest = questObjects?[questIndex].objectId
+        print(filmObjects![filmIndex])
+        print(questObjects![questIndex])
+        presentViewController(vc!, animated: true, completion: nil)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.myPickerView.delegate = self
@@ -31,28 +49,29 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         Spinner.startAnimating()
         var query = PFQuery(className: "Films")
         query.whereKeyExists("film")
-        var objects : [PFObject]? = [PFObject]?()
+        filmObjects = [PFObject]?()
         
         do {
-            objects = try query.findObjects() as [PFObject]?
+            filmObjects = try query.findObjects() as [PFObject]?
         } catch  {
             print("Download film categories error")
         }
         
-        for film in objects!{
+        for film in filmObjects!{
             let filmStr = film["film"] as? String
             pickerData.append(filmStr!)
         }
         
         query = PFQuery(className: "Quests")
         query.whereKeyExists("quest")
+        questObjects = [PFObject]?()
         do {
-            objects = try query.findObjects() as [PFObject]?
+            questObjects = try query.findObjects() as [PFObject]?
         } catch  {
             print("Download quest categories error")
         }
         
-        for quest in objects!{
+        for quest in questObjects!{
             let questStr = quest["quest"] as? String
             pickerData1.append(questStr!)
         }

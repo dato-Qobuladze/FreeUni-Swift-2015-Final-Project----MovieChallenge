@@ -55,7 +55,7 @@ class QuestionViewController: UIViewController {
                             question["d"] as! String
                             ]
             
-            let randIndex = Int(arc4random()) % answers.count
+            let randIndex = Int(arc4random_uniform(4))
             correct = randIndex
             if randIndex != 0{
                 swap(&answers[0], &answers[randIndex])

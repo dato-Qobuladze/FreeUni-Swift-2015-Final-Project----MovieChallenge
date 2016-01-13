@@ -24,7 +24,6 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     var loadingData:Bool = false{
         didSet{
-            print("loading \(loadingData)")
             if loadingData{
                 spinner.startAnimating()
             }else{
@@ -61,6 +60,9 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
     var pageViewController: UIPageViewController!
     var questionViewControllers: [QuestionViewController]!
     var timer:NSTimer!
+    
+    var selectedFilm:String?
+    var selectedQuest:String?
     
     @IBAction func submit(sender: UIButton) {
         timer.invalidate()
@@ -110,8 +112,13 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
     
     func loadQuestionsViewControllers(withBlock callback: ()->()){
         questionViewControllers = []
-        
-        PFCloud.callFunctionInBackground("getInfoQuestions", withParameters: nil) { (result, error) -> Void in
+        var params:[String:String]? = nil
+        if selectedFilm != nil && selectedQuest != nil{
+            params = [  "film":selectedFilm!,
+                        "quest":selectedQuest!]
+        }
+        print(params)
+        PFCloud.callFunctionInBackground("getQuestions", withParameters: params) { (result, error) -> Void in
             if (error != nil){
                 print(error!)
             }else{
