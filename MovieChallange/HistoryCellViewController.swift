@@ -11,6 +11,9 @@ import UIKit
 class HistoryCellViewController: UITableViewCell {
 
     
+    @IBOutlet weak var profileImage: UIImageView!
+    
+    @IBOutlet weak var dataLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

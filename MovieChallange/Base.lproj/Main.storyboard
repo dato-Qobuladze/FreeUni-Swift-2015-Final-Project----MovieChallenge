@@ -821,7 +821,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="59" id="ENT-Ml-VpV">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="59" id="ENT-Ml-VpV" customClass="HistoryCellViewController" customModule="MovieChallange" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="600" height="59"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ENT-Ml-VpV" id="8h6-ls-xVN">
@@ -834,7 +834,7 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user168.png" translatesAutoresizingMaskIntoConstraints="NO" id="GAA-VI-s3J">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user168.png" translatesAutoresizingMaskIntoConstraints="NO" id="GAA-VI-s3J">
                                             <rect key="frame" x="8" y="0.0" width="50" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="50" id="9WE-UN-9hd"/>
@@ -851,6 +851,11 @@
                                         <constraint firstItem="GAA-VI-s3J" firstAttribute="leading" secondItem="8h6-ls-xVN" secondAttribute="leadingMargin" id="epr-7V-2Gf"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dataLabel" destination="cOW-8k-tDh" id="rlW-Me-7FI"/>
+                                    <outlet property="imageView" destination="GAA-VI-s3J" id="ROZ-wF-csM"/>
+                                    <outlet property="profileImage" destination="GAA-VI-s3J" id="mgB-b3-GGa"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
