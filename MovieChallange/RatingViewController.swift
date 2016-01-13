@@ -83,15 +83,15 @@ class RatingViewController: UITableViewController, UITextFieldDelegate  { // UIV
     }
     
     
-//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        
-//        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TweetTableViewCell
-//        
-//        let tweet = self.tweets[indexPath.section][indexPath.row]
-//        cell.data = tweet
-//        
-//        return cell
-//    }
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! HistoryCellViewController
+        
+        let tweet = self.tweets[indexPath.section][indexPath.row]
+        cell.data = tweet
+        
+        return cell
+    }
 
     
     /*
