@@ -42,6 +42,21 @@ class ImageQuestionViewController: QuestionViewController, UIScrollViewDelegate 
         text.text = dataObject?["text"] as? String
         // Do any additional setup after loading the view.
         scrollView.addSubview(imageView)
+//        if let data = dataObject{
+//            if let file = data["data"] as? PFFile{
+//                parent.loadingData = true
+//                file.getDataInBackgroundWithBlock({(imageData: NSData?, error: NSError?) -> Void in
+//                    self.parent.loadingData = false
+//                    if let imgData = imageData {
+//                        self.image = UIImage(data: imgData)
+//                    }
+//                })
+//            }
+//            
+//        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         if let data = dataObject{
             if let file = data["data"] as? PFFile{
                 parent.loadingData = true

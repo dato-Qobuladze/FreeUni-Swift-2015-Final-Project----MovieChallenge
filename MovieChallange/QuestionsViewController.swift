@@ -62,6 +62,9 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
     var questionViewControllers: [QuestionViewController]!
     var timer:NSTimer!
     
+    var selectedFilm:String?
+    var selectedQuest:String?
+    
     @IBAction func submit(sender: UIButton) {
         timer.invalidate()
         var correctCounter = 0
@@ -110,8 +113,13 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
     
     func loadQuestionsViewControllers(withBlock callback: ()->()){
         questionViewControllers = []
-        
-        PFCloud.callFunctionInBackground("getInfoQuestions", withParameters: nil) { (result, error) -> Void in
+        var params:[String:String]? = nil
+        if selectedFilm != nil && selectedQuest != nil{
+            params = [  "film":selectedFilm!,
+                        "quest":selectedQuest!]
+        }
+        print(params)
+        PFCloud.callFunctionInBackground("getInfoQuestions", withParameters: params) { (result, error) -> Void in
             if (error != nil){
                 print(error!)
             }else{
