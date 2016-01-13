@@ -7,25 +7,57 @@
 //
 
 import UIKit
+import Parse
 
 class RatingViewController: UIViewController {
 
     @IBOutlet weak var userRatingLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        let userQuery = PFUser.query()
+        userQuery?.whereKey("username", equalTo: "iOS")
+        userQuery?.findObjectsInBackgroundWithBlock({ (users, error) -> Void in
+            self.findoutRatingOf(users![0])
+        })
+        
+//        if let user = PFUser.currentUser() {
+//            findoutRatingOf(user)
+//        }
     }
 
+    func findGameEntry(){
+        let gamesQuery = PFObject.query()
+//        gamesQuery.wh
+    }
+    
     @IBOutlet weak var multiplayerHistoryTable: UITableView!
     
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
     
 
+    
+    func findoutRatingOf(user: PFObject){
+        if let score = user["score"] as? Double {
+            print("score is: \(score)")
+            let showLabelText : String = LabelsEnum.RatingLabel.rawValue + String(score)
+            userRatingLabel.text = showLabelText
+        }
+    }
+    
+    
+    enum LabelsEnum : String {
+        case RatingLabel = "Your score: "
+    }
+
+    
     /*
     // MARK: - Navigation
 
