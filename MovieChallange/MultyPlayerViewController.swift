@@ -11,7 +11,7 @@ import Parse
 
 class MultyPlayerViewController: UIViewController {
 
-    @IBOutlet weak var PlayersSearch: UITextField!
+    @IBOutlet weak var search: UISearchBar!
     @IBOutlet weak var userImageView1: UIImageView!
     @IBOutlet weak var userImageView2: UIImageView!
     @IBOutlet weak var userImageView3: UIImageView!
@@ -23,6 +23,8 @@ class MultyPlayerViewController: UIViewController {
     @IBOutlet weak var userLabel3: UILabel!
     @IBOutlet weak var userLabel4: UILabel!
     @IBOutlet weak var userLabel5: UILabel!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
