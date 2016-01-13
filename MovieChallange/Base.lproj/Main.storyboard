@@ -520,16 +520,6 @@
                                     <rect key="frame" x="119" y="187" width="84" height="133"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXD-6J-nsf">
-                                <rect key="frame" x="110" y="310" width="470" height="60"/>
-                                <state key="normal" title="Rating"/>
-                                <connections>
-                                    <action selector="ratingAction:" destination="oU7-UT-9Mj" eventType="touchUpInside" id="hhI-vh-qTG"/>
-                                    <segue destination="Sqi-bF-ugN" kind="popoverPresentation" identifier="ratingPopover" popoverAnchorView="JXD-6J-nsf" id="O9c-Pn-ED7">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUi-kd-uyd">
                                 <rect key="frame" x="20" y="136" width="560" height="30"/>
                                 <constraints>
@@ -570,6 +560,16 @@
                                 <connections>
                                     <action selector="settingsAction:" destination="oU7-UT-9Mj" eventType="touchUpInside" id="8VN-IO-EMi"/>
                                     <segue destination="TN1-B7-lc4" kind="popoverPresentation" identifier="settingsPopover" popoverAnchorView="cv3-Tb-tTj" id="tpa-9v-5ie">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXD-6J-nsf">
+                                <rect key="frame" x="110" y="310" width="470" height="60"/>
+                                <state key="normal" title="Rating"/>
+                                <connections>
+                                    <action selector="ratingAction:" destination="oU7-UT-9Mj" eventType="touchUpInside" id="hhI-vh-qTG"/>
+                                    <segue destination="Yoh-pS-V68" kind="popoverPresentation" popoverAnchorView="JXD-6J-nsf" id="Cct-7O-uV0">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
                                 </connections>
@@ -803,7 +803,53 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NSR-Q2-TMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="842" y="511"/>
+            <point key="canvasLocation" x="753" y="307"/>
+        </scene>
+        <!--Rating View Controller-->
+        <scene sceneID="y9L-fd-jkL">
+            <objects>
+                <tableViewController id="Yoh-pS-V68" customClass="RatingViewController" customModule="MovieChallange" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="32" sectionHeaderHeight="28" sectionFooterHeight="28" id="iV5-yx-X6v">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZrT-YV-UU1">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="32" id="ENT-Ml-VpV">
+                                <rect key="frame" x="0.0" y="72" width="600" height="32"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ENT-Ml-VpV" id="8h6-ls-xVN">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="31"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOW-8k-tDh">
+                                            <rect key="frame" x="8" y="5" width="584" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Yoh-pS-V68" id="3sD-ui-Mj4"/>
+                            <outlet property="delegate" destination="Yoh-pS-V68" id="m3i-LA-byw"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="userRatingLabel" destination="ZrT-YV-UU1" id="3jX-d5-v4a"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6rG-Xh-S5b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1189" y="456"/>
         </scene>
         <!--Questions View Controller-->
         <scene sceneID="F8l-Sf-5E2">
@@ -969,11 +1015,12 @@
                     <value key="contentSizeForViewInPopover" type="size" width="250" height="270"/>
                     <connections>
                         <outlet property="multiplayerHistoryTable" destination="vvG-cf-NDf" id="bd5-PN-cVO"/>
+                        <outlet property="userRatingLabel" destination="fbl-ZP-nWX" id="cnY-hI-1KU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hSp-0x-szg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1258" y="711"/>
+            <point key="canvasLocation" x="1189" y="1101"/>
         </scene>
         <!--Audio Question View Controller-->
         <scene sceneID="BPj-q2-HBa">
