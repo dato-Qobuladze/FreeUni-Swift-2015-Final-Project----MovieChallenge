@@ -21,6 +21,7 @@ class QuestionViewController: UIViewController {
     private var correct: Int?
     var isCorrect: Bool?
     var onAnswer:(()->())?
+    var parent: QuestionsViewController!
     
     
     @IBAction func answer(sender: UIButton) {
