@@ -566,7 +566,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXD-6J-nsf">
                                 <rect key="frame" x="110" y="310" width="470" height="60"/>
-                                <state key="normal" title="Rating"/>
+                                <state key="normal" title="History"/>
                                 <connections>
                                     <action selector="ratingAction:" destination="oU7-UT-9Mj" eventType="touchUpInside" id="hhI-vh-qTG"/>
                                     <segue destination="Yoh-pS-V68" kind="popoverPresentation" popoverAnchorView="JXD-6J-nsf" id="Cct-7O-uV0">

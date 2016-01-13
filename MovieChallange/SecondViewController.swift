@@ -91,12 +91,12 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
         if user.objectForKey("username") != nil {
             let userName = user.objectForKey("username") as! String
             let userEmail = user.objectForKey("email") as! String
-            let currentScore = user.objectForKey("score") as! Int
+//            let currentScore = user.objectForKey("score") as! Double
         
         
             usernameLabel.text = userName
             mailLabel.text = userEmail
-            scoreLabel.text = String(currentScore)
+//            scoreLabel.text = String(currentScore)
             // appropriate color
         }
     }
