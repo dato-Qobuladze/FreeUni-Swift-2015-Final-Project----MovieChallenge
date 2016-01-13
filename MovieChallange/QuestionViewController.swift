@@ -20,6 +20,7 @@ class QuestionViewController: UIViewController {
     
     private var correct: Int?
     var isCorrect: Bool?
+    var onAnswer:(()->())?
     
     
     @IBAction func answer(sender: UIButton) {
@@ -39,14 +40,14 @@ class QuestionViewController: UIViewController {
             print("shemovida d chemisa")
             isCorrect = (correct == 3)
         }
+        onAnswer?()
         print(isCorrect)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if let question = dataObject{
-            
-            
             var answers = [ question["a"] as! String,
                             question["b"] as! String,
                             question["c"] as! String,

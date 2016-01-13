@@ -19,11 +19,13 @@ class ImageQuestionViewController: QuestionViewController, UIScrollViewDelegate 
             scrollView.maximumZoomScale = 4.0
         }
     }
+    @IBOutlet weak var text: UILabel!
     
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
         return imageView
     }
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     private var imageView = UIImageView()
     
     private var image: UIImage? {
@@ -38,11 +40,14 @@ class ImageQuestionViewController: QuestionViewController, UIScrollViewDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        text.text = dataObject?["text"] as? String
         // Do any additional setup after loading the view.
         scrollView.addSubview(imageView)
         if let data = dataObject{
             if let file = data["data"] as? PFFile{
+                spinner.startAnimating()
                 file.getDataInBackgroundWithBlock({(imageData: NSData?, error: NSError?) -> Void in
+                    self.spinner.stopAnimating()
                     if let imgData = imageData {
                         self.image = UIImage(data: imgData)
                     }
