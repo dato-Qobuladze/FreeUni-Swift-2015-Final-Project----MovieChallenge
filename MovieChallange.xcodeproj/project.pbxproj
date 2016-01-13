@@ -31,7 +31,6 @@
 		485873781C440B2A000BE9F0 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485873771C440B2A000BE9F0 /* HistoryTableViewController.swift */; };
 		485D09B31C416C000092B742 /* SettingsPopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485D09B21C416C000092B742 /* SettingsPopoverController.swift */; };
 		486354951C4020FB00786A12 /* closed.png in Resources */ = {isa = PBXBuildFile; fileRef = 486354941C4020FB00786A12 /* closed.png */; };
-		8300B4091C4578EA00F5FC9F /* MM.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8300B4081C4578EA00F5FC9F /* MM.storyboard */; settings = {ASSET_TAGS = (); }; };
 		83098B961C44112000982FC4 /* MultyPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83098B951C44112000982FC4 /* MultyPlayerViewController.swift */; };
 		E19BE89A50F491B5D5FE5E4D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52655CC1927D0562E0BF6496 /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -89,7 +88,6 @@
 		486354941C4020FB00786A12 /* closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closed.png; sourceTree = "<group>"; };
 		52655CC1927D0562E0BF6496 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E5910D716528DBC9645F6F0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		8300B4081C4578EA00F5FC9F /* MM.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MM.storyboard; sourceTree = "<group>"; };
 		83098B951C44112000982FC4 /* MultyPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultyPlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,7 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				240AA0FF1C1D46D200CE21EB /* Main.storyboard */,
-				8300B4081C4578EA00F5FC9F /* MM.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -379,7 +376,6 @@
 				241B3C1C1C3E8C5E00D33237 /* screen.png in Resources */,
 				240AA1031C1D46D200CE21EB /* Assets.xcassets in Resources */,
 				4834789F1C3EBFBA005B2BD3 /* user168.png in Resources */,
-				8300B4091C4578EA00F5FC9F /* MM.storyboard in Resources */,
 				4834789D1C3EBFBA005B2BD3 /* rank2.png in Resources */,
 				4834789E1C3EBFBA005B2BD3 /* settings48.png in Resources */,
 				240AA1011C1D46D200CE21EB /* Main.storyboard in Resources */,

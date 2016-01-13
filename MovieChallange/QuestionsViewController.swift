@@ -22,6 +22,17 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
     @IBOutlet weak var pagerView: UIView!
     @IBOutlet weak var pagerControls: UIPageControl!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    var loadingData:Bool = false{
+        didSet{
+            print("loading \(loadingData)")
+            if loadingData{
+                spinner.startAnimating()
+            }else{
+                spinner.stopAnimating()
+            }
+            pageViewController.view.userInteractionEnabled = !loadingData
+        }
+    }
     
     private let vcIDforTypeID:[String:String] = [
         Types.INFO_ID   : "q_simple",
@@ -31,49 +42,84 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
     
     var timeElapsed: Int = 0 {
         didSet{
-            let hours = String(format: "%02d", timeElapsed/60/60)
-            let minutes = String(format: "%02d", timeElapsed/60%60)
-            let seconds = String(format: "%02d", timeElapsed%60)
-            
-            timer_lbl.text = "\(hours):\(minutes):\(seconds)"
+            timer_lbl.text = timerLabel
+        }
+    }
+    private var timerLabel: String{
+        let hours = String(format: "%02d", timeElapsed/60/60)
+        let minutes = String(format: "%02d", timeElapsed/60%60)
+        let seconds = String(format: "%02d", timeElapsed%60)
+        return "\(hours):\(minutes):\(seconds)"
+    }
+    
+    func timerTick(){
+        if !loadingData{
+            timeElapsed++
         }
     }
     
-    var pageViewController: UIPageViewController?
-    var questionViewControllers: [UIViewController]?
+    var pageViewController: UIPageViewController!
+    var questionViewControllers: [QuestionViewController]!
+    var timer:NSTimer!
     
+    var selectedFilm:String?
+    var selectedQuest:String?
+    
+    @IBAction func submit(sender: UIButton) {
+        timer.invalidate()
+        var correctCounter = 0
+        var unansweredCounter = 0
+        for controller in questionViewControllers{
+            if let correct = controller.isCorrect {
+                if correct{
+                    correctCounter++
+                }
+            }else{
+                unansweredCounter++
+            }
+        }
+        
+        let alertController = UIAlertController(title: "Finnished", message: "You have \(correctCounter)/\(questionViewControllers.count - unansweredCounter) answered correctly in \(timerLabel)", preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) in
+            // go to home
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("home")
+            self.presentViewController(vc!, animated: true, completion: nil)
+        }))
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         spinner.startAnimating()
         loadQuestionsViewControllers(withBlock: {
-            self.pageViewController!.setViewControllers([self.questionViewControllers![0]], direction: .Forward, animated: false, completion: nil)
+            self.pageViewController.setViewControllers([self.questionViewControllers[0]], direction: .Forward, animated: false, completion: nil)
             
-            self.pagerControls.numberOfPages = (self.questionViewControllers?.count)!
+            self.pagerControls.numberOfPages = self.questionViewControllers.count
             self.spinner.stopAnimating()
-            NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "timerTick", userInfo: nil, repeats: true)
+            self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "timerTick", userInfo: nil, repeats: true)
         })
         
         pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
-        pageViewController!.dataSource = self
-        pageViewController?.delegate = self
+        pageViewController.dataSource = self
+        pageViewController.delegate = self
         
-        pageViewController!.view.frame = CGRectMake(0, 0, pagerView.frame.size.width, pagerView.frame.size.height);
+        pageViewController.view.frame = CGRectMake(0, 0, pagerView.frame.size.width, pagerView.frame.size.height);
         
-        addChildViewController(pageViewController!)
-        pagerView.addSubview(pageViewController!.view)
-        pageViewController!.didMoveToParentViewController(self)
+        addChildViewController(pageViewController)
+        pagerView.addSubview(pageViewController.view)
+        pageViewController.didMoveToParentViewController(self)
         
-    }
-    
-    
-    func timerTick(){
-        timeElapsed++
     }
     
     func loadQuestionsViewControllers(withBlock callback: ()->()){
         questionViewControllers = []
-        
-        PFCloud.callFunctionInBackground("getInfoQuestions", withParameters: nil) { (result, error) -> Void in
+        var params:[String:String]? = nil
+        if selectedFilm != nil && selectedQuest != nil{
+            params = [  "film":selectedFilm!,
+                        "quest":selectedQuest!]
+        }
+        print(params)
+        PFCloud.callFunctionInBackground("getInfoQuestions", withParameters: params) { (result, error) -> Void in
             if (error != nil){
                 print(error!)
             }else{
@@ -84,7 +130,17 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
                         print(vc_id)
                         if let vc = self.storyboard?.instantiateViewControllerWithIdentifier(vc_id!) as? QuestionViewController{
                             vc.dataObject = question
-                            self.questionViewControllers?.append(vc)
+                            vc.parent = self
+                            vc.onAnswer = {
+                                ()->() in
+                                print("answered")
+                                if let next = self.pageViewController(self.pageViewController, viewControllerAfterViewController: self.pageViewController.viewControllers![0]){
+                                    self.pageViewController.setViewControllers([next], direction: .Forward, animated: true, completion: nil)
+                                    self.pageViewController(self.pageViewController, didFinishAnimating: false, previousViewControllers: [], transitionCompleted: false)
+                                }
+                                
+                            }
+                            self.questionViewControllers.append(vc)
                         }
                     }
                     callback()
@@ -94,31 +150,31 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        let index = (questionViewControllers?.indexOf(viewController))! + 1
-        if index >= questionViewControllers?.count {
+        let index = (questionViewControllers.indexOf(viewController as! QuestionViewController))! + 1
+        if index >= questionViewControllers.count {
             return nil
         }
-        return questionViewControllers![index]
+        return questionViewControllers[index]
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        let index = (questionViewControllers?.indexOf(viewController))! - 1
+        let index = (questionViewControllers.indexOf(viewController as! QuestionViewController))! - 1
         if index < 0 {
             return nil
         }
-        return questionViewControllers![index]
+        return questionViewControllers[index]
     }
     
     func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         let currentController = pageViewController.viewControllers?.first
-        let index = questionViewControllers?.indexOf(currentController!)
+        let index = questionViewControllers.indexOf(currentController as! QuestionViewController)
         pagerControls.currentPage = index!
     }
     
     
     func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int
     {
-        return (questionViewControllers?.count)!
+        return questionViewControllers.count
     }
 
     override func didReceiveMemoryWarning() {

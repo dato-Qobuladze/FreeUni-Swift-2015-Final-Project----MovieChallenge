@@ -14,37 +14,17 @@ class AudioQuestionViewController: QuestionViewController, AVAudioPlayerDelegate
 
     @IBOutlet weak var questionText: UITextView!
     @IBOutlet weak var musicSlider: UISlider!
-//    @IBOutlet weak var answerA: UIButton!
-//    @IBOutlet weak var answerB: UIButton!
-//    @IBOutlet weak var answerC: UIButton!
-//    @IBOutlet weak var answerD: UIButton!
     
     private var audioPlayer: AVAudioPlayer!
     private var player: AVPlayer!
-    
-//    @IBAction func answered(sender: UIButton) {
-//        if (sender.isEqual(answerA)) {
-//            print("shemovida a chemisa")
-//        }
-//        if (sender.isEqual(answerB)) {
-//            print("shemovida b chemisa")
-//        }
-//        if (sender.isEqual(answerC)) {
-//            print("shemovida c chemisa")
-//        }
-//        if (sender.isEqual(answerD)) {
-//            print("shemovida d chemisa")
-//        }
-//    }
-    
-    @IBAction func next(sender: UIButton) {
-        
-    }
+    private var isPlaying = false
     
     @IBAction func playMusic(sender: AnyObject) {
+        parent.loadingData = true
         let audio = dataObject
         let audioFile = audio?["data"] as? PFFile
         audioFile?.getDataInBackgroundWithBlock({ (audio: NSData?, error: NSError?) -> Void in
+            self.parent.loadingData = false
             if audio != nil {
                 do {
                     self.audioPlayer = try AVAudioPlayer(data: audio!)
@@ -52,6 +32,7 @@ class AudioQuestionViewController: QuestionViewController, AVAudioPlayerDelegate
                     self.audioPlayer.delegate = self
                     self.audioPlayer.volume = 10.0
                     self.audioPlayer.play()
+                    self.isPlaying = true
                 } catch {
                     print("Error occured while playing music!")
                 }
@@ -63,12 +44,15 @@ class AudioQuestionViewController: QuestionViewController, AVAudioPlayerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        questionText.text = dataObject?["text"] as? String
         // Do any additional setup after loading the view.
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        self.audioPlayer.stop()
+        if self.isPlaying {
+            self.audioPlayer.stop()
+        }
     }
 
 }
