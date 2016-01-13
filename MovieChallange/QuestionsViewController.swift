@@ -24,7 +24,6 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     var loadingData:Bool = false{
         didSet{
-            print("loading \(loadingData)")
             if loadingData{
                 spinner.startAnimating()
             }else{
@@ -119,7 +118,7 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
                         "quest":selectedQuest!]
         }
         print(params)
-        PFCloud.callFunctionInBackground("getInfoQuestions", withParameters: params) { (result, error) -> Void in
+        PFCloud.callFunctionInBackground("getQuestions", withParameters: params) { (result, error) -> Void in
             if (error != nil){
                 print(error!)
             }else{
