@@ -661,7 +661,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BvR-cr-8XD" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="332" y="570"/>
+            <point key="canvasLocation" x="314" y="557"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4JR-hC-feB">
@@ -1578,6 +1578,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dfsdf" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJr-ov-SlT">
+                                <rect key="frame" x="138" y="83" width="442" height="46"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHJ-EQ-9ro">
                                 <rect key="frame" x="20" y="562" width="560" height="30"/>
                                 <constraints>
@@ -1655,6 +1662,7 @@
                     <value key="contentSizeForViewInPopover" type="size" width="300" height="400"/>
                     <connections>
                         <outlet property="playButton" destination="yHJ-EQ-9ro" id="f2o-Dr-OLt"/>
+                        <outlet property="search" destination="rUz-6i-fl7" id="oSK-Ip-w48"/>
                         <outlet property="userImageView1" destination="Yl6-EO-fxo" id="6pO-yc-uvm"/>
                         <outlet property="userImageView2" destination="7pq-KO-AzF" id="9qW-48-SkS"/>
                         <outlet property="userImageView3" destination="fM1-sp-ubG" id="XSc-Dc-tJF"/>
@@ -1669,7 +1677,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zAO-o3-d5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1053" y="-240"/>
+            <point key="canvasLocation" x="1012" y="-200"/>
         </scene>
     </scenes>
     <resources>
