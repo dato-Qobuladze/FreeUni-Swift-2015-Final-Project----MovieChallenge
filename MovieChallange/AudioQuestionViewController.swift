@@ -12,7 +12,6 @@ import AVFoundation
 
 class AudioQuestionViewController: QuestionViewController, AVAudioPlayerDelegate {
 
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var questionText: UITextView!
     @IBOutlet weak var musicSlider: UISlider!
     
@@ -21,11 +20,11 @@ class AudioQuestionViewController: QuestionViewController, AVAudioPlayerDelegate
     private var isPlaying = false
     
     @IBAction func playMusic(sender: AnyObject) {
-        spinner.startAnimating()
+        parent.loadingData = true
         let audio = dataObject
         let audioFile = audio?["data"] as? PFFile
         audioFile?.getDataInBackgroundWithBlock({ (audio: NSData?, error: NSError?) -> Void in
-            self.spinner.stopAnimating()
+            self.parent.loadingData = false
             if audio != nil {
                 do {
                     self.audioPlayer = try AVAudioPlayer(data: audio!)

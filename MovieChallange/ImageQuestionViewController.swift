@@ -25,7 +25,6 @@ class ImageQuestionViewController: QuestionViewController, UIScrollViewDelegate 
         return imageView
     }
     
-    @IBOutlet weak var spinner: UIActivityIndicatorView!
     private var imageView = UIImageView()
     
     private var image: UIImage? {
@@ -45,9 +44,9 @@ class ImageQuestionViewController: QuestionViewController, UIScrollViewDelegate 
         scrollView.addSubview(imageView)
         if let data = dataObject{
             if let file = data["data"] as? PFFile{
-                spinner.startAnimating()
+                parent.loadingData = true
                 file.getDataInBackgroundWithBlock({(imageData: NSData?, error: NSError?) -> Void in
-                    self.spinner.stopAnimating()
+                    self.parent.loadingData = false
                     if let imgData = imageData {
                         self.image = UIImage(data: imgData)
                     }

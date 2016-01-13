@@ -22,6 +22,17 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
     @IBOutlet weak var pagerView: UIView!
     @IBOutlet weak var pagerControls: UIPageControl!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    var loadingData:Bool = false{
+        didSet{
+            print("loading \(loadingData)")
+            if loadingData{
+                spinner.startAnimating()
+            }else{
+                spinner.stopAnimating()
+            }
+            pageViewController.view.userInteractionEnabled = !loadingData
+        }
+    }
     
     private let vcIDforTypeID:[String:String] = [
         Types.INFO_ID   : "q_simple",
@@ -39,6 +50,12 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
         let minutes = String(format: "%02d", timeElapsed/60%60)
         let seconds = String(format: "%02d", timeElapsed%60)
         return "\(hours):\(minutes):\(seconds)"
+    }
+    
+    func timerTick(){
+        if !loadingData{
+            timeElapsed++
+        }
     }
     
     var pageViewController: UIPageViewController!
@@ -62,6 +79,8 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
         let alertController = UIAlertController(title: "Finnished", message: "You have \(correctCounter)/\(questionViewControllers.count - unansweredCounter) answered correctly in \(timerLabel)", preferredStyle: .Alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) in
             // go to home
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("home")
+            self.presentViewController(vc!, animated: true, completion: nil)
         }))
         self.presentViewController(alertController, animated: true, completion: nil)
         
@@ -89,11 +108,6 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
         
     }
     
-    
-    func timerTick(){
-        timeElapsed++
-    }
-    
     func loadQuestionsViewControllers(withBlock callback: ()->()){
         questionViewControllers = []
         
@@ -108,6 +122,7 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
                         print(vc_id)
                         if let vc = self.storyboard?.instantiateViewControllerWithIdentifier(vc_id!) as? QuestionViewController{
                             vc.dataObject = question
+                            vc.parent = self
                             vc.onAnswer = {
                                 ()->() in
                                 print("answered")
