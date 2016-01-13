@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class MultyPlayerViewController: UIViewController {
 
@@ -33,8 +34,7 @@ class MultyPlayerViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
+        
     /*
     // MARK: - Navigation
 
