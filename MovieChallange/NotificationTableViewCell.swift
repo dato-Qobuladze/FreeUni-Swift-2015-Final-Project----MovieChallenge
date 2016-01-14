@@ -14,8 +14,9 @@ class NotificationTableViewCell: UITableViewCell {
     @IBOutlet weak var username: UILabel!
     
     @IBAction func play(sender: UIButton) {
-        
     }
+    
+    
     
     var object: PFObject?{
         didSet{
@@ -35,5 +36,7 @@ class NotificationTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
 
 }
