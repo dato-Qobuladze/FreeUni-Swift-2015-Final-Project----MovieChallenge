@@ -44,10 +44,15 @@ class NotificationsTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("notification_cell", forIndexPath: indexPath) as? NotificationTableViewCell
         cell?.object = data?[indexPath.row]
-        print("cell: \(cell)")
         // Configure the cell...
 
         return cell!
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let vc = storyboard?.instantiateViewControllerWithIdentifier("questions") as? QuestionsViewController
+        vc?.challenge = data?[indexPath.row]
+        presentViewController(vc!, animated: true, completion: nil)
     }
 
 

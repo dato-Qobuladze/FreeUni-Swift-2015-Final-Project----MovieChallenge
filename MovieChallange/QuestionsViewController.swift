@@ -65,6 +65,8 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
     
     var selectedFilm:String?
     var selectedQuest:String?
+    var challenge:PFObject?
+    private var questions: [PFObject]?
     
     @IBAction func submit(sender: UIButton) {
         timer.invalidate()
@@ -80,7 +82,32 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
             }
         }
         
-        let alertController = UIAlertController(title: "Finnished", message: "You have \(correctCounter)/\(questionViewControllers.count - unansweredCounter) answered correctly in \(timerLabel)", preferredStyle: .Alert)
+        let score = correctCounter*100 - timeElapsed
+        print(userObjects)
+        if let challengers = userObjects{
+            print("challengers")
+            for opponent in challengers{
+                let request = PFObject(className: "MultiplayHistory")
+                request["yourName"] = PFUser.currentUser()?.username
+                request["yourScore"] = score
+                request["opponentName"] = opponent["username"] as! String
+                let relation = request.relationForKey("questions")
+                for question in questions!{
+                    relation.addObject(question)
+                }
+                print("challenging \(opponent["username"])")
+                request.saveInBackground()
+            }
+        }
+        
+        if challenge != nil{
+            challenge!["opponentScore"] = score
+            challenge?.saveInBackground()
+            let updatedScore = PFUser.currentUser()!["score"] as? Int ?? 0 + score
+            PFUser.currentUser()!["score"] = updatedScore
+            PFUser.currentUser()?.saveInBackground()
+        }
+        let alertController = UIAlertController(title: "Finnished", message: "You have \(correctCounter)/\(questionViewControllers.count - unansweredCounter) answered correctly in \(timerLabel), Score: \(score)", preferredStyle: .Alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) in
             // go to home
             let vc = self.storyboard?.instantiateViewControllerWithIdentifier("home")
@@ -124,19 +151,12 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
     
     func loadQuestionsViewControllers(withBlock callback: ()->()){
         questionViewControllers = []
-        var params:[String:String]? = nil
-        if selectedFilm != nil && selectedQuest != nil{
-            params = [  "film":selectedFilm!,
-                        "quest":selectedQuest!]
-        }
-        print(params)
-        PFCloud.callFunctionInBackground("getQuestions", withParameters: params) { (result, error) -> Void in
-            if (error != nil){
-                print(error!)
-            }else{
-                if let questions = result as? [PFObject]{
+        if challenge != nil{
+            challenge?.relationForKey("questions").query().findObjectsInBackgroundWithBlock({ (result, error) -> Void in
+                if let questions = result{
                     print(questions.count)
                     for question in questions {
+                        self.questions = questions
                         let vc_id = self.vcIDforTypeID[question["type"].objectId!!]
                         print(vc_id)
                         if let vc = self.storyboard?.instantiateViewControllerWithIdentifier(vc_id!) as? QuestionViewController{
@@ -155,6 +175,42 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
                         }
                     }
                     callback()
+                }
+            })
+        }else{
+            var params:[String:String]? = nil
+            if selectedFilm != nil && selectedQuest != nil{
+                params = [  "film":selectedFilm!,
+                            "quest":selectedQuest!]
+            }
+            print(params)
+            PFCloud.callFunctionInBackground("getQuestions", withParameters: params) { (result, error) -> Void in
+                if (error != nil){
+                    print(error!)
+                }else{
+                    if let questions = result as? [PFObject]{
+                        self.questions = questions
+                        print(questions.count)
+                        for question in questions {
+                            let vc_id = self.vcIDforTypeID[question["type"].objectId!!]
+                            print(vc_id)
+                            if let vc = self.storyboard?.instantiateViewControllerWithIdentifier(vc_id!) as? QuestionViewController{
+                                vc.dataObject = question
+                                vc.parent = self
+                                vc.onAnswer = {
+                                    ()->() in
+                                    print("answered")
+                                    if let next = self.pageViewController(self.pageViewController, viewControllerAfterViewController: self.pageViewController.viewControllers![0]){
+                                        self.pageViewController.setViewControllers([next], direction: .Forward, animated: true, completion: nil)
+                                        self.pageViewController(self.pageViewController, didFinishAnimating: false, previousViewControllers: [], transitionCompleted: false)
+                                    }
+                                    
+                                }
+                                self.questionViewControllers.append(vc)
+                            }
+                        }
+                        callback()
+                    }
                 }
             }
         }
