@@ -95,7 +95,7 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
                 for question in questions!{
                     relation.addObject(question)
                 }
-                print("challenging \(opponent["username"])")
+
                 request.saveInBackground()
                 let updatedScore = (PFUser.currentUser()!["score"] as? Int ?? 0) + score
                 print("updated score: \(updatedScore)")
