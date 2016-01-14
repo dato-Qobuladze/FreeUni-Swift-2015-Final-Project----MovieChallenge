@@ -219,19 +219,9 @@
 		017664AF1C3FCCAC001E8740 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				0102DE951C3ED9CC00AEE1EA /* SignUpViewController.swift */,
-				24C0B0841C453A7C00B8E406 /* InfoQuestionViewController.swift */,
-				24C0B0861C453ABC00B8E406 /* QuestionViewController.swift */,
-				24F58B8D1C426ED7001AD8EB /* QuestionsViewController.swift */,
-				240AA0FB1C1D46D200CE21EB /* FirstViewController.swift */,
-				240AA0FD1C1D46D200CE21EB /* SecondViewController.swift */,
-				241B3C1D1C3EACC600D33237 /* SigninViewController.swift */,
-				017664BB1C40133C001E8740 /* AudioQuestionViewController.swift */,
-				485D09B21C416C000092B742 /* SettingsPopoverController.swift */,
-				014666901C416ACE00294575 /* ImageQuestionViewController.swift */,
-				485873751C440400000BE9F0 /* RatingViewController.swift */,
-				83098B951C44112000982FC4 /* MultyPlayerViewController.swift */,
-				4813DB151C4682E6009C2DFF /* HistoryCellViewController.swift */,
+				019057911C47EF3F00066D5C /* Login */,
+				019057921C47EF4F00066D5C /* Settings */,
+				019057931C47EF5800066D5C /* Game */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -301,6 +291,40 @@
 				0190576D1C47C98800066D5C /* upload.png */,
 			);
 			name = "App Icons";
+			sourceTree = "<group>";
+		};
+		019057911C47EF3F00066D5C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0102DE951C3ED9CC00AEE1EA /* SignUpViewController.swift */,
+				241B3C1D1C3EACC600D33237 /* SigninViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		019057921C47EF4F00066D5C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				240AA0FB1C1D46D200CE21EB /* FirstViewController.swift */,
+				240AA0FD1C1D46D200CE21EB /* SecondViewController.swift */,
+				485D09B21C416C000092B742 /* SettingsPopoverController.swift */,
+				485873751C440400000BE9F0 /* RatingViewController.swift */,
+				83098B951C44112000982FC4 /* MultyPlayerViewController.swift */,
+				4813DB151C4682E6009C2DFF /* HistoryCellViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		019057931C47EF5800066D5C /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				24C0B0841C453A7C00B8E406 /* InfoQuestionViewController.swift */,
+				24C0B0861C453ABC00B8E406 /* QuestionViewController.swift */,
+				24F58B8D1C426ED7001AD8EB /* QuestionsViewController.swift */,
+				017664BB1C40133C001E8740 /* AudioQuestionViewController.swift */,
+				014666901C416ACE00294575 /* ImageQuestionViewController.swift */,
+			);
+			name = Game;
 			sourceTree = "<group>";
 		};
 		01EE9BBD1C47B7D10008C786 /* Vectors */ = {
