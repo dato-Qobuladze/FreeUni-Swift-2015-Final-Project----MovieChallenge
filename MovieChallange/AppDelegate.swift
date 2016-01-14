@@ -26,11 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // [Optional] Track statistics around application opens.
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
-        /*if PFUser.currentUser() != nil{
+        if PFUser.currentUser() != nil{
             let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
             let home_vc = storyboard.instantiateViewControllerWithIdentifier("home")
             window?.rootViewController = home_vc
-        }*/
+        }
         
         return true
     }
