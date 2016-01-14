@@ -17,6 +17,8 @@ public class Types {
 }
 
 class QuestionsViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+    
+    var userObjects: [PFObject]?
 
     @IBOutlet weak var timer_lbl: UILabel!
     @IBOutlet weak var pagerView: UIView!

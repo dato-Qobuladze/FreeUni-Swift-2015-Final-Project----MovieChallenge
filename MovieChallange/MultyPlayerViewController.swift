@@ -176,26 +176,32 @@ class MultyPlayerViewController: UIViewController, UISearchBarDelegate {
             }
             
             count++
-            print(color)
-            print(UIColor(hexString: "#ffe700ff"))
+        }else{
+            let info =   "There is no player with name \"" + userName + "\""
+            let infoAlert = UIAlertController(title: nil, message: info, preferredStyle: .Alert)
+            infoAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            self.presentViewController(infoAlert, animated: true, completion: nil)
         }
         
 
         }
     
+    
+    
    /* @IBAction func singlePlay(sender: UIButton) {
-        let filmIndex = myPickerView.selectedRowInComponent(0)
-        let questIndex = SecondPicker.selectedRowInComponent(0)
         let vc = storyboard?.instantiateViewControllerWithIdentifier("questions") as? QuestionsViewController
-        vc?.selectedFilm = filmObjects?[filmIndex].objectId
-        vc?.selectedQuest = questObjects?[questIndex].objectId
-        print(filmObjects![filmIndex])
-        print(questObjects![questIndex])
+        vc?.selectedFilm = filmId
+        vc?.selectedQuest = questId
         presentViewController(vc!, animated: true, completion: nil)
         
     }*/
-
-        
+    
+    @IBAction func multyPlay(sender: UIButton) {
+        let vc = storyboard?.instantiateViewControllerWithIdentifier("questions") as? QuestionsViewController
+        vc?.selectedFilm = filmId
+        vc?.selectedQuest = questId
+        presentViewController(vc!, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
