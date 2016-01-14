@@ -91,11 +91,21 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
         super.viewDidLoad()
         spinner.startAnimating()
         loadQuestionsViewControllers(withBlock: {
-            self.pageViewController.setViewControllers([self.questionViewControllers[0]], direction: .Forward, animated: false, completion: nil)
-            
-            self.pagerControls.numberOfPages = self.questionViewControllers.count
-            self.spinner.stopAnimating()
-            self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "timerTick", userInfo: nil, repeats: true)
+            if self.questionViewControllers.count == 0{
+                let alertController = UIAlertController(title: "Sorry :(((", message: "There are no such questions", preferredStyle: .Alert)
+                alertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) in
+                    // go to home
+                    let vc = self.storyboard?.instantiateViewControllerWithIdentifier("home")
+                    self.presentViewController(vc!, animated: true, completion: nil)
+                }))
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }else{
+                self.pageViewController.setViewControllers([self.questionViewControllers[0]], direction: .Forward, animated: false, completion: nil)
+                
+                self.pagerControls.numberOfPages = self.questionViewControllers.count
+                self.spinner.stopAnimating()
+                self.timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "timerTick", userInfo: nil, repeats: true)
+            }
         })
         
         pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)

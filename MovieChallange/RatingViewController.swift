@@ -87,7 +87,9 @@ class RatingViewController: UITableViewController, UITextFieldDelegate  { // UIV
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! HistoryCellViewController
         
-
+        
+//        let userGameEntry = gamesEntry[indexPath.row]
+//        cell.data = userGameEntry
         
         return cell
     }
