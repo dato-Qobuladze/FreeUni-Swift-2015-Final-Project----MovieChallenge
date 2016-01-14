@@ -10,6 +10,14 @@
 		0102DE961C3ED9CC00AEE1EA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102DE951C3ED9CC00AEE1EA /* SignUpViewController.swift */; };
 		014666911C416ACF00294575 /* ImageQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014666901C416ACE00294575 /* ImageQuestionViewController.swift */; };
 		017664BC1C40133C001E8740 /* AudioQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017664BB1C40133C001E8740 /* AudioQuestionViewController.swift */; };
+		01EE9BF61C47B9330008C786 /* controller.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EE9BEE1C47B9330008C786 /* controller.png */; settings = {ASSET_TAGS = (); }; };
+		01EE9BF71C47B9330008C786 /* film20.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EE9BEF1C47B9330008C786 /* film20.png */; settings = {ASSET_TAGS = (); }; };
+		01EE9BF81C47B9330008C786 /* game9.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EE9BF01C47B9330008C786 /* game9.png */; settings = {ASSET_TAGS = (); }; };
+		01EE9BF91C47B9330008C786 /* maleuser.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EE9BF11C47B9330008C786 /* maleuser.png */; settings = {ASSET_TAGS = (); }; };
+		01EE9BFA1C47B9330008C786 /* movie47.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EE9BF21C47B9330008C786 /* movie47.png */; settings = {ASSET_TAGS = (); }; };
+		01EE9BFB1C47B9330008C786 /* puzzle9.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EE9BF31C47B9330008C786 /* puzzle9.png */; settings = {ASSET_TAGS = (); }; };
+		01EE9BFC1C47B9330008C786 /* video107.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EE9BF41C47B9330008C786 /* video107.png */; settings = {ASSET_TAGS = (); }; };
+		01EE9BFD1C47B9330008C786 /* video190.png in Resources */ = {isa = PBXBuildFile; fileRef = 01EE9BF51C47B9330008C786 /* video190.png */; settings = {ASSET_TAGS = (); }; };
 		240AA0FA1C1D46D200CE21EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240AA0F91C1D46D200CE21EB /* AppDelegate.swift */; };
 		240AA0FC1C1D46D200CE21EB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240AA0FB1C1D46D200CE21EB /* FirstViewController.swift */; };
 		240AA0FE1C1D46D200CE21EB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240AA0FD1C1D46D200CE21EB /* SecondViewController.swift */; };
@@ -57,6 +65,14 @@
 		014666901C416ACE00294575 /* ImageQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageQuestionViewController.swift; sourceTree = "<group>"; };
 		017664B71C40108A001E8740 /* Interstellar Soundtrack - Docking Scene.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Interstellar Soundtrack - Docking Scene.mp3"; sourceTree = "<group>"; };
 		017664BB1C40133C001E8740 /* AudioQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioQuestionViewController.swift; sourceTree = "<group>"; };
+		01EE9BEE1C47B9330008C786 /* controller.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controller.png; sourceTree = "<group>"; };
+		01EE9BEF1C47B9330008C786 /* film20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = film20.png; sourceTree = "<group>"; };
+		01EE9BF01C47B9330008C786 /* game9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game9.png; sourceTree = "<group>"; };
+		01EE9BF11C47B9330008C786 /* maleuser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maleuser.png; sourceTree = "<group>"; };
+		01EE9BF21C47B9330008C786 /* movie47.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movie47.png; sourceTree = "<group>"; };
+		01EE9BF31C47B9330008C786 /* puzzle9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = puzzle9.png; sourceTree = "<group>"; };
+		01EE9BF41C47B9330008C786 /* video107.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video107.png; sourceTree = "<group>"; };
+		01EE9BF51C47B9330008C786 /* video190.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video190.png; sourceTree = "<group>"; };
 		07A008B3A37830813AB510C3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		240AA0F61C1D46D100CE21EB /* MovieChallange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieChallange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		240AA0F91C1D46D200CE21EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +188,21 @@
 			name = Backgrounds;
 			sourceTree = "<group>";
 		};
+		01EE9BBD1C47B7D10008C786 /* Vectors */ = {
+			isa = PBXGroup;
+			children = (
+				01EE9BEE1C47B9330008C786 /* controller.png */,
+				01EE9BEF1C47B9330008C786 /* film20.png */,
+				01EE9BF01C47B9330008C786 /* game9.png */,
+				01EE9BF11C47B9330008C786 /* maleuser.png */,
+				01EE9BF21C47B9330008C786 /* movie47.png */,
+				01EE9BF31C47B9330008C786 /* puzzle9.png */,
+				01EE9BF41C47B9330008C786 /* video107.png */,
+				01EE9BF51C47B9330008C786 /* video190.png */,
+			);
+			name = Vectors;
+			sourceTree = "<group>";
+		};
 		240AA0ED1C1D46D100CE21EB = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +257,7 @@
 		241B3C1A1C3E8C1A00D33237 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				01EE9BBD1C47B7D10008C786 /* Vectors */,
 				017664B61C401067001E8740 /* Backgrounds */,
 				017664B51C401051001E8740 /* Music */,
 				483478971C3EBFA5005B2BD3 /* Profile Images */,
@@ -370,15 +402,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01EE9BF71C47B9330008C786 /* film20.png in Resources */,
 				4834789C1C3EBFBA005B2BD3 /* email19.png in Resources */,
 				240AA1061C1D46D200CE21EB /* LaunchScreen.storyboard in Resources */,
 				486354951C4020FB00786A12 /* closed.png in Resources */,
 				241B3C1C1C3E8C5E00D33237 /* screen.png in Resources */,
 				240AA1031C1D46D200CE21EB /* Assets.xcassets in Resources */,
 				4834789F1C3EBFBA005B2BD3 /* user168.png in Resources */,
+				01EE9BF81C47B9330008C786 /* game9.png in Resources */,
 				4834789D1C3EBFBA005B2BD3 /* rank2.png in Resources */,
+				01EE9BFA1C47B9330008C786 /* movie47.png in Resources */,
+				01EE9BF61C47B9330008C786 /* controller.png in Resources */,
+				01EE9BF91C47B9330008C786 /* maleuser.png in Resources */,
+				01EE9BFB1C47B9330008C786 /* puzzle9.png in Resources */,
 				4834789E1C3EBFBA005B2BD3 /* settings48.png in Resources */,
+				01EE9BFC1C47B9330008C786 /* video107.png in Resources */,
 				240AA1011C1D46D200CE21EB /* Main.storyboard in Resources */,
+				01EE9BFD1C47B9330008C786 /* video190.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

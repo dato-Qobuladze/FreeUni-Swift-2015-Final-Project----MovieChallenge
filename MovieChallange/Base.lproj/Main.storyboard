@@ -350,7 +350,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="settings48.png" translatesAutoresizingMaskIntoConstraints="NO" id="Mrm-2u-sOc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings48.png" translatesAutoresizingMaskIntoConstraints="NO" id="Mrm-2u-sOc">
                                 <rect key="frame" x="20" y="242" width="90" height="60"/>
                                 <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="20" y="188" width="40" height="40"/>
@@ -374,7 +374,7 @@
                                     <rect key="frame" x="20" y="380" width="91" height="41"/>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWa-Nf-kiH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWa-Nf-kiH">
                                 <rect key="frame" x="128" y="78" width="452" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -401,7 +401,7 @@
                                     <rect key="frame" x="216" y="97" width="100" height="20"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1d-zW-FK0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1d-zW-FK0">
                                 <rect key="frame" x="128" y="28" width="452" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="F1X-Nb-FUQ"/>
@@ -431,7 +431,7 @@
                                     <rect key="frame" x="221" y="28" width="159" height="75"/>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="rank2.png" translatesAutoresizingMaskIntoConstraints="NO" id="11j-nm-pjH">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rank2.png" translatesAutoresizingMaskIntoConstraints="NO" id="11j-nm-pjH">
                                 <rect key="frame" x="20" y="310" width="90" height="60"/>
                                 <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="20" y="236" width="40" height="40"/>
@@ -455,7 +455,7 @@
                                     <rect key="frame" x="20" y="457" width="91" height="151"/>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="user168.png" translatesAutoresizingMaskIntoConstraints="NO" id="mdq-sA-Y2P">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user168.png" translatesAutoresizingMaskIntoConstraints="NO" id="mdq-sA-Y2P">
                                 <rect key="frame" x="20" y="28" width="100" height="100"/>
                                 <accessibility key="accessibilityConfiguration" identifier="profileImage"/>
                                 <gestureRecognizers/>
@@ -485,7 +485,7 @@
                                     <rect key="frame" x="20" y="28" width="100" height="277"/>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJ5-Kt-55g">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJ5-Kt-55g">
                                 <rect key="frame" x="110" y="174" width="470" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="vdC-q3-Nkp"/>
@@ -520,7 +520,7 @@
                                     <rect key="frame" x="119" y="187" width="84" height="133"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUi-kd-uyd">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUi-kd-uyd">
                                 <rect key="frame" x="20" y="136" width="560" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="L3e-d0-aCn"/>
@@ -530,7 +530,7 @@
                                     <action selector="changeProfileImage:" destination="oU7-UT-9Mj" eventType="touchUpInside" id="Gw1-ZV-JJP"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="email19.png" translatesAutoresizingMaskIntoConstraints="NO" id="8P6-nn-xs9">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email19.png" translatesAutoresizingMaskIntoConstraints="NO" id="8P6-nn-xs9">
                                 <rect key="frame" x="20" y="174" width="90" height="60"/>
                                 <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="20" y="140" width="40" height="40"/>
@@ -554,7 +554,7 @@
                                     <rect key="frame" x="20" y="187" width="69" height="184"/>
                                 </variation>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cv3-Tb-tTj">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cv3-Tb-tTj">
                                 <rect key="frame" x="110" y="242" width="470" height="60"/>
                                 <state key="normal" title="Settings"/>
                                 <connections>
@@ -564,7 +564,7 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXD-6J-nsf">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXD-6J-nsf">
                                 <rect key="frame" x="110" y="310" width="470" height="60"/>
                                 <state key="normal" title="History"/>
                                 <connections>
@@ -651,7 +651,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="second" id="XRD-qf-rdt"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="maleuser.png" id="XRD-qf-rdt"/>
                     <connections>
                         <outlet property="mailLabel" destination="wJ5-Kt-55g" id="zJ8-Yj-n8O"/>
                         <outlet property="profileImage" destination="mdq-sA-Y2P" id="Vpz-bk-Oks"/>
@@ -1289,7 +1289,7 @@
             </objects>
             <point key="canvasLocation" x="2250" y="340"/>
         </scene>
-        <!--First-->
+        <!--Game-->
         <scene sceneID="vd7-mY-1v5">
             <objects>
                 <viewController id="FYw-TN-CBD" customClass="FirstViewController" customModule="MovieChallange" customModuleProvider="target" sceneMemberID="viewController">
@@ -1301,13 +1301,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" misplaced="YES" text="Films" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHI-Er-Pmg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Films" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHI-Er-Pmg">
                                 <rect key="frame" x="20" y="20" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="center" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zfP-ja-fw7">
+                            <pickerView contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="zfP-ja-fw7">
                                 <rect key="frame" x="20" y="41" width="560" height="207"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="95" id="JC7-lo-C2e"/>
@@ -1323,7 +1323,7 @@
                                     <outlet property="dataSource" destination="FYw-TN-CBD" id="YA5-Pt-wrh"/>
                                 </connections>
                             </pickerView>
-                            <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="749" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SGw-mH-qtT">
+                            <pickerView contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="SGw-mH-qtT">
                                 <rect key="frame" x="20" y="269" width="560" height="206"/>
                                 <connections>
                                     <outlet property="dataSource" destination="FYw-TN-CBD" id="FU9-ll-9Is"/>
@@ -1336,7 +1336,7 @@
                                     <action selector="singlePlay:" destination="FYw-TN-CBD" eventType="touchUpInside" id="4Rt-If-qYc"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Quest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5C-Zp-VME">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5C-Zp-VME">
                                 <rect key="frame" x="20" y="248" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1351,7 +1351,7 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kNZ-VJ-fvO">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="kNZ-VJ-fvO">
                                 <rect key="frame" x="20" y="20" width="560" height="531"/>
                             </activityIndicatorView>
                         </subviews>
@@ -1393,7 +1393,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="opN-sR-agc"/>
+                    <tabBarItem key="tabBarItem" title="Game" image="movie47.png" id="opN-sR-agc"/>
                     <connections>
                         <outlet property="SecondPicker" destination="SGw-mH-qtT" id="M4z-9S-Iez"/>
                         <outlet property="Spinner" destination="kNZ-VJ-fvO" id="3J8-FK-b6P"/>
@@ -1677,9 +1677,9 @@
     <resources>
         <image name="closed.png" width="64" height="64"/>
         <image name="email19.png" width="64" height="64"/>
-        <image name="first" width="30" height="30"/>
+        <image name="maleuser.png" width="32" height="32"/>
+        <image name="movie47.png" width="32" height="32"/>
         <image name="rank2.png" width="64" height="64"/>
-        <image name="second" width="30" height="30"/>
         <image name="settings48.png" width="64" height="64"/>
         <image name="user168.png" width="64" height="64"/>
     </resources>
