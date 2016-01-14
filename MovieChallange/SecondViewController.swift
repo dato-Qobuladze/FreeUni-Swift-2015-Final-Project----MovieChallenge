@@ -123,8 +123,8 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
             let userName = user.objectForKey(ParseColumn.Username.rawValue) as! String
             let userEmail = user.objectForKey(ParseColumn.userEmail.rawValue) as! String
             let currentScore = user.objectForKey(ParseColumn.UserScore.rawValue) as! Double
-            let colorHex = user.objectForKey(ParseColumn.UserColor.rawValue) as! String
-        
+            var colorHex = user.objectForKey(ParseColumn.UserColor.rawValue) as! String
+            colorHex = colorHex + "ff"
             usernameLabel.text = userName
             usernameLabel.textColor = UIColor(hexString: colorHex)
             mailLabel.text = userEmail
