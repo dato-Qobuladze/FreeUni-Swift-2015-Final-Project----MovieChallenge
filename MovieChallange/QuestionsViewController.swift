@@ -66,6 +66,7 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
     var selectedFilm:String?
     var selectedQuest:String?
     var challenge:PFObject?
+    private var questions: [PFObject]?
     
     @IBAction func submit(sender: UIButton) {
         timer.invalidate()
@@ -81,7 +82,23 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
             }
         }
         
-        let score = correctCounter*10 + Int(1000/timeElapsed)
+        let score = correctCounter*100 - timeElapsed
+        print(userObjects)
+        if let challengers = userObjects{
+            print("challengers")
+            for opponent in challengers{
+                let request = PFObject(className: "MultiplayHistory")
+                request["yourName"] = PFUser.currentUser()?.username
+                request["yourScore"] = score
+                request["opponentName"] = opponent["username"] as! String
+                let relation = request.relationForKey("questions")
+                for question in questions!{
+                    relation.addObject(question)
+                }
+                print("challenging \(opponent["username"])")
+                request.saveInBackground()
+            }
+        }
         
         if challenge != nil{
             challenge!["opponentScore"] = score
@@ -139,6 +156,7 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
                 if let questions = result{
                     print(questions.count)
                     for question in questions {
+                        self.questions = questions
                         let vc_id = self.vcIDforTypeID[question["type"].objectId!!]
                         print(vc_id)
                         if let vc = self.storyboard?.instantiateViewControllerWithIdentifier(vc_id!) as? QuestionViewController{
@@ -171,6 +189,7 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
                     print(error!)
                 }else{
                     if let questions = result as? [PFObject]{
+                        self.questions = questions
                         print(questions.count)
                         for question in questions {
                             let vc_id = self.vcIDforTypeID[question["type"].objectId!!]
