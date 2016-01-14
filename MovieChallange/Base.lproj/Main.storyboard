@@ -591,21 +591,8 @@
                                 <animations/>
                                 <state key="normal" title="Log Out"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fj3-J6-gfl">
-                                <rect key="frame" x="550" y="28" width="30" height="50"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="T1m-GF-vER"/>
-                                </constraints>
-                                <state key="normal" title="0">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="notificationsAction:" destination="oU7-UT-9Mj" eventType="touchUpInside" id="gDc-zd-r2E"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1d-zW-FK0">
-                                <rect key="frame" x="128" y="28" width="414" height="50"/>
+                                <rect key="frame" x="128" y="28" width="394" height="50"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="F1X-Nb-FUQ"/>
@@ -635,6 +622,28 @@
                                     <rect key="frame" x="221" y="28" width="159" height="75"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fj3-J6-gfl">
+                                <rect key="frame" x="530" y="28" width="50" height="50"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Ael-WV-DgF"/>
+                                    <constraint firstAttribute="width" constant="50" id="T1m-GF-vER"/>
+                                </constraints>
+                                <state key="normal" title="0">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="T1m-GF-vER"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="notificationsAction:" destination="oU7-UT-9Mj" eventType="touchUpInside" id="gDc-zd-r2E"/>
+                                    <segue destination="3iY-zS-zHc" kind="popoverPresentation" popoverAnchorView="fj3-J6-gfl" id="IvK-yH-cxV">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -1050,6 +1059,76 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YmD-j9-wcR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1415" y="-394"/>
+        </scene>
+        <!--Notifications Table View Controller-->
+        <scene sceneID="UR3-jo-GVk">
+            <objects>
+                <tableViewController id="3iY-zS-zHc" customClass="NotificationsTableViewController" customModule="MovieChallange" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="pQ3-Mf-XPk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jNF-ud-hsw" customClass="NotificationTableViewCell" customModule="MovieChallange" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jNF-ud-hsw" id="fUF-Rs-3Qs">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="notification_cell" id="rU0-0u-U52" customClass="NotificationTableViewCell" customModule="MovieChallange" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rU0-0u-U52" id="rl2-Xu-7sA">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27t-oV-jsp">
+                                            <rect key="frame" x="8" y="8" width="546" height="27"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmF-Fy-lpZ">
+                                            <rect key="frame" x="562" y="8" width="30" height="27"/>
+                                            <animations/>
+                                            <state key="normal" title="Play"/>
+                                            <connections>
+                                                <action selector="play:" destination="rU0-0u-U52" eventType="touchUpInside" id="KLz-G1-L8T"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="gmF-Fy-lpZ" firstAttribute="leading" secondItem="27t-oV-jsp" secondAttribute="trailing" constant="8" symbolic="YES" id="437-XR-5SM"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="27t-oV-jsp" secondAttribute="leading" id="6EL-Ff-XnY"/>
+                                        <constraint firstItem="27t-oV-jsp" firstAttribute="top" secondItem="gmF-Fy-lpZ" secondAttribute="top" id="VnL-zl-eUh"/>
+                                        <constraint firstItem="27t-oV-jsp" firstAttribute="bottom" secondItem="gmF-Fy-lpZ" secondAttribute="bottom" id="bT5-d3-JcO"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="gmF-Fy-lpZ" secondAttribute="bottom" id="qHv-9p-l6m"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="gmF-Fy-lpZ" secondAttribute="trailing" id="r4S-13-3yw"/>
+                                        <constraint firstItem="gmF-Fy-lpZ" firstAttribute="top" secondItem="rl2-Xu-7sA" secondAttribute="topMargin" id="uXf-Qq-334"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="username" destination="27t-oV-jsp" id="oBe-ce-5D4"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3iY-zS-zHc" id="4oW-gw-be2"/>
+                            <outlet property="delegate" destination="3iY-zS-zHc" id="hTV-ST-ntV"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4bJ-be-E7T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-178" y="1355"/>
         </scene>
         <!--Rating View Controller-->
         <scene sceneID="By9-Gw-kVf">

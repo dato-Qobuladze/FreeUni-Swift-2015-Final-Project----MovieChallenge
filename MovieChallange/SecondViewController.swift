@@ -21,6 +21,13 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
     @IBOutlet weak var mailLabel: UILabel!
     
     @IBOutlet weak var notificationsButton: UIButton!
+    var notifications: [PFObject]?{
+        didSet{
+            if notifications != nil{
+                notificationsButton.setTitle("\((notifications?.count)!)", forState: .Normal)
+            }
+        }
+    }
     
     
     @IBAction func settingsAction(sender: UIButton) {
@@ -65,6 +72,11 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
                 settingsControler.secondController = self
             }
             
+            if let notificationsTable = dest as? NotificationsTableViewController{
+                print("table")
+                notificationsTable.data = notifications
+            }
+            
         }
         
     }
@@ -85,9 +97,15 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
         if let user = PFUser.currentUser() {
             setUserProfileTexts(userObject: user)
             setUserProfileImage(userObject: user)
+            
+            let notificationsQuery = PFQuery(className: "MultiplayHistory")
+            notificationsQuery.whereKey("opponentName", equalTo: user.username!)
+            notificationsQuery.whereKeyDoesNotExist("opponentScore")
+            notificationsQuery.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+                self.notifications = objects
+            })
         }
         
-        let notificationsQuery = PFQuery(className: "MultiplayHistory")
 //        notificationsQuery
     }
     
