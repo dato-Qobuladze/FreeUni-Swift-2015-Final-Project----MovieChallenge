@@ -57,7 +57,8 @@ class MultyPlayerViewController: UIViewController, UISearchBarDelegate {
     
     var filmId: String?
     var questId: String?
-
+    var users = [PFObject]()
+    var userNames = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,11 +99,32 @@ class MultyPlayerViewController: UIViewController, UISearchBarDelegate {
         } catch  {
             print("Download film categories error")
         }
-        if (userObjects?.count > 0){
+        
+        if ((userObjects?.count)! > 0){
             print("shemovida")
+            
+            if(userNames.contains(userName)) {
+                let info =   "You have already added \"" + userName + "\"."
+                let infoAlert = UIAlertController(title: nil, message: info, preferredStyle: .Alert)
+                infoAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                self.presentViewController(infoAlert, animated: true, completion: nil)
+                return
+            }
+            
+            if((PFUser.currentUser()?.username)! == userName) {
+                let info =   "You can't add yourself."
+                let infoAlert = UIAlertController(title: nil, message: info, preferredStyle: .Alert)
+                infoAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                self.presentViewController(infoAlert, animated: true, completion: nil)
+                return
+            }
+            
             let colorStr = userObjects?[0]["color"] as? String
             let color = colorStr! + "ff"
-
+            if(count < 5){
+                users.append((userObjects?[0])!)
+                userNames.append(userName)
+            }
             if (count == 0){
                 userLabel1.textColor = UIColor(hexString: color)
                 userLabel1.text = userName
@@ -177,13 +199,14 @@ class MultyPlayerViewController: UIViewController, UISearchBarDelegate {
             
             count++
         }else{
-            let info =   "There is no player with name \"" + userName + "\""
+            let info =   "There is no player with name \"" + userName + "\"."
             let infoAlert = UIAlertController(title: nil, message: info, preferredStyle: .Alert)
             infoAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
             self.presentViewController(infoAlert, animated: true, completion: nil)
         }
         
-
+        
+        
         }
     
     
@@ -200,6 +223,7 @@ class MultyPlayerViewController: UIViewController, UISearchBarDelegate {
         let vc = storyboard?.instantiateViewControllerWithIdentifier("questions") as? QuestionsViewController
         vc?.selectedFilm = filmId
         vc?.selectedQuest = questId
+        vc?.userObjects = users
         presentViewController(vc!, animated: true, completion: nil)
     }
     /*
