@@ -42,6 +42,24 @@ class SigninViewController: UIViewController {
         }
     }
     
+    @IBAction func forgotPassword(sender: AnyObject) {
+        let alertController = UIAlertController(title: "Reset Password", message: nil, preferredStyle: .Alert)
+        alertController.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
+            textField.placeholder = "Email"
+            textField.keyboardType = .EmailAddress
+        })
+        alertController.addAction(UIAlertAction(title: "Reset", style: .Default, handler: { (action) in
+            let email = alertController.textFields?[0].text
+            PFUser.requestPasswordResetForEmailInBackground(email!, block: { (sent, error) -> Void in
+                let info = sent ? "Reset link is sent to your mail" : "Wrong email address"
+                let infoAlert = UIAlertController(title: nil, message: info, preferredStyle: .Alert)
+                infoAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                self.presentViewController(infoAlert, animated: true, completion: nil)
+            })
+        }))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         username.becomeFirstResponder()
     }
