@@ -28,18 +28,34 @@ class QuestionViewController: UIViewController {
         if (sender.isEqual(a)) {
             print("shemovida a chemisa")
             isCorrect = (correct == 0)
+            a.backgroundColor = UIColor.lightGrayColor()
+            b.backgroundColor = nil
+            c.backgroundColor = nil
+            d.backgroundColor = nil
         }
         if (sender.isEqual(b)) {
             print("shemovida b chemisa")
             isCorrect = (correct == 1)
+            b.backgroundColor = UIColor.lightGrayColor()
+            a.backgroundColor = nil
+            c.backgroundColor = nil
+            d.backgroundColor = nil
         }
         if (sender.isEqual(c)) {
             print("shemovida c chemisa")
             isCorrect = (correct == 2)
+            c.backgroundColor = UIColor.lightGrayColor()
+            a.backgroundColor = nil
+            b.backgroundColor = nil
+            d.backgroundColor = nil
         }
         if (sender.isEqual(d)) {
             print("shemovida d chemisa")
             isCorrect = (correct == 3)
+            d.backgroundColor = UIColor.lightGrayColor()
+            a.backgroundColor = nil
+            b.backgroundColor = nil
+            c.backgroundColor = nil
         }
         onAnswer?()
         print(isCorrect)
@@ -47,6 +63,10 @@ class QuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        a.layer.cornerRadius = 5
+        b.layer.cornerRadius = 5
+        c.layer.cornerRadius = 5
+        d.layer.cornerRadius = 5
         
         if let question = dataObject{
             var answers = [ question["a"] as! String,
