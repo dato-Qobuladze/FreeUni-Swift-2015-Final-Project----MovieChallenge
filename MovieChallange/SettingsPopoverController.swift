@@ -25,6 +25,7 @@ class SettingsPopoverController: UIViewController {
     
     @IBOutlet weak var confirmPasswordField: UITextField!
     
+    var secondController : SecondViewController!
     
     @IBAction func passwordFieldAction(sender: UITextField) {
     }
@@ -136,11 +137,15 @@ class SettingsPopoverController: UIViewController {
             
             user.saveInBackgroundWithBlock({ (isSave, error) -> Void in
                 if error != nil {
+                    
                     print("mE")
 //                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
 //                        self.showAlertWithMessage(Messages.usedEmail.rawValue, style: UIAlertActionStyle.Cancel, handlerTitle: "Cancel")
 //                    })
                     
+                }
+                else {
+                    self.secondController.mailLabel.text = newEmail
                 }
                 
             })
