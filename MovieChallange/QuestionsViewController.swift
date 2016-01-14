@@ -97,13 +97,18 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
                 }
                 print("challenging \(opponent["username"])")
                 request.saveInBackground()
+                let updatedScore = (PFUser.currentUser()!["score"] as? Int ?? 0) + score
+                print("updated score: \(updatedScore)")
+                PFUser.currentUser()!["score"] = updatedScore
+                PFUser.currentUser()?.saveInBackground()
+
             }
         }
         
         if challenge != nil{
             challenge!["opponentScore"] = score
             challenge?.saveInBackground()
-            let updatedScore = PFUser.currentUser()!["score"] as? Int ?? 0 + score
+            let updatedScore = (PFUser.currentUser()!["score"] as? Int ?? 0) + score
             PFUser.currentUser()!["score"] = updatedScore
             PFUser.currentUser()?.saveInBackground()
         }

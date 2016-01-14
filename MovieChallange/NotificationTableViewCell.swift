@@ -21,7 +21,7 @@ class NotificationTableViewCell: UITableViewCell {
     var object: PFObject?{
         didSet{
             if object != nil && username != nil{
-                username.text = object!["opponentName"] as? String ?? ""
+                username.text = object!["yourName"] as? String ?? ""
             }
         }
     }
