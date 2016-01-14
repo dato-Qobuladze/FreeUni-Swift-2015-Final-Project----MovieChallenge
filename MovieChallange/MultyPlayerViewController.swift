@@ -176,6 +176,7 @@ class MultyPlayerViewController: UIViewController, UISearchBarDelegate {
                             self.userImageView4.hidden = false
                         }
                     })
+                    
                 }
             }
             if (count == 4){
