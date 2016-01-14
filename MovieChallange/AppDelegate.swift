@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // [Optional] Track statistics around application opens.
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
-        
+        PFUser.enableRevocableSessionInBackground()
         if PFUser.currentUser() != nil{
             let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
             let home_vc = storyboard.instantiateViewControllerWithIdentifier("home")
