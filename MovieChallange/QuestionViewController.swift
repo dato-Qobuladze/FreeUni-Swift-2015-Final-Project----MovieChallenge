@@ -63,17 +63,19 @@ class QuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view.
         a.layer.cornerRadius = 5
         b.layer.cornerRadius = 5
         c.layer.cornerRadius = 5
         d.layer.cornerRadius = 5
         
         if let question = dataObject{
-            var answers = [ question["a"] as! String,
-                            question["b"] as! String,
-                            question["c"] as! String,
-                            question["d"] as! String
-                            ]
+            var answers = [
+                question["a"] as! String,
+                question["b"] as! String,
+                question["c"] as! String,
+                question["d"] as! String
+            ]
             
             let randIndex = Int(arc4random_uniform(4))
             correct = randIndex
@@ -81,14 +83,11 @@ class QuestionViewController: UIViewController {
                 swap(&answers[0], &answers[randIndex])
             }
             
-            
             a.setTitle(titleFor("A", withAnswer: answers[0]), forState: .Normal)
             b.setTitle(titleFor("B", withAnswer: answers[1]), forState: .Normal)
             c.setTitle(titleFor("C", withAnswer: answers[2]), forState: .Normal)
             d.setTitle(titleFor("D", withAnswer: answers[3]), forState: .Normal)
         }
-
-        // Do any additional setup after loading the view.
     }
     
     private func titleFor(button: String, withAnswer: String) -> String{
@@ -99,16 +98,5 @@ class QuestionViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
