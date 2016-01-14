@@ -46,12 +46,31 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
 //        
 //    }
     
+    
+    
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        profileImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        
+        if let user = PFUser.currentUser() {
+            let imageData = UIImageJPEGRepresentation(profileImage.image!, 1)
+            let file = PFFile(data: imageData!)
+            user.setObject(file!, forKey: "profileImage")
+        }
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func ratingAction(sender: UIButton) {
+    }
+    
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let dest = segue.destinationViewController
         if let popoverController = dest.popoverPresentationController
         {
             popoverController.delegate = self
-                        
+            
         }
         
     }
@@ -62,24 +81,10 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
     }
     
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        profileImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        self.dismissViewControllerAnimated(true, completion: nil)
-        
-        
-    }
-    
-    @IBAction func ratingAction(sender: UIButton) {
-    }
-    
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        
-        popoverStartPoint = calculateStartPoint()
+//        popoverStartPoint = calculateStartPoint()
         
         if let user = PFUser.currentUser() {
             setUserProfileTexts(userObject: user)
@@ -91,12 +96,12 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
         if user.objectForKey("username") != nil {
             let userName = user.objectForKey("username") as! String
             let userEmail = user.objectForKey("email") as! String
-//            let currentScore = user.objectForKey("score") as! Double
+            let currentScore = user.objectForKey("score") as! Double
         
         
             usernameLabel.text = userName
             mailLabel.text = userEmail
-//            scoreLabel.text = String(currentScore)
+            scoreLabel.text = String(currentScore)
             // appropriate color
         }
     }
