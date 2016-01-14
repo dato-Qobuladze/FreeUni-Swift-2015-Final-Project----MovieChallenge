@@ -30,6 +30,15 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
     }
     
     
+    @IBAction func logOut(sender: UIButton) {
+        PFUser.logOut()
+        let currentUser = PFUser.currentUser()
+        if (currentUser == nil) {
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("entry")
+            self.presentViewController(vc!, animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func settingsAction(sender: UIButton) {
 //        self.performSegueWithIdentifier("settingsPopover", sender: self)
     }

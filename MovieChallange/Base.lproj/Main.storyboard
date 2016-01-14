@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pUH-0z-j4u">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pUH-0z-j4u">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -353,7 +353,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Nac-GF-RCR">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pUH-0z-j4u" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="entry" automaticallyAdjustsScrollViewInsets="NO" id="pUH-0z-j4u" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="47y-Mt-SIq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -586,11 +586,6 @@
                                     </segue>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3R-Vl-3gp">
-                                <rect key="frame" x="128" y="130" width="452" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Log Out"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1d-zW-FK0">
                                 <rect key="frame" x="128" y="28" width="394" height="50"/>
                                 <animations/>
@@ -642,6 +637,14 @@
                                     <segue destination="3iY-zS-zHc" kind="popoverPresentation" popoverAnchorView="fj3-J6-gfl" id="IvK-yH-cxV">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3R-Vl-3gp">
+                                <rect key="frame" x="128" y="130" width="452" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOut:" destination="oU7-UT-9Mj" eventType="touchUpInside" id="2Fv-a8-Gj1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -965,7 +968,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rG-Xh-S5b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="659" y="657"/>
+            <point key="canvasLocation" x="687" y="689"/>
         </scene>
         <!--Questions View Controller-->
         <scene sceneID="F8l-Sf-5E2">
@@ -1058,7 +1061,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YmD-j9-wcR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1415" y="-394"/>
+            <point key="canvasLocation" x="1359" y="-266"/>
         </scene>
         <!--Notifications Table View Controller-->
         <scene sceneID="UR3-jo-GVk">
@@ -1621,18 +1624,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user168.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yl6-EO-fxo">
-                                <rect key="frame" x="20" y="60" width="110" height="92"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Yl6-EO-fxo" secondAttribute="height" multiplier="1:1" id="4MM-EM-uEA"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="4MM-EM-uEA"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user168.png" translatesAutoresizingMaskIntoConstraints="NO" id="7pq-KO-AzF">
                                 <rect key="frame" x="20" y="160" width="110" height="93"/>
                                 <animations/>
@@ -1703,6 +1694,18 @@
                                     <action selector="multyPlay:" destination="YTC-z5-eqv" eventType="touchUpInside" id="JE7-Hs-zdO"/>
                                 </connections>
                             </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user168.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yl6-EO-fxo">
+                                <rect key="frame" x="20" y="60" width="110" height="92"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Yl6-EO-fxo" secondAttribute="height" multiplier="1:1" id="4MM-EM-uEA"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="4MM-EM-uEA"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
