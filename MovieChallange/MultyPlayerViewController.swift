@@ -86,6 +86,9 @@ class MultyPlayerViewController: UIViewController, UISearchBarDelegate {
                 userLabel5.hidden = false
                 
             }
+            if(count == 0){
+                playButton.hidden = false
+            }
             
             count++
             print(color)
