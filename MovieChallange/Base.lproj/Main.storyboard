@@ -103,6 +103,14 @@
                                 <rect key="frame" x="20" y="72" width="560" height="520"/>
                                 <animations/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HrE-xq-w08">
+                                <rect key="frame" x="150" y="262" width="300" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Forgot Password"/>
+                                <connections>
+                                    <action selector="forgotPassword:" destination="bXX-px-Dls" eventType="touchUpInside" id="KJV-0K-SaJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -117,7 +125,9 @@
                             <constraint firstItem="qif-Uj-GKs" firstAttribute="top" secondItem="QDf-31-eSB" secondAttribute="bottom" constant="8" symbolic="YES" id="YOd-i3-jQy"/>
                             <constraint firstItem="obq-S2-RJ6" firstAttribute="top" secondItem="0PC-Xd-fJm" secondAttribute="bottom" constant="8" symbolic="YES" id="YX5-Jm-x6d"/>
                             <constraint firstItem="QDf-31-eSB" firstAttribute="top" secondItem="IcW-ca-Tx9" secondAttribute="bottom" constant="8" symbolic="YES" id="bww-Ht-qBa"/>
+                            <constraint firstItem="HrE-xq-w08" firstAttribute="top" secondItem="GzS-MY-TtE" secondAttribute="bottom" constant="8" id="gBY-Tn-ROL"/>
                             <constraint firstItem="hUy-ai-ebG" firstAttribute="trailing" secondItem="GzS-MY-TtE" secondAttribute="trailing" id="gUy-1j-iKx"/>
+                            <constraint firstItem="HrE-xq-w08" firstAttribute="trailing" secondItem="GzS-MY-TtE" secondAttribute="trailing" id="gxu-WH-2Cc"/>
                             <constraint firstItem="qif-Uj-GKs" firstAttribute="leading" secondItem="7e0-Mq-fWe" secondAttribute="leading" id="hNF-R6-UM7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0PC-Xd-fJm" secondAttribute="trailing" id="hy9-pd-zOs"/>
                             <constraint firstItem="0PC-Xd-fJm" firstAttribute="top" secondItem="IcW-ca-Tx9" secondAttribute="bottom" constant="8" symbolic="YES" id="iuH-9b-Oj3"/>
@@ -125,6 +135,7 @@
                             <constraint firstItem="7e0-Mq-fWe" firstAttribute="top" secondItem="qif-Uj-GKs" secondAttribute="bottom" constant="8" symbolic="YES" id="lPi-dy-4zJ"/>
                             <constraint firstItem="GzS-MY-TtE" firstAttribute="top" secondItem="hUy-ai-ebG" secondAttribute="bottom" constant="8" symbolic="YES" id="rrh-KM-HLg"/>
                             <constraint firstItem="0PC-Xd-fJm" firstAttribute="leading" secondItem="I0n-ye-4EA" secondAttribute="leadingMargin" id="vvw-UM-iXW"/>
+                            <constraint firstItem="HrE-xq-w08" firstAttribute="leading" secondItem="GzS-MY-TtE" secondAttribute="leading" id="zrm-1M-82n"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QHL-yK-c6K"/>
@@ -385,7 +396,7 @@
                                 <variation key="widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="20" y="264" width="40" height="40"/>
                                 </variation>
-                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="44" y="368" width="40" height="0.0"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
@@ -413,7 +424,7 @@
                                 <variation key="widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="128" y="67" width="652" height="50"/>
                                 </variation>
-                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="229" y="280" width="151" height="48"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
@@ -444,7 +455,7 @@
                                 <variation key="widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="128" y="28" width="652" height="39"/>
                                 </variation>
-                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="229" y="208" width="151" height="21"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
@@ -469,7 +480,7 @@
                                 <variation key="widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="20" y="312" width="40" height="40"/>
                                 </variation>
-                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="44" y="440" width="40" height="0.0"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
@@ -500,7 +511,7 @@
                                 <variation key="widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="20" y="28" width="100" height="89"/>
                                 </variation>
-                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="150" y="56" width="100" height="100"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
@@ -536,7 +547,7 @@
                                 <variation key="widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="79" y="216" width="701" height="40"/>
                                 </variation>
-                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="115" y="280" width="74" height="48"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
@@ -574,7 +585,7 @@
                                 <variation key="widthClass=regular" misplaced="YES">
                                     <rect key="frame" x="20" y="216" width="40" height="40"/>
                                 </variation>
-                                <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="44" y="272" width="40" height="64"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=regular" misplaced="YES">

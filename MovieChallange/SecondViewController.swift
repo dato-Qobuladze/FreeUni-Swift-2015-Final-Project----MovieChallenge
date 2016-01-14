@@ -82,7 +82,6 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
             let userEmail = user.objectForKey(ParseColumn.userEmail.rawValue) as! String
             let currentScore = user.objectForKey(ParseColumn.UserScore.rawValue) as! Double
         
-        
             usernameLabel.text = userName
             mailLabel.text = userEmail
             scoreLabel.text = "Score: " + String(currentScore)
@@ -108,8 +107,6 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
         // Dispose of any resources that can be recreated.
     }
 
-    
-    
     enum ParseColumn : String {
         case Username = "username"
         case userEmail = "email"
