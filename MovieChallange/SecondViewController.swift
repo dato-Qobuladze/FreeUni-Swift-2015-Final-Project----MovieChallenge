@@ -30,6 +30,9 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
     }
     
     
+    @IBAction func logOut(sender: UIButton) {
+    }
+    
     @IBAction func settingsAction(sender: UIButton) {
 //        self.performSegueWithIdentifier("settingsPopover", sender: self)
     }
