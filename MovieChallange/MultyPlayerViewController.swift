@@ -84,6 +84,9 @@ class MultyPlayerViewController: UIViewController, UISearchBarDelegate {
 
     var count  = 0
     
+    
+
+    
     func addLine(userName : String){
         var userObjects: [PFObject]?
         let query = PFQuery(className: "_User")
@@ -96,6 +99,14 @@ class MultyPlayerViewController: UIViewController, UISearchBarDelegate {
             print("Download film categories error")
         }
         if (userObjects?.count > 0){
+            /////////////////////////////////////////////////////////
+            //userImageView1
+        
+            
+                    
+            
+            
+            /////////////////////////////////////////////////////////
             print("shemovida")
             let colorStr = userObjects?[0]["color"] as? String
             let color = colorStr! + "ff"
@@ -104,29 +115,70 @@ class MultyPlayerViewController: UIViewController, UISearchBarDelegate {
                 userLabel1.textColor = UIColor(hexString: color)
                 userLabel1.text = userName
                 userLabel1.hidden = false
+                if let file = userObjects?[0]["data"] as? PFFile{
+                    file.getDataInBackgroundWithBlock({(imageData: NSData?, error: NSError?) -> Void in
+                        if let imgData = imageData {
+                           self.userImageView1.image = UIImage(data: imgData)
+                           self.userImageView1.hidden = false
+                        }
+                    })
+                }
                 
             }
             if (count == 1){
                 userLabel2.textColor = UIColor(hexString: color)
                 userLabel2.text = userName
                 userLabel2.hidden = false
+                if let file = userObjects?[0]["data"] as? PFFile{
+                    file.getDataInBackgroundWithBlock({(imageData: NSData?, error: NSError?) -> Void in
+                        if let imgData = imageData {
+                            self.userImageView2.image = UIImage(data: imgData)
+                            self.userImageView2.hidden = false
+                        }
+                    })
+                }
             }
             if (count == 2){
                 userLabel3.textColor = UIColor(hexString: color)
                 userLabel3.text = userName
                 userLabel3.hidden = false
+                if let file = userObjects?[0]["data"] as? PFFile{
+                    file.getDataInBackgroundWithBlock({(imageData: NSData?, error: NSError?) -> Void in
+                        if let imgData = imageData {
+                            self.userImageView3.image = UIImage(data: imgData)
+                            self.userImageView3.hidden = false
+                        }
+                    })
+                }
             }
             if (count == 3){
                 userLabel4.textColor = UIColor(hexString: color)
                 userLabel4.text = userName
                 userLabel4.hidden = false
+                if let file = userObjects?[0]["data"] as? PFFile{
+                    file.getDataInBackgroundWithBlock({(imageData: NSData?, error: NSError?) -> Void in
+                        if let imgData = imageData {
+                            self.userImageView4.image = UIImage(data: imgData)
+                            self.userImageView4.hidden = false
+                        }
+                    })
+                }
             }
             if (count == 4){
                 userLabel5.textColor = UIColor(hexString: color)
                 userLabel5.text = userName
                 userLabel5.hidden = false
+                if let file = userObjects?[0]["data"] as? PFFile{
+                    file.getDataInBackgroundWithBlock({(imageData: NSData?, error: NSError?) -> Void in
+                        if let imgData = imageData {
+                            self.userImageView5.image = UIImage(data: imgData)
+                            self.userImageView5.hidden = false
+                        }
+                    })
+                }
                 
             }
+            
             if(count == 0){
                 playButton.hidden = false
             }
