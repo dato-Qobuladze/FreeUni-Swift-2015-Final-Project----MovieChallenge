@@ -371,7 +371,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings48.png" translatesAutoresizingMaskIntoConstraints="NO" id="Mrm-2u-sOc">
-                                <rect key="frame" x="20" y="242" width="60" height="60"/>
+                                <rect key="frame" x="20" y="234" width="60" height="60"/>
                                 <animations/>
                                 <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="20" y="188" width="40" height="40"/>
@@ -455,7 +455,7 @@
                                 </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rank2.png" translatesAutoresizingMaskIntoConstraints="NO" id="11j-nm-pjH">
-                                <rect key="frame" x="20" y="310" width="60" height="60"/>
+                                <rect key="frame" x="20" y="302" width="60" height="60"/>
                                 <animations/>
                                 <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="20" y="236" width="40" height="40"/>
@@ -511,7 +511,7 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJ5-Kt-55g">
-                                <rect key="frame" x="80" y="174" width="500" height="60"/>
+                                <rect key="frame" x="80" y="166" width="500" height="60"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="vdC-q3-Nkp"/>
@@ -547,42 +547,16 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUi-kd-uyd">
-                                <rect key="frame" x="20" y="136" width="100" height="30"/>
+                                <rect key="frame" x="20" y="136" width="100" height="22"/>
                                 <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                 <state key="normal" title="Change profile image"/>
                                 <connections>
                                     <action selector="changeProfileImage:" destination="oU7-UT-9Mj" eventType="touchUpInside" id="Gw1-ZV-JJP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cv3-Tb-tTj">
-                                <rect key="frame" x="80" y="242" width="500" height="60"/>
-                                <animations/>
-                                <state key="normal" title="Settings"/>
-                                <connections>
-                                    <action selector="settingsAction:" destination="oU7-UT-9Mj" eventType="touchUpInside" id="8VN-IO-EMi"/>
-                                    <segue destination="TN1-B7-lc4" kind="popoverPresentation" identifier="settingsPopover" popoverAnchorView="cv3-Tb-tTj" id="tpa-9v-5ie">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXD-6J-nsf">
-                                <rect key="frame" x="80" y="310" width="500" height="60"/>
-                                <animations/>
-                                <state key="normal" title="History"/>
-                                <connections>
-                                    <action selector="ratingAction:" destination="oU7-UT-9Mj" eventType="touchUpInside" id="hhI-vh-qTG"/>
-                                    <segue destination="Yoh-pS-V68" kind="popoverPresentation" popoverAnchorView="JXD-6J-nsf" id="Cct-7O-uV0">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3R-Vl-3gp">
-                                <rect key="frame" x="128" y="136" width="452" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Log Out"/>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email19.png" translatesAutoresizingMaskIntoConstraints="NO" id="8P6-nn-xs9">
-                                <rect key="frame" x="20" y="174" width="60" height="60"/>
+                                <rect key="frame" x="20" y="166" width="60" height="60"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Ijt-fm-ncU"/>
@@ -610,6 +584,33 @@
                                     <rect key="frame" x="20" y="187" width="69" height="184"/>
                                 </variation>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cv3-Tb-tTj">
+                                <rect key="frame" x="80" y="234" width="500" height="60"/>
+                                <animations/>
+                                <state key="normal" title="Settings"/>
+                                <connections>
+                                    <action selector="settingsAction:" destination="oU7-UT-9Mj" eventType="touchUpInside" id="8VN-IO-EMi"/>
+                                    <segue destination="TN1-B7-lc4" kind="popoverPresentation" identifier="settingsPopover" popoverAnchorView="cv3-Tb-tTj" id="tpa-9v-5ie">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXD-6J-nsf">
+                                <rect key="frame" x="80" y="302" width="500" height="60"/>
+                                <animations/>
+                                <state key="normal" title="History"/>
+                                <connections>
+                                    <action selector="ratingAction:" destination="oU7-UT-9Mj" eventType="touchUpInside" id="hhI-vh-qTG"/>
+                                    <segue destination="Yoh-pS-V68" kind="popoverPresentation" popoverAnchorView="JXD-6J-nsf" id="Cct-7O-uV0">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3R-Vl-3gp">
+                                <rect key="frame" x="128" y="130" width="452" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Log Out"/>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
