@@ -75,7 +75,7 @@ class MultyPlayerViewController: UIViewController, UISearchBarDelegate {
             }
             if (count == 2){
                 userLabel3.text = userName
-                userLabel4.hidden = false
+                userLabel3.hidden = false
             }
             if (count == 3){
                 userLabel4.text = userName
