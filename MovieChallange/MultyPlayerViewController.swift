@@ -188,14 +188,20 @@ class MultyPlayerViewController: UIViewController, UISearchBarDelegate {
     
     
     
-    @IBAction func singlePlay(sender: UIButton) {
+   /* @IBAction func singlePlay(sender: UIButton) {
         let vc = storyboard?.instantiateViewControllerWithIdentifier("questions") as? QuestionsViewController
         vc?.selectedFilm = filmId
         vc?.selectedQuest = questId
         presentViewController(vc!, animated: true, completion: nil)
         
+    }*/
+    
+    @IBAction func multyPlay(sender: UIButton) {
+        let vc = storyboard?.instantiateViewControllerWithIdentifier("questions") as? QuestionsViewController
+        vc?.selectedFilm = filmId
+        vc?.selectedQuest = questId
+        presentViewController(vc!, animated: true, completion: nil)
     }
-        
     /*
     // MARK: - Navigation
 
