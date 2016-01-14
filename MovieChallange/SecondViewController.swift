@@ -12,11 +12,6 @@ import Parse
 class SecondViewController: UIViewController, UIPopoverPresentationControllerDelegate,
                             UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
-    var popoverStartPoint : CGPoint!
-    var settingsPopoverSize : CGSize {
-        return CGSize(width: 200, height: 200)
-    }
-    
     @IBOutlet weak var profileImage: UIImageView!
 
     @IBOutlet weak var usernameLabel: UILabel!
@@ -37,25 +32,16 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
         self.presentViewController(pickerController, animated: true, completion: nil)
     }
     
-//    @IBAction func longPressed(sender: UILongPressGestureRecognizer) {
-////        print(sender.view)
-////        
-////        if let targetView = sender.view as? UIImageView{
-////            print("click images")
-////        }
-//        
-//    }
-    
-    
-    
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         profileImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         
         if let user = PFUser.currentUser() {
-            let imageData = UIImageJPEGRepresentation(profileImage.image!, 1)
-            let file = PFFile(data: imageData!)
-            user.setObject(file!, forKey: "profileImage")
+            if let imageData = UIImageJPEGRepresentation(profileImage.image!, 1){
+                let file = PFFile(data: imageData)
+                user.setObject(file!, forKey: ParseColumn.UserImage.rawValue)
+                user.saveInBackground()
+            }
         }
         
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -84,8 +70,6 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        popoverStartPoint = calculateStartPoint()
-        
         if let user = PFUser.currentUser() {
             setUserProfileTexts(userObject: user)
             setUserProfileImage(userObject: user)
@@ -93,22 +77,22 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
     }
     
     func setUserProfileTexts(userObject user: PFUser) {
-        if user.objectForKey("username") != nil {
-            let userName = user.objectForKey("username") as! String
-            let userEmail = user.objectForKey("email") as! String
-            let currentScore = user.objectForKey("score") as! Double
+        if user.objectForKey(ParseColumn.Username.rawValue) != nil {
+            let userName = user.objectForKey(ParseColumn.Username.rawValue) as! String
+            let userEmail = user.objectForKey(ParseColumn.userEmail.rawValue) as! String
+            let currentScore = user.objectForKey(ParseColumn.UserScore.rawValue) as! Double
         
         
             usernameLabel.text = userName
             mailLabel.text = userEmail
-            scoreLabel.text = String(currentScore)
+            scoreLabel.text = "Score: " + String(currentScore)
             // appropriate color
         }
     }
     
     
     func setUserProfileImage(userObject user: PFUser){
-        if let imageFile = user.objectForKey("profileImage") as? PFFile {
+        if let imageFile = user.objectForKey(ParseColumn.UserImage.rawValue) as? PFFile {
             imageFile.getDataInBackgroundWithBlock({(imageData: NSData?, error: NSError?) -> Void in
                 if let imgData = imageData {
                     self.profileImage.image = UIImage(data: imgData)
@@ -117,21 +101,8 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
             })
         }
     }
-    
-    
-    
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        
-        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
-//        popoverStartPoint = calculateStartPoint()
-    }
-    
-    func calculateStartPoint() -> CGPoint {
-        
-        return  CGPoint(x: view.bounds.midX - settingsPopoverSize.width / 2,
-                        y: view.bounds.midY - settingsPopoverSize.height / 2)
-    }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -139,7 +110,12 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
 
     
     
-
+    enum ParseColumn : String {
+        case Username = "username"
+        case userEmail = "email"
+        case UserScore = "score"
+        case UserImage = "profileImage"
+    }
     
 }
 

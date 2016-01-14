@@ -43,10 +43,17 @@ class SigninViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+//        if PFUser.currentUser() != nil{
+//            goToHome()
+//        }else{
+            username.becomeFirstResponder()
+//        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         if PFUser.currentUser() != nil{
             goToHome()
-        }else{
-            username.becomeFirstResponder()
         }
     }
     
