@@ -27,10 +27,6 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBAction func singlePlay(sender: UIButton) {
         let filmIndex = myPickerView.selectedRowInComponent(0)
         let questIndex = SecondPicker.selectedRowInComponent(0)
-//        let filmStr = pickerData[filmIndex]
-//        let questStr = pickerData1[questIndex]
-//        print(filmStr)
-//        print(questStr)
         let vc = storyboard?.instantiateViewControllerWithIdentifier("questions") as? QuestionsViewController
         vc?.selectedFilm = filmObjects?[filmIndex].objectId
         vc?.selectedQuest = questObjects?[questIndex].objectId
@@ -113,10 +109,14 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let dest = segue.destinationViewController
+        let dest = segue.destinationViewController as! MultyPlayerViewController
         if let popoverController = dest.popoverPresentationController
         {
             popoverController.delegate = self
+            let filmIndex = myPickerView.selectedRowInComponent(0)
+            let questIndex = SecondPicker.selectedRowInComponent(0)
+            dest.filmId  = filmObjects?[filmIndex].objectId
+            dest.questId = questObjects?[questIndex].objectId
             
         }
         
