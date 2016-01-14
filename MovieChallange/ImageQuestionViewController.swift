@@ -33,7 +33,7 @@ class ImageQuestionViewController: QuestionViewController, UIScrollViewDelegate 
             imageView.image = newValue
             imageView.sizeToFit()
             scrollView?.contentSize = imageView.frame.size
-            scrollView.zoomToRect(imageView.frame, animated: true)
+            scrollView.zoomToRect(imageView.bounds, animated: true)
         }
     }
     
@@ -57,17 +57,19 @@ class ImageQuestionViewController: QuestionViewController, UIScrollViewDelegate 
     }
     
     override func viewDidAppear(animated: Bool) {
-        if let data = dataObject{
-            if let file = data["data"] as? PFFile{
-                parent.loadingData = true
-                file.getDataInBackgroundWithBlock({(imageData: NSData?, error: NSError?) -> Void in
-                    self.parent.loadingData = false
-                    if let imgData = imageData {
-                        self.image = UIImage(data: imgData)
-                    }
-                })
+        if self.image == nil{
+            if let data = dataObject{
+                if let file = data["data"] as? PFFile{
+                    parent.loadingData = true
+                    file.getDataInBackgroundWithBlock({(imageData: NSData?, error: NSError?) -> Void in
+                        self.parent.loadingData = false
+                        if let imgData = imageData {
+                            self.image = UIImage(data: imgData)
+                        }
+                    })
+                }
+                
             }
-            
         }
     }
 

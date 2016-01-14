@@ -24,8 +24,7 @@ class SigninViewController: UIViewController {
                 self.spinner.stopAnimating()
                 if user != nil {
                     // Do stuff after successful login.
-                    let vc = self.storyboard?.instantiateViewControllerWithIdentifier("home")
-                    self.presentViewController(vc!, animated: true, completion: nil)
+                    self.goToHome()
                 } else {
                     let alertController = UIAlertController(title: "Invalide Credentials", message: "Incorrect Username or Password", preferredStyle: .Alert)
                     alertController.addAction(UIAlertAction(title: "Retry", style: .Default, handler: { (action) in
@@ -44,6 +43,15 @@ class SigninViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        username.becomeFirstResponder()
+        if PFUser.currentUser() != nil{
+            goToHome()
+        }else{
+            username.becomeFirstResponder()
+        }
+    }
+    
+    private func goToHome(){
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("home")
+        self.presentViewController(vc!, animated: true, completion: nil)
     }
 }
