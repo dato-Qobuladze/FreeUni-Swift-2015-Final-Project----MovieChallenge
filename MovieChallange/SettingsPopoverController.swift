@@ -34,6 +34,7 @@ class SettingsPopoverController: UIViewController {
     }
     
     
+    var alert : UIAlertController!
     @IBOutlet weak var changeButton: UIButton!
     
     
@@ -98,19 +99,16 @@ class SettingsPopoverController: UIViewController {
                 
             }
         }
-//        else {
-//            showAlertWithMessage(Messages.emptyFieldMsg.rawValue,
-//                                    style: UIAlertActionStyle.Cancel, handlerTitle: "Cancel")
-//        }
     }
     
     func showAlertWithMessage(message: String, style: UIAlertActionStyle, handlerTitle: String){
         
-        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: handlerTitle, style: alertStyle, handler: { action in
-            switch action.style{
+            switch action.style {
             case .Default:
-                print("default")
+                
+                self.saveChanges()
                 self.dismissViewControllerAnimated(false, completion: nil) // close popover
                 
             case .Cancel:
@@ -128,11 +126,33 @@ class SettingsPopoverController: UIViewController {
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
+    func saveChanges(){
+        let newEmail = emailTextField.text!
+        let newPassword = passwordField.text!
+        
+        if let user = PFUser.currentUser() {
+            user.setObject(newEmail, forKey: "email")
+            user.setObject(newPassword, forKey: "password")
+            
+            user.saveInBackgroundWithBlock({ (isSave, error) -> Void in
+                if error != nil {
+                    print("mE")
+//                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+//                        self.showAlertWithMessage(Messages.usedEmail.rawValue, style: UIAlertActionStyle.Cancel, handlerTitle: "Cancel")
+//                    })
+                    
+                }
+                
+            })
+        }
+    }
+    
     enum Messages : String{
         case emailFieldMsg = "Do you want to change email?"
         case changePasswordMsg = "Do you want to change password?"
         case notSameFieldMsg = "There are not the same password and confirm password text."
         case emptyFieldMsg = "Please enter text in both fields: \n password and confirm password."
+        case usedEmail = "This email address is already exist. Please enter another."
     }
 
     /*
