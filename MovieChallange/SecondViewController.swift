@@ -20,11 +20,16 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
     
     @IBOutlet weak var mailLabel: UILabel!
     
+    @IBOutlet weak var notificationsButton: UIButton!
+    
     
     @IBAction func settingsAction(sender: UIButton) {
 //        self.performSegueWithIdentifier("settingsPopover", sender: self)
     }
     
+    @IBAction func notificationsAction(sender: AnyObject) {
+        
+    }
     @IBAction func changeProfileImage(sender: UIButton) {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
@@ -74,6 +79,9 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
             setUserProfileTexts(userObject: user)
             setUserProfileImage(userObject: user)
         }
+        
+        let notificationsQuery = PFQuery(className: "MultiplayHistory")
+//        notificationsQuery
     }
     
     func setUserProfileTexts(userObject user: PFUser) {
