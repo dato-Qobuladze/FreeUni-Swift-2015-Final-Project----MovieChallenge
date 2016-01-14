@@ -57,7 +57,8 @@ class MultyPlayerViewController: UIViewController, UISearchBarDelegate {
     
     var filmId: String?
     var questId: String?
-
+    var users = [PFObject]()
+    var userNames = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,11 +99,32 @@ class MultyPlayerViewController: UIViewController, UISearchBarDelegate {
         } catch  {
             print("Download film categories error")
         }
-        if (userObjects?.count > 0){
+        
+        if ((userObjects?.count)! > 0){
             print("shemovida")
+            
+            if(userNames.contains(userName)) {
+                let info =   "You have already added \"" + userName + "\"."
+                let infoAlert = UIAlertController(title: nil, message: info, preferredStyle: .Alert)
+                infoAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                self.presentViewController(infoAlert, animated: true, completion: nil)
+                return
+            }
+            
+            if((PFUser.currentUser()?.username)! == userName) {
+                let info =   "You can't add yourself."
+                let infoAlert = UIAlertController(title: nil, message: info, preferredStyle: .Alert)
+                infoAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                self.presentViewController(infoAlert, animated: true, completion: nil)
+                return
+            }
+            
             let colorStr = userObjects?[0]["color"] as? String
             let color = colorStr! + "ff"
-
+            if(count < 5){
+                users.append((userObjects?[0])!)
+                userNames.append(userName)
+            }
             if (count == 0){
                 userLabel1.textColor = UIColor(hexString: color)
                 userLabel1.text = userName
@@ -111,11 +133,11 @@ class MultyPlayerViewController: UIViewController, UISearchBarDelegate {
                     file.getDataInBackgroundWithBlock({(imageData: NSData?, error: NSError?) -> Void in
                         if let imgData = imageData {
                            self.userImageView1.image = UIImage(data: imgData)
-                           self.userImageView1.hidden = false
+                           
                         }
                     })
                 }
-                
+                self.userImageView1.hidden = false
             }
             if (count == 1){
                 userLabel2.textColor = UIColor(hexString: color)
@@ -125,10 +147,11 @@ class MultyPlayerViewController: UIViewController, UISearchBarDelegate {
                     file.getDataInBackgroundWithBlock({(imageData: NSData?, error: NSError?) -> Void in
                         if let imgData = imageData {
                             self.userImageView2.image = UIImage(data: imgData)
-                            self.userImageView2.hidden = false
+                            
                         }
                     })
                 }
+                self.userImageView2.hidden = false
             }
             if (count == 2){
                 userLabel3.textColor = UIColor(hexString: color)
@@ -138,10 +161,11 @@ class MultyPlayerViewController: UIViewController, UISearchBarDelegate {
                     file.getDataInBackgroundWithBlock({(imageData: NSData?, error: NSError?) -> Void in
                         if let imgData = imageData {
                             self.userImageView3.image = UIImage(data: imgData)
-                            self.userImageView3.hidden = false
+                            
                         }
                     })
                 }
+                self.userImageView3.hidden = false
             }
             if (count == 3){
                 userLabel4.textColor = UIColor(hexString: color)
@@ -151,10 +175,12 @@ class MultyPlayerViewController: UIViewController, UISearchBarDelegate {
                     file.getDataInBackgroundWithBlock({(imageData: NSData?, error: NSError?) -> Void in
                         if let imgData = imageData {
                             self.userImageView4.image = UIImage(data: imgData)
-                            self.userImageView4.hidden = false
+                            
                         }
                     })
+                    
                 }
+                self.userImageView4.hidden = false
             }
             if (count == 4){
                 userLabel5.textColor = UIColor(hexString: color)
@@ -164,11 +190,11 @@ class MultyPlayerViewController: UIViewController, UISearchBarDelegate {
                     file.getDataInBackgroundWithBlock({(imageData: NSData?, error: NSError?) -> Void in
                         if let imgData = imageData {
                             self.userImageView5.image = UIImage(data: imgData)
-                            self.userImageView5.hidden = false
-                        }
+                                                    }
                     })
                 }
-                
+                self.userImageView5.hidden = false
+
             }
             
             if(count == 0){
@@ -176,26 +202,34 @@ class MultyPlayerViewController: UIViewController, UISearchBarDelegate {
             }
             
             count++
-            print(color)
-            print(UIColor(hexString: "#ffe700ff"))
+        }else{
+            let info =   "There is no player with name \"" + userName + "\"."
+            let infoAlert = UIAlertController(title: nil, message: info, preferredStyle: .Alert)
+            infoAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            self.presentViewController(infoAlert, animated: true, completion: nil)
         }
         
-
+        
+        
         }
     
+    
+    
    /* @IBAction func singlePlay(sender: UIButton) {
-        let filmIndex = myPickerView.selectedRowInComponent(0)
-        let questIndex = SecondPicker.selectedRowInComponent(0)
         let vc = storyboard?.instantiateViewControllerWithIdentifier("questions") as? QuestionsViewController
-        vc?.selectedFilm = filmObjects?[filmIndex].objectId
-        vc?.selectedQuest = questObjects?[questIndex].objectId
-        print(filmObjects![filmIndex])
-        print(questObjects![questIndex])
+        vc?.selectedFilm = filmId
+        vc?.selectedQuest = questId
         presentViewController(vc!, animated: true, completion: nil)
         
     }*/
-
-        
+    
+    @IBAction func multyPlay(sender: UIButton) {
+        let vc = storyboard?.instantiateViewControllerWithIdentifier("questions") as? QuestionsViewController
+        vc?.selectedFilm = filmId
+        vc?.selectedQuest = questId
+        vc?.userObjects = users
+        presentViewController(vc!, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
