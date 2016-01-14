@@ -1013,7 +1013,7 @@
         <!--Rating View Controller-->
         <scene sceneID="By9-Gw-kVf">
             <objects>
-                <viewController modalPresentationStyle="formSheet" id="Sqi-bF-ugN" customClass="RatingViewController" customModule="MovieChallange" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="rating_multiplayer" modalPresentationStyle="formSheet" id="Sqi-bF-ugN" customClass="RatingViewController" customModule="MovieChallange" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BiK-QH-sf7"/>
                         <viewControllerLayoutGuide type="bottom" id="bQq-tX-Mfl"/>
