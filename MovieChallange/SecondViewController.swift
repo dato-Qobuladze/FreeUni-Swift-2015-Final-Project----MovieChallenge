@@ -34,7 +34,7 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
         PFUser.logOut()
         let currentUser = PFUser.currentUser()
         if (currentUser == nil) {
-            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("login")
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("entry")
             self.presentViewController(vc!, animated: true, completion: nil)
         }
     }
