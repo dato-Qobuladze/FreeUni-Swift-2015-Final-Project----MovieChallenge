@@ -20,10 +20,14 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
     
     @IBOutlet weak var mailLabel: UILabel!
     
+    var localSaves = NSUserDefaults()
     
     @IBAction func settingsAction(sender: UIButton) {
 //        self.performSegueWithIdentifier("settingsPopover", sender: self)
     }
+    
+    
+    
     
     @IBAction func changeProfileImage(sender: UIButton) {
         let pickerController = UIImagePickerController()
@@ -56,6 +60,9 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
         if let popoverController = dest.popoverPresentationController
         {
             popoverController.delegate = self
+            if let settingsControler = dest as? SettingsPopoverController {
+                settingsControler.secondController = self
+            }
             
         }
         
@@ -70,6 +77,10 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        localSaves.setBool(false, forKey: "isSetEmail")
+//        localSaves.setValue("", forKey: "newEmail")
+        
+        
         if let user = PFUser.currentUser() {
             setUserProfileTexts(userObject: user)
             setUserProfileImage(userObject: user)
@@ -81,11 +92,12 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
             let userName = user.objectForKey(ParseColumn.Username.rawValue) as! String
             let userEmail = user.objectForKey(ParseColumn.userEmail.rawValue) as! String
             let currentScore = user.objectForKey(ParseColumn.UserScore.rawValue) as! Double
+            let colorHex = user.objectForKey(ParseColumn.UserColor.rawValue) as! String
         
             usernameLabel.text = userName
+            usernameLabel.textColor = UIColor(hexString: colorHex)
             mailLabel.text = userEmail
             scoreLabel.text = "Score: " + String(currentScore)
-            // appropriate color
         }
     }
     
@@ -112,6 +124,7 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
         case userEmail = "email"
         case UserScore = "score"
         case UserImage = "profileImage"
+        case UserColor = "color"
     }
     
 }
