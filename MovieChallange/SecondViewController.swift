@@ -101,10 +101,6 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        localSaves.setBool(false, forKey: "isSetEmail")
-//        localSaves.setValue("", forKey: "newEmail")
-        
-        
         if let user = PFUser.currentUser() {
             setUserProfileTexts(userObject: user)
             setUserProfileImage(userObject: user)
