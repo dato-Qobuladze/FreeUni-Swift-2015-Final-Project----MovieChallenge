@@ -63,7 +63,7 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
     
     var pageViewController: UIPageViewController!
     var questionViewControllers: [QuestionViewController]!
-    var timer: NSTimer!
+    weak var timer: NSTimer!
     
     var selectedFilm: String?
     var selectedQuest: String?
@@ -115,24 +115,24 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
             PFUser.currentUser()?.saveInBackground()
         }
         let alertController = UIAlertController(title: "Finnished", message: "You have \(correctCounter)/\(questionViewControllers.count - unansweredCounter) answered correctly in \(timerLabel), \nScore: \(score)", preferredStyle: .Alert)
-        alertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) in
+        alertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: {[unowned self] (action) in
             // Go to home! I say you are drunk!
-            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("home")
-            self.presentViewController(vc!, animated: true, completion: nil)
+            self.dismissViewControllerAnimated(true, completion: nil)
         }))
-        self.presentViewController(alertController, animated: true, completion: nil)
+        presentViewController(alertController, animated: true, completion: nil)
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         spinner.startAnimating()
-        loadQuestionsViewControllers(withBlock: {
+        loadQuestionsViewControllers(withBlock: {[unowned self] in
             if self.questionViewControllers.count == 0{
                 let alertController = UIAlertController(title: "Sorry", message: "There are no such questions :(((", preferredStyle: .Alert)
                 alertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) in
                     // Go home! You are drunk!
-                    let vc = self.storyboard?.instantiateViewControllerWithIdentifier("home")
-                    self.presentViewController(vc!, animated: true, completion: nil)
+                    self.dismissViewControllerAnimated(true, completion: nil)
+//                    let vc = self.storyboard?.instantiateViewControllerWithIdentifier("home")
+//                    self.presentViewController(vc!, animated: true, completion: nil)
                 }))
                 self.presentViewController(alertController, animated: true, completion: nil)
             } else {
@@ -159,7 +159,7 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
     func loadQuestionsViewControllers(withBlock callback: ()->()){
         questionViewControllers = []
         if challenge != nil{
-            challenge?.relationForKey("questions").query().findObjectsInBackgroundWithBlock({ (result, error) -> Void in
+            challenge?.relationForKey("questions").query().findObjectsInBackgroundWithBlock({[unowned self] (result, error) -> Void in
                 if let questions = result {
                     print(questions.count)
                     for question in questions {
@@ -191,7 +191,7 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
                             "quest":selectedQuest!]
             }
             print(params)
-            PFCloud.callFunctionInBackground("getQuestions", withParameters: params) { (result, error) -> Void in
+            PFCloud.callFunctionInBackground("getQuestions", withParameters: params) {[unowned self] (result, error) -> Void in
                 if (error != nil) {
                     print(error!)
                 } else {

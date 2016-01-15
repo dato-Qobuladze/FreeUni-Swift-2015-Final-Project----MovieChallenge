@@ -22,7 +22,7 @@ class AudioQuestionViewController: QuestionViewController, AVAudioPlayerDelegate
         parent.loadingData = true
         let audio = dataObject
         let audioFile = audio?["data"] as? PFFile
-        audioFile?.getDataInBackgroundWithBlock({ (audio: NSData?, error: NSError?) -> Void in
+        audioFile?.getDataInBackgroundWithBlock({[unowned self] (audio: NSData?, error: NSError?) -> Void in
             self.parent.loadingData = false
             if audio != nil {
                 do {

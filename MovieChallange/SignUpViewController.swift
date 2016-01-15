@@ -25,7 +25,7 @@ class SignUpViewController: UIViewController {
             user.password = password.text
             user.email = email.text
             spinner.startAnimating()
-            user.signUpInBackgroundWithBlock {
+            user.signUpInBackgroundWithBlock {[unowned self]
                 (succeeded: Bool, error: NSError?) -> Void in
                 // self.spinner.stopAnimating()
                 if let error = error {
@@ -39,13 +39,19 @@ class SignUpViewController: UIViewController {
                 } else {
                     // Hooray! Let them use the app now.
                     print("INFO: Hooray! \(user.username!) use the app now.")
-                    PFUser.logInWithUsernameInBackground(user.username!, password: user.password!) {
+                    PFUser.logInWithUsernameInBackground(user.username!, password: user.password!) {[unowned self]
                         (user: PFUser?, error: NSError?) -> Void in
                         self.spinner.stopAnimating()
                         if user != nil {
                             // Do stuff after successful login.
-                            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("home")
-                            self.presentViewController(vc!, animated: true, completion: nil)
+                            if (self.presentingViewController != nil){
+                                self.dismissViewControllerAnimated(true, completion: nil)
+                            }else{
+                                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("home")
+                                self.presentViewController(vc!, animated: true, completion: nil)
+                            }
+//                            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("home")
+//                            self.presentViewController(vc!, animated: true, completion: nil)
                         }
                     }
                     
@@ -61,6 +67,13 @@ class SignUpViewController: UIViewController {
             self.presentViewController(alertController, animated: true, completion: nil)
         }
 
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        username.text = ""
+        email.text = ""
+        password.text = ""
+        repeatPassword.text = ""
     }
     
     private func clearFields() {

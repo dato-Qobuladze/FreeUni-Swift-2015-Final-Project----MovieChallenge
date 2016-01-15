@@ -34,8 +34,12 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
         PFUser.logOut()
         let currentUser = PFUser.currentUser()
         if (currentUser == nil) {
-            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("entry")
-            self.presentViewController(vc!, animated: true, completion: nil)
+            if (presentingViewController != nil){
+                dismissViewControllerAnimated(true, completion: nil)
+            }else{
+                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("entry")
+                self.presentViewController(vc!, animated: true, completion: nil)
+            }
         }
     }
     
@@ -105,6 +109,54 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
 //        localSaves.setValue("", forKey: "newEmail")
         
         
+//        if let user = PFUser.currentUser() {
+//            setUserProfileTexts(userObject: user)
+//            setUserProfileImage(userObject: user)
+//            
+//            let notificationsQuery = PFQuery(className: "MultiplayHistory")
+//            notificationsQuery.whereKey("opponentName", equalTo: user.username!)
+//            notificationsQuery.whereKeyDoesNotExist("opponentScore")
+//            notificationsQuery.whereKey("cancelled", notEqualTo: true)
+//            notificationsQuery.findObjectsInBackgroundWithBlock({[unowned self] (objects, error) -> Void in
+//                self.notifications = objects
+//            })
+//            
+//            let newResults = PFQuery(className: "MultiplayHistory")
+//            newResults.whereKey("yourName", equalTo: user.username!)
+//            newResults.whereKeyDoesNotExist("resultConfirmed")
+//            newResults.whereKeyExists("cancelled")
+//            newResults.findObjectsInBackgroundWithBlock({[unowned self] (objects, error) -> Void in
+//                if let results = objects{
+//                    if results.count == 0{
+//                        return
+//                    }
+//                    var message: String = ""
+//                    for result in results{
+//                        message += "\(result["opponentName"]) "
+//                        if result["cancelled"] as! Bool{
+//                            message += "(cancelled)\n"
+//                        }else{
+//                            message += "(\(result["opponentScore"] as! Int)) vs you (\(result["yourScore"] as! Int))\n"
+//                            var myScore = (PFUser.currentUser()!["score"] as? Int) ?? 0
+//                            myScore += result["yourScore"] as! Int
+//                            PFUser.currentUser()!["score"] = myScore
+//                        }
+//                        PFUser.currentUser()?.saveInBackground()
+//                        result["resultConfirmed"] = true
+//                        result.saveInBackground()
+//                    }
+//                    let alertController = UIAlertController(title: "New Results", message: message, preferredStyle: .Alert)
+//                    alertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+//                    self.presentViewController(alertController, animated: true, completion: nil)
+//                }
+//            })
+//        }
+        
+//        notificationsQuery
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         if let user = PFUser.currentUser() {
             setUserProfileTexts(userObject: user)
             setUserProfileImage(userObject: user)
@@ -113,7 +165,7 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
             notificationsQuery.whereKey("opponentName", equalTo: user.username!)
             notificationsQuery.whereKeyDoesNotExist("opponentScore")
             notificationsQuery.whereKey("cancelled", notEqualTo: true)
-            notificationsQuery.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+            notificationsQuery.findObjectsInBackgroundWithBlock({[unowned self] (objects, error) -> Void in
                 self.notifications = objects
             })
             
@@ -121,7 +173,7 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
             newResults.whereKey("yourName", equalTo: user.username!)
             newResults.whereKeyDoesNotExist("resultConfirmed")
             newResults.whereKeyExists("cancelled")
-            newResults.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+            newResults.findObjectsInBackgroundWithBlock({[unowned self] (objects, error) -> Void in
                 if let results = objects{
                     if results.count == 0{
                         return
@@ -145,10 +197,8 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
                     alertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
                     self.presentViewController(alertController, animated: true, completion: nil)
                 }
-            })
+                })
         }
-        
-//        notificationsQuery
     }
     
     func setUserProfileTexts(userObject user: PFUser) {
@@ -168,7 +218,7 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
     
     func setUserProfileImage(userObject user: PFUser){
         if let imageFile = user.objectForKey(ParseColumn.UserImage.rawValue) as? PFFile {
-            imageFile.getDataInBackgroundWithBlock({(imageData: NSData?, error: NSError?) -> Void in
+            imageFile.getDataInBackgroundWithBlock({[unowned self] (imageData: NSData?, error: NSError?) -> Void in
                 if let imgData = imageData {
                     self.profileImage.image = UIImage(data: imgData)
                 }

@@ -64,8 +64,17 @@ class SigninViewController: UIViewController {
         username.becomeFirstResponder()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        username.text = ""
+        password.text = ""
+    }
+    
     private func goToHome(){
-        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("home")
-        self.presentViewController(vc!, animated: true, completion: nil)
+        if (presentingViewController != nil){
+            dismissViewControllerAnimated(true, completion: nil)
+        }else{
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("home")
+            self.presentViewController(vc!, animated: true, completion: nil)
+        }
     }
 }

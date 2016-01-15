@@ -51,7 +51,7 @@ class ImageQuestionViewController: QuestionViewController, UIScrollViewDelegate 
             if let data = dataObject {
                 if let file = data["data"] as? PFFile {
                     parent.loadingData = true
-                    file.getDataInBackgroundWithBlock({ (imageData: NSData?, error: NSError?) -> Void in
+                    file.getDataInBackgroundWithBlock({[unowned self] (imageData: NSData?, error: NSError?) -> Void in
                         self.parent.loadingData = false
                         if let imgData = imageData {
                             self.image = UIImage(data: imgData)
