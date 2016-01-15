@@ -38,6 +38,7 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
         self.myPickerView.delegate = self
         self.myPickerView.dataSource = self
         self.SecondPicker.delegate = self
@@ -73,7 +74,6 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         }
         
         Spinner.stopAnimating()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
@@ -104,7 +104,6 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             return pickerData1[row]
         }
         
-        
         return pickerData[row]
     }
     
@@ -126,8 +125,6 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
         return .None
     }
-    
-    
     
 }
 
