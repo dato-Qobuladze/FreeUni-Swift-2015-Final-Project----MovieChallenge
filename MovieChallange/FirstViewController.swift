@@ -36,11 +36,12 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.myPickerView.delegate = self
-        self.myPickerView.dataSource = self
         self.SecondPicker.delegate = self
+        self.myPickerView.dataSource = self
         self.SecondPicker.dataSource = self
         
         Spinner.startAnimating()
+        
         var query = PFQuery(className: "Films")
         query.whereKeyExists("film")
         filmObjects = [PFObject]?()
@@ -85,7 +86,7 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     // The number of rows of data
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == SecondPicker{
+        if pickerView == SecondPicker {
             return pickerData1.count
         }
         return pickerData.count
@@ -93,7 +94,7 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     // The data to return for the row and component (column) that's being passed in
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == SecondPicker{
+        if pickerView == SecondPicker {
             return pickerData1[row]
         }
         return pickerData[row]

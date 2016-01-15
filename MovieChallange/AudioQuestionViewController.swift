@@ -34,21 +34,23 @@ class AudioQuestionViewController: QuestionViewController, AVAudioPlayerDelegate
                     self.audioPlayer.play()
                     self.isPlaying = true
                 } catch {
-                    print("Error occured! Something went wrong playing music!")
+                    print("ERROR: Something went wrong while playing music!")
                 }
             } else {
-                print ("Error occured! Somehow audio is nil!")
+                print ("ERROR: Somehow audio is nil!")
             }
         })
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view.
         questionText.text = dataObject?["text"] as? String
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
+        // Do any additional setup after disappearing the view.
         if self.isPlaying {
             self.audioPlayer.stop()
         }
