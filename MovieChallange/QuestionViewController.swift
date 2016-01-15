@@ -26,7 +26,7 @@ class QuestionViewController: UIViewController {
     
     @IBAction func answer(sender: UIButton) {
         if (sender.isEqual(a)) {
-            print("shemovida a chemisa")
+            print("INFO: User chose A!")
             isCorrect = (correct == 0)
             a.backgroundColor = UIColor.lightGrayColor()
             b.backgroundColor = nil
@@ -34,7 +34,7 @@ class QuestionViewController: UIViewController {
             d.backgroundColor = nil
         }
         if (sender.isEqual(b)) {
-            print("shemovida b chemisa")
+            print("INFO: User chose B!")
             isCorrect = (correct == 1)
             b.backgroundColor = UIColor.lightGrayColor()
             a.backgroundColor = nil
@@ -42,7 +42,7 @@ class QuestionViewController: UIViewController {
             d.backgroundColor = nil
         }
         if (sender.isEqual(c)) {
-            print("shemovida c chemisa")
+            print("INFO: User chose C!")
             isCorrect = (correct == 2)
             c.backgroundColor = UIColor.lightGrayColor()
             a.backgroundColor = nil
@@ -50,7 +50,7 @@ class QuestionViewController: UIViewController {
             d.backgroundColor = nil
         }
         if (sender.isEqual(d)) {
-            print("shemovida d chemisa")
+            print("INFO: User chose D!")
             isCorrect = (correct == 3)
             d.backgroundColor = UIColor.lightGrayColor()
             a.backgroundColor = nil
@@ -69,7 +69,7 @@ class QuestionViewController: UIViewController {
         c.layer.cornerRadius = 5
         d.layer.cornerRadius = 5
         
-        if let question = dataObject{
+        if let question = dataObject {
             var answers = [
                 question["a"] as! String,
                 question["b"] as! String,
@@ -79,7 +79,7 @@ class QuestionViewController: UIViewController {
             
             let randIndex = Int(arc4random_uniform(4))
             correct = randIndex
-            if randIndex != 0{
+            if randIndex != 0 {
                 swap(&answers[0], &answers[randIndex])
             }
             
@@ -92,11 +92,6 @@ class QuestionViewController: UIViewController {
     
     private func titleFor(button: String, withAnswer: String) -> String{
         return "\(button): \(withAnswer)"
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }
