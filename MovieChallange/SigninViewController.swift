@@ -70,11 +70,7 @@ class SigninViewController: UIViewController {
     }
     
     private func goToHome(){
-        if (presentingViewController != nil){
-            dismissViewControllerAnimated(true, completion: nil)
-        }else{
-            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("home")
-            self.presentViewController(vc!, animated: true, completion: nil)
-        }
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("home")
+        self.presentViewController(vc!, animated: true, completion: nil)
     }
 }

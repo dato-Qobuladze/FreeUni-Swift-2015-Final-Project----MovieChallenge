@@ -44,14 +44,8 @@ class SignUpViewController: UIViewController {
                         self.spinner.stopAnimating()
                         if user != nil {
                             // Do stuff after successful login.
-                            if (self.presentingViewController != nil){
-                                self.dismissViewControllerAnimated(true, completion: nil)
-                            }else{
-                                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("home")
-                                self.presentViewController(vc!, animated: true, completion: nil)
-                            }
-//                            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("home")
-//                            self.presentViewController(vc!, animated: true, completion: nil)
+                            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("home")
+                            self.presentViewController(vc!, animated: true, completion: nil)
                         }
                     }
                     
@@ -69,12 +63,6 @@ class SignUpViewController: UIViewController {
 
     }
     
-    override func viewWillAppear(animated: Bool) {
-        username.text = ""
-        email.text = ""
-        password.text = ""
-        repeatPassword.text = ""
-    }
     
     private func clearFields() {
         self.password.text = "";
