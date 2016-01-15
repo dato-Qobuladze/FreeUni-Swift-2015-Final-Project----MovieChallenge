@@ -108,8 +108,39 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
             let notificationsQuery = PFQuery(className: "MultiplayHistory")
             notificationsQuery.whereKey("opponentName", equalTo: user.username!)
             notificationsQuery.whereKeyDoesNotExist("opponentScore")
+            notificationsQuery.whereKey("cancelled", notEqualTo: true)
             notificationsQuery.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
                 self.notifications = objects
+            })
+            
+            let newResults = PFQuery(className: "MultiplayHistory")
+            newResults.whereKey("yourName", equalTo: user.username!)
+            newResults.whereKeyDoesNotExist("resultConfirmed")
+            newResults.whereKeyExists("cancelled")
+            newResults.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
+                if let results = objects{
+                    if results.count == 0{
+                        return
+                    }
+                    var message: String = ""
+                    for result in results{
+                        message += "\(result["opponentName"]) "
+                        if result["cancelled"] as! Bool{
+                            message += "(cancelled)\n"
+                        }else{
+                            message += "(\(result["opponentScore"] as! Int)) vs you (\(result["yourScore"] as! Int))\n"
+                            var myScore = (PFUser.currentUser()!["score"] as? Int) ?? 0
+                            myScore += result["yourScore"] as! Int
+                            PFUser.currentUser()!["score"] = myScore
+                        }
+                        PFUser.currentUser()?.saveInBackground()
+                        result["resultConfirmed"] = true
+                        result.saveInBackground()
+                    }
+                    let alertController = UIAlertController(title: "New Results", message: message, preferredStyle: .Alert)
+                    alertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                }
             })
         }
         

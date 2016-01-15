@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pUH-0z-j4u">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pUH-0z-j4u">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -382,7 +382,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings48.png" translatesAutoresizingMaskIntoConstraints="NO" id="Mrm-2u-sOc">
-                                <rect key="frame" x="20" y="234" width="60" height="60"/>
+                                <rect key="frame" x="20" y="236" width="60" height="60"/>
                                 <animations/>
                                 <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="20" y="188" width="40" height="40"/>
@@ -435,7 +435,7 @@
                                 </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rank2.png" translatesAutoresizingMaskIntoConstraints="NO" id="11j-nm-pjH">
-                                <rect key="frame" x="20" y="302" width="60" height="60"/>
+                                <rect key="frame" x="20" y="304" width="60" height="60"/>
                                 <animations/>
                                 <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="20" y="236" width="40" height="40"/>
@@ -491,7 +491,7 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJ5-Kt-55g">
-                                <rect key="frame" x="80" y="166" width="500" height="60"/>
+                                <rect key="frame" x="80" y="168" width="500" height="60"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="vdC-q3-Nkp"/>
@@ -526,17 +526,8 @@
                                     <rect key="frame" x="119" y="187" width="84" height="133"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUi-kd-uyd">
-                                <rect key="frame" x="20" y="136" width="100" height="22"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                <state key="normal" title="Change profile image"/>
-                                <connections>
-                                    <action selector="changeProfileImage:" destination="oU7-UT-9Mj" eventType="touchUpInside" id="Gw1-ZV-JJP"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email19.png" translatesAutoresizingMaskIntoConstraints="NO" id="8P6-nn-xs9">
-                                <rect key="frame" x="20" y="166" width="60" height="60"/>
+                                <rect key="frame" x="20" y="168" width="60" height="60"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Ijt-fm-ncU"/>
@@ -565,7 +556,7 @@
                                 </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cv3-Tb-tTj">
-                                <rect key="frame" x="80" y="234" width="500" height="60"/>
+                                <rect key="frame" x="80" y="236" width="500" height="60"/>
                                 <animations/>
                                 <state key="normal" title="Settings"/>
                                 <connections>
@@ -576,7 +567,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JXD-6J-nsf">
-                                <rect key="frame" x="80" y="302" width="500" height="60"/>
+                                <rect key="frame" x="80" y="304" width="500" height="60"/>
                                 <animations/>
                                 <state key="normal" title="History"/>
                                 <connections>
@@ -640,11 +631,20 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3R-Vl-3gp">
-                                <rect key="frame" x="128" y="130" width="452" height="30"/>
+                                <rect key="frame" x="128" y="132" width="452" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Log Out"/>
                                 <connections>
                                     <action selector="logOut:" destination="oU7-UT-9Mj" eventType="touchUpInside" id="2Fv-a8-Gj1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUi-kd-uyd">
+                                <rect key="frame" x="20" y="136" width="100" height="24"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" title="Change image"/>
+                                <connections>
+                                    <action selector="changeProfileImage:" destination="oU7-UT-9Mj" eventType="touchUpInside" id="Gw1-ZV-JJP"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1073,52 +1073,63 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jNF-ud-hsw" customClass="NotificationTableViewCell" customModule="MovieChallange" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jNF-ud-hsw" id="fUF-Rs-3Qs">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
-                                </tableViewCellContentView>
-                                <animations/>
-                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="notification_cell" id="rU0-0u-U52" customClass="NotificationTableViewCell" customModule="MovieChallange" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rU0-0u-U52" id="rl2-Xu-7sA">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27t-oV-jsp">
-                                            <rect key="frame" x="8" y="8" width="546" height="27"/>
+                                            <rect key="frame" x="51" y="0.0" width="482" height="35"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmF-Fy-lpZ">
-                                            <rect key="frame" x="562" y="8" width="30" height="27"/>
+                                            <rect key="frame" x="541" y="0.0" width="51" height="35"/>
                                             <animations/>
-                                            <state key="normal" title="Play"/>
+                                            <state key="normal" title="Cancell"/>
                                             <connections>
-                                                <action selector="play:" destination="rU0-0u-U52" eventType="touchUpInside" id="KLz-G1-L8T"/>
+                                                <action selector="cancel:" destination="rU0-0u-U52" eventType="touchUpInside" id="opt-1V-M9z"/>
                                             </connections>
                                         </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user168.png" translatesAutoresizingMaskIntoConstraints="NO" id="X4c-yg-i9v">
+                                            <rect key="frame" x="8" y="0.0" width="35" height="35"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="X4c-yg-i9v" secondAttribute="height" multiplier="1:1" id="3lR-YT-Ak4"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <animations/>
                                     <constraints>
                                         <constraint firstItem="gmF-Fy-lpZ" firstAttribute="leading" secondItem="27t-oV-jsp" secondAttribute="trailing" constant="8" symbolic="YES" id="437-XR-5SM"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="27t-oV-jsp" secondAttribute="leading" id="6EL-Ff-XnY"/>
+                                        <constraint firstItem="27t-oV-jsp" firstAttribute="bottom" secondItem="X4c-yg-i9v" secondAttribute="bottom" id="MHB-6l-shz"/>
                                         <constraint firstItem="27t-oV-jsp" firstAttribute="top" secondItem="gmF-Fy-lpZ" secondAttribute="top" id="VnL-zl-eUh"/>
                                         <constraint firstItem="27t-oV-jsp" firstAttribute="bottom" secondItem="gmF-Fy-lpZ" secondAttribute="bottom" id="bT5-d3-JcO"/>
+                                        <constraint firstItem="27t-oV-jsp" firstAttribute="leading" secondItem="X4c-yg-i9v" secondAttribute="trailing" constant="8" id="euF-6G-7qN"/>
+                                        <constraint firstItem="27t-oV-jsp" firstAttribute="top" secondItem="X4c-yg-i9v" secondAttribute="top" id="hFg-SF-aBL"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="X4c-yg-i9v" secondAttribute="leading" id="m9B-Ty-Ebu"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="gmF-Fy-lpZ" secondAttribute="bottom" id="qHv-9p-l6m"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="X4c-yg-i9v" secondAttribute="bottom" id="qN9-9S-qcg"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="gmF-Fy-lpZ" secondAttribute="trailing" id="r4S-13-3yw"/>
+                                        <constraint firstItem="X4c-yg-i9v" firstAttribute="top" secondItem="rl2-Xu-7sA" secondAttribute="topMargin" constant="-8" id="rRY-VV-S6X"/>
                                         <constraint firstItem="gmF-Fy-lpZ" firstAttribute="top" secondItem="rl2-Xu-7sA" secondAttribute="topMargin" id="uXf-Qq-334"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="6EL-Ff-XnY"/>
+                                            <exclude reference="qHv-9p-l6m"/>
+                                            <exclude reference="uXf-Qq-334"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
+                                    <outlet property="avatar" destination="X4c-yg-i9v" id="Zjo-TO-2be"/>
                                     <outlet property="username" destination="27t-oV-jsp" id="oBe-ce-5D4"/>
                                 </connections>
                             </tableViewCell>
