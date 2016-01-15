@@ -38,7 +38,7 @@ class SignUpViewController: UIViewController {
                     print(errorString)
                 } else {
                     // Hooray! Let them use the app now.
-                    print("Hooray! \(user.username!) use the app now.")
+                    print("INFO: Hooray! \(user.username!) use the app now.")
                     PFUser.logInWithUsernameInBackground(user.username!, password: user.password!) {
                         (user: PFUser?, error: NSError?) -> Void in
                         self.spinner.stopAnimating()
@@ -64,10 +64,8 @@ class SignUpViewController: UIViewController {
     }
     
     private func clearFields() {
-        self.username.text = "";
         self.password.text = "";
         self.repeatPassword.text = "";
-        self.email.text = "";
     }
     
 }

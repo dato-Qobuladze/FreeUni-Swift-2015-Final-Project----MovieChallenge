@@ -11,17 +11,13 @@ import Parse
 
 class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UIPopoverPresentationControllerDelegate {
     
-    
-    
-    @IBOutlet weak var myPickerView: UIPickerView!
-    
-    @IBOutlet weak var SecondPicker: UIPickerView!
-    
     var pickerData: [String] = [String]()
     var pickerData1: [String] = [String]()
     var filmObjects: [PFObject]?
     var questObjects: [PFObject]?
     
+    @IBOutlet weak var myPickerView: UIPickerView!
+    @IBOutlet weak var SecondPicker: UIPickerView!
     @IBOutlet weak var Spinner: UIActivityIndicatorView!
 
     @IBAction func singlePlay(sender: UIButton) {
@@ -38,11 +34,14 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
         self.myPickerView.delegate = self
-        self.myPickerView.dataSource = self
         self.SecondPicker.delegate = self
+        self.myPickerView.dataSource = self
         self.SecondPicker.dataSource = self
+        
         Spinner.startAnimating()
+        
         var query = PFQuery(className: "Films")
         query.whereKeyExists("film")
         filmObjects = [PFObject]?()
@@ -73,17 +72,12 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         }
         
         Spinner.stopAnimating()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
-    
     
     // The number of columns of data
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -92,7 +86,7 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     // The number of rows of data
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == SecondPicker{
+        if pickerView == SecondPicker {
             return pickerData1.count
         }
         return pickerData.count
@@ -100,18 +94,15 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     // The data to return for the row and component (column) that's being passed in
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == SecondPicker{
+        if pickerView == SecondPicker {
             return pickerData1[row]
         }
-        
-        
         return pickerData[row]
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let dest = segue.destinationViewController as! MultyPlayerViewController
-        if let popoverController = dest.popoverPresentationController
-        {
+        if let popoverController = dest.popoverPresentationController {
             popoverController.delegate = self
             let filmIndex = myPickerView.selectedRowInComponent(0)
             let questIndex = SecondPicker.selectedRowInComponent(0)
@@ -119,15 +110,11 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             dest.questId = questObjects?[questIndex].objectId
             
         }
-        
     }
     
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
-        
         return .None
     }
-    
-    
     
 }
 

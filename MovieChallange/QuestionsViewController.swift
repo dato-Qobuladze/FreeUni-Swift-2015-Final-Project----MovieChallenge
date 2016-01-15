@@ -24,18 +24,19 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
     @IBOutlet weak var pagerView: UIView!
     @IBOutlet weak var pagerControls: UIPageControl!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
-    var loadingData:Bool = false{
-        didSet{
-            if loadingData{
+    
+    var loadingData: Bool = false {
+        didSet {
+            if loadingData {
                 spinner.startAnimating()
-            }else{
+            } else {
                 spinner.stopAnimating()
             }
             pageViewController.view.userInteractionEnabled = !loadingData
         }
     }
     
-    private let vcIDforTypeID:[String:String] = [
+    private let vcIDforTypeID: [String:String] = [
         Types.INFO_ID   : "q_simple",
         Types.IMAGE_ID  : "q_image",
         Types.AUDIO_ID  : "q_audio"
@@ -46,53 +47,54 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
             timer_lbl.text = timerLabel
         }
     }
-    private var timerLabel: String{
+    
+    private var timerLabel: String {
         let hours = String(format: "%02d", timeElapsed/60/60)
         let minutes = String(format: "%02d", timeElapsed/60%60)
         let seconds = String(format: "%02d", timeElapsed%60)
         return "\(hours):\(minutes):\(seconds)"
     }
     
-    func timerTick(){
-        if !loadingData{
+    func timerTick() {
+        if !loadingData {
             timeElapsed++
         }
     }
     
     var pageViewController: UIPageViewController!
     var questionViewControllers: [QuestionViewController]!
-    var timer:NSTimer!
+    var timer: NSTimer!
     
-    var selectedFilm:String?
-    var selectedQuest:String?
-    var challenge:PFObject?
+    var selectedFilm: String?
+    var selectedQuest: String?
+    var challenge: PFObject?
     private var questions: [PFObject]?
     
     @IBAction func submit(sender: UIButton) {
         timer.invalidate()
         var correctCounter = 0
         var unansweredCounter = 0
-        for controller in questionViewControllers{
+        for controller in questionViewControllers {
             if let correct = controller.isCorrect {
-                if correct{
+                if correct {
                     correctCounter++
                 }
-            }else{
+            } else {
                 unansweredCounter++
             }
         }
         
-        let score = correctCounter*100 - timeElapsed
-        print(userObjects)
-        if let challengers = userObjects{
-            print("challengers")
-            for opponent in challengers{
+        let score = correctCounter * 100 - timeElapsed
+        print("INFO: User objects <" + String(userObjects) + ">")
+        if let challengers = userObjects {
+            print("INFO: Challengers")
+            for opponent in challengers {
                 let request = PFObject(className: "MultiplayHistory")
                 request["yourName"] = PFUser.currentUser()?.username
                 request["yourScore"] = score
                 request["opponentName"] = opponent["username"] as! String
                 let relation = request.relationForKey("questions")
-                for question in questions!{
+                for question in questions! {
                     relation.addObject(question)
                 }
 
@@ -101,11 +103,10 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
                 print("updated score: \(updatedScore)")
                 PFUser.currentUser()!["score"] = updatedScore
                 PFUser.currentUser()?.saveInBackground()
-
             }
         }
         
-        if challenge != nil{
+        if challenge != nil {
             challenge!["opponentScore"] = score
             challenge?.saveInBackground()
             let updatedScore = (PFUser.currentUser()!["score"] as? Int ?? 0) + score
@@ -114,7 +115,7 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
         }
         let alertController = UIAlertController(title: "Finnished", message: "You have \(correctCounter)/\(questionViewControllers.count - unansweredCounter) answered correctly in \(timerLabel), Score: \(score)", preferredStyle: .Alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) in
-            // go to home
+            // Go to home! I say you are drunk!
             let vc = self.storyboard?.instantiateViewControllerWithIdentifier("home")
             self.presentViewController(vc!, animated: true, completion: nil)
         }))
@@ -126,14 +127,14 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
         spinner.startAnimating()
         loadQuestionsViewControllers(withBlock: {
             if self.questionViewControllers.count == 0{
-                let alertController = UIAlertController(title: "Sorry :(((", message: "There are no such questions", preferredStyle: .Alert)
+                let alertController = UIAlertController(title: "Sorry", message: "There are no such questions :(((", preferredStyle: .Alert)
                 alertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) in
-                    // go to home
+                    // Go home! You are drunk!
                     let vc = self.storyboard?.instantiateViewControllerWithIdentifier("home")
                     self.presentViewController(vc!, animated: true, completion: nil)
                 }))
                 self.presentViewController(alertController, animated: true, completion: nil)
-            }else{
+            } else {
                 self.pageViewController.setViewControllers([self.questionViewControllers[0]], direction: .Forward, animated: false, completion: nil)
                 
                 self.pagerControls.numberOfPages = self.questionViewControllers.count
@@ -158,7 +159,7 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
         questionViewControllers = []
         if challenge != nil{
             challenge?.relationForKey("questions").query().findObjectsInBackgroundWithBlock({ (result, error) -> Void in
-                if let questions = result{
+                if let questions = result {
                     print(questions.count)
                     for question in questions {
                         self.questions = questions
@@ -170,7 +171,7 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
                             vc.onAnswer = {
                                 ()->() in
                                 print("answered")
-                                if let next = self.pageViewController(self.pageViewController, viewControllerAfterViewController: self.pageViewController.viewControllers![0]){
+                                if let next = self.pageViewController(self.pageViewController, viewControllerAfterViewController: self.pageViewController.viewControllers![0]) {
                                     self.pageViewController.setViewControllers([next], direction: .Forward, animated: true, completion: nil)
                                     self.pageViewController(self.pageViewController, didFinishAnimating: false, previousViewControllers: [], transitionCompleted: false)
                                 }
@@ -182,18 +183,18 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
                     callback()
                 }
             })
-        }else{
+        } else {
             var params:[String:String]? = nil
-            if selectedFilm != nil && selectedQuest != nil{
+            if selectedFilm != nil && selectedQuest != nil {
                 params = [  "film":selectedFilm!,
                             "quest":selectedQuest!]
             }
             print(params)
             PFCloud.callFunctionInBackground("getQuestions", withParameters: params) { (result, error) -> Void in
-                if (error != nil){
+                if (error != nil) {
                     print(error!)
-                }else{
-                    if let questions = result as? [PFObject]{
+                } else {
+                    if let questions = result as? [PFObject] {
                         self.questions = questions
                         print(questions.count)
                         for question in questions {
@@ -204,7 +205,7 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
                                 vc.parent = self
                                 vc.onAnswer = {
                                     ()->() in
-                                    print("answered")
+                                    print("INFO: Answered! From QuestionsViewController")
                                     if let next = self.pageViewController(self.pageViewController, viewControllerAfterViewController: self.pageViewController.viewControllers![0]){
                                         self.pageViewController.setViewControllers([next], direction: .Forward, animated: true, completion: nil)
                                         self.pageViewController(self.pageViewController, didFinishAnimating: false, previousViewControllers: [], transitionCompleted: false)
@@ -244,8 +245,7 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
     }
     
     
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int
-    {
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
         return questionViewControllers.count
     }
 
