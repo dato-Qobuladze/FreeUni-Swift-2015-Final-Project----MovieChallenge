@@ -128,12 +128,12 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
                     var message: String = ""
                     for result in results{
                         let opponentName = result["opponentName"]
-                        let opponentScore = result["opponentScore"] as! Int
-                        let yourScore = result["yourScore"] as! Int
                         message += "\(opponentName)"
-                        if result["cancelled"] as! Bool{
-                            message += "(cancelled)\n"
-                        }else{
+                        if result["cancelled"] as! Bool {
+                            message += " (cancelled)\n"
+                        } else {
+                            let yourScore = result["yourScore"] as! Int
+                            let opponentScore = result["opponentScore"] as! Int
                             message += "(\(opponentScore)) vs you (\(yourScore))\n"
                             var myScore = (PFUser.currentUser()!["score"] as? Int) ?? 0
                             myScore += result["yourScore"] as! Int
