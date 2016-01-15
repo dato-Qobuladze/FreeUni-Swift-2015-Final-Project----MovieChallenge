@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0102DE961C3ED9CC00AEE1EA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0102DE951C3ED9CC00AEE1EA /* SignUpViewController.swift */; };
 		014666911C416ACF00294575 /* ImageQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014666901C416ACE00294575 /* ImageQuestionViewController.swift */; };
+		01483EB41C492288001EA38C /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01483EB31C492288001EA38C /* background.jpg */; settings = {ASSET_TAGS = (); }; };
 		017664BC1C40133C001E8740 /* AudioQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017664BB1C40133C001E8740 /* AudioQuestionViewController.swift */; };
 		019057491C47C80300066D5C /* 1452794456_video-x-sgi-movie.png in Resources */ = {isa = PBXBuildFile; fileRef = 019057481C47C80300066D5C /* 1452794456_video-x-sgi-movie.png */; };
 		0190576E1C47C98800066D5C /* Icon-16.png in Resources */ = {isa = PBXBuildFile; fileRef = 0190574B1C47C98800066D5C /* Icon-16.png */; };
@@ -101,6 +102,7 @@
 /* Begin PBXFileReference section */
 		0102DE951C3ED9CC00AEE1EA /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		014666901C416ACE00294575 /* ImageQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageQuestionViewController.swift; sourceTree = "<group>"; };
+		01483EB31C492288001EA38C /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		017664B71C40108A001E8740 /* Interstellar Soundtrack - Docking Scene.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Interstellar Soundtrack - Docking Scene.mp3"; sourceTree = "<group>"; };
 		017664BB1C40133C001E8740 /* AudioQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioQuestionViewController.swift; sourceTree = "<group>"; };
 		019057481C47C80300066D5C /* 1452794456_video-x-sgi-movie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1452794456_video-x-sgi-movie.png"; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 		017664B61C401067001E8740 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				01483EB31C492288001EA38C /* background.jpg */,
 				019057481C47C80300066D5C /* 1452794456_video-x-sgi-movie.png */,
 				241B3C1B1C3E8C5E00D33237 /* screen.png */,
 			);
@@ -575,6 +578,7 @@
 				4834789F1C3EBFBA005B2BD3 /* user168.png in Resources */,
 				0190577A1C47C98800066D5C /* Icon-76@2x.png in Resources */,
 				019057701C47C98800066D5C /* Icon-32.png in Resources */,
+				01483EB41C492288001EA38C /* background.jpg in Resources */,
 				019057871C47C98800066D5C /* Icon-Small@2x.png in Resources */,
 				01EE9BF81C47B9330008C786 /* game9.png in Resources */,
 				4834789D1C3EBFBA005B2BD3 /* rank2.png in Resources */,
