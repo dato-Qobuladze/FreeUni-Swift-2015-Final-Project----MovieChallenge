@@ -16,7 +16,6 @@ class AudioQuestionViewController: QuestionViewController, AVAudioPlayerDelegate
     @IBOutlet weak var musicSlider: UISlider!
     
     private var audioPlayer: AVAudioPlayer!
-    private var player: AVPlayer!
     private var isPlaying = false
     
     @IBAction func playMusic(sender: AnyObject) {
@@ -28,8 +27,8 @@ class AudioQuestionViewController: QuestionViewController, AVAudioPlayerDelegate
             if audio != nil {
                 do {
                     self.audioPlayer = try AVAudioPlayer(data: audio!)
-                    self.audioPlayer.prepareToPlay()
                     self.audioPlayer.delegate = self
+                    self.audioPlayer.prepareToPlay()
                     self.audioPlayer.volume = 10.0
                     self.audioPlayer.play()
                     self.isPlaying = true
@@ -53,6 +52,8 @@ class AudioQuestionViewController: QuestionViewController, AVAudioPlayerDelegate
         // Do any additional setup after disappearing the view.
         if self.isPlaying {
             self.audioPlayer.stop()
+            self.audioPlayer.delegate = nil
+            self.audioPlayer = nil
         }
     }
 
