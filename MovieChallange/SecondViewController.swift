@@ -21,14 +21,14 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
     @IBOutlet weak var mailLabel: UILabel!
     
     @IBOutlet weak var notificationsButton: UIButton!
-    var notifications: [PFObject]?{
-        didSet{
-            if notifications != nil{
+    
+    var notifications: [PFObject]? {
+        didSet {
+            if notifications != nil {
                 notificationsButton.setTitle("\((notifications?.count)!)", forState: .Normal)
             }
         }
     }
-    
     
     @IBAction func logOut(sender: UIButton) {
         PFUser.logOut()
@@ -46,6 +46,7 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
     @IBAction func notificationsAction(sender: AnyObject) {
         
     }
+    
     @IBAction func changeProfileImage(sender: UIButton) {
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
@@ -58,7 +59,7 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
         profileImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         
         if let user = PFUser.currentUser() {
-            if let imageData = UIImageJPEGRepresentation(profileImage.image!, 1){
+            if let imageData = UIImageJPEGRepresentation(profileImage.image!, 1) {
                 let file = PFFile(data: imageData)
                 user.setObject(file!, forKey: ParseColumn.UserImage.rawValue)
                 user.saveInBackground()
@@ -69,6 +70,7 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
     }
     
     @IBAction func ratingAction(sender: UIButton) {
+        
     }
     
 
@@ -82,7 +84,7 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
             }
             
             if let notificationsTable = dest as? NotificationsTableViewController{
-                print("table")
+                print("INFO: Table")
                 notificationsTable.data = notifications
             }
             

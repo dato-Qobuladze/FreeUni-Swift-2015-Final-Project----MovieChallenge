@@ -17,34 +17,68 @@ class RatingViewController: UITableViewController, UITextFieldDelegate  { // UIV
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let userQuery = PFUser.query()
-        userQuery?.whereKey("username", equalTo: "iOS")
-        userQuery?.findObjectsInBackgroundWithBlock({ (users, error) -> Void in
-            self.findoutRatingOf(users![0])
-            self.findGameEntryOf(users![0])
-        })
+//        let userQuery = PFUser.query()
+//        userQuery?.whereKey("username", equalTo: "iOS")
+//        userQuery?.findObjectsInBackgroundWithBlock({ (users, error) -> Void in
+//            self.findoutRatingOf(users![0])
+//            self.findGameEntryOf(users![0])
+//        })
         
-//        if let user = PFUser.currentUser() {
-//            findoutRatingOf(user)
-//            findGameEntryOf(user)
-//        }
+        if let user = PFUser.currentUser() {
+            print("inViewDidload")
+            findGameEntryOf(user)
+        }
         
         
     }
 
     var gamesEntry = [PFObject]()
     
-    func findGameEntryOf(user: PFObject){
-        print("test")
+    func findGameEntryOf(user: PFUser){
+        
+//        let username = user["username"] as! String
+//        gamesEntry = getQueryResultForTable("MultiplayHistory", columnName: "yourName", searchElem: username)
+//
+//        print(gamesEntry)
+//        gamesEntry += getQueryResultForTable("MultiplayHistory", columnName: "opponentName", searchElem: username)
+
+        
         let query = PFQuery(className: "MultiplayHistory")
-        query.whereKey("yourName", equalTo: "iOS")
-        query.findObjectsInBackgroundWithBlock { (entries, error) -> Void in
-            self.gamesEntry = entries!
+        
+        query.whereKey("yourName", equalTo: user["username"])
+        do {
+            gamesEntry = try query.findObjects() as [PFObject]
             
+//            print("gamesEntry: \(gamesEntry)")
+        } catch  {
+            print("error history")
+        }
+
+        let query2 = PFQuery(className: "MultiplayHistory")
+        query2.whereKey("opponentName", equalTo: user["username"])
+        do {
+            let other = try query2.findObjects() as [PFObject]
+            gamesEntry += other
+//            gamesEntry.appendContentsOf(other)
+            
+//            print("both: \(other)")
+        } catch  {
+            print("error history")
         }
     }
     
-    @IBOutlet weak var multiplayerHistoryTable: UITableView!
+    func getQueryResultForTable(tableName: String, columnName: String, searchElem: String) -> [PFObject] {
+        let query = PFQuery(className: tableName)
+        
+        query.whereKey(columnName, equalTo: searchElem)
+        do {
+            let rowEntry = try query.findObjects() as [PFObject]
+            return rowEntry
+        } catch  {
+            print("error history")
+        }
+        return []
+    }
     
     
     override func didReceiveMemoryWarning() {
@@ -52,22 +86,6 @@ class RatingViewController: UITableViewController, UITextFieldDelegate  { // UIV
         // Dispose of any resources that can be recreated.
         
     }
-    
-
-    
-    func findoutRatingOf(user: PFObject){
-        if let score = user["score"] as? Double {
-            print("score is: \(score)")
-            let showLabelText : String = LabelsEnum.RatingLabel.rawValue + String(score)
-            userRatingLabel.text = showLabelText
-        }
-    }
-    
-    
-    enum LabelsEnum : String {
-        case RatingLabel = "Your score: "
-    }
-
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
@@ -79,7 +97,7 @@ class RatingViewController: UITableViewController, UITextFieldDelegate  { // UIV
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         
-        return 10;
+        return gamesEntry.count;
     }
     
     
@@ -88,8 +106,8 @@ class RatingViewController: UITableViewController, UITextFieldDelegate  { // UIV
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! HistoryCellViewController
         
         
-//        let userGameEntry = gamesEntry[indexPath.row]
-//        cell.data = userGameEntry
+        let userGameEntry = gamesEntry[indexPath.row]
+        cell.data = userGameEntry
         
         return cell
     }

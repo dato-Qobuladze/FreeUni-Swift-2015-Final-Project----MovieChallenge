@@ -18,16 +18,28 @@ class HistoryCellViewController: UITableViewCell {
     
     var data: PFObject? {
         didSet{
-            let opponentName = data?["opponentName"] as! String
-            let opponentScore = data?["opponentScore"] as! Double
+            var opponentName = data?["opponentName"] as! String
+            let opponentScore = data?["opponentScore"] as? Double
+            var yourName = data?["yourName"] as! String
             let yourScore = data?["yourScore"] as! Double
-            let isWin = data?["result"] as! Int
+            
+            if opponentScore == nil {
+                return
+            }
+            
+            if let currentUser = PFUser.currentUser() {
+                
+                if opponentName == currentUser["username"] as! String {
+                    opponentName = yourName
+                    yourName = currentUser["username"] as! String
+                }
+            }
             
             var fullEntry = opponentName + "   " + String(opponentScore) + "   " + String(yourScore) + "   "
-            if isWin == 1 {
+            if yourScore > opponentScore {
                 fullEntry += "You Win"
             }
-            else if isWin == -1 {
+            else if yourScore < opponentScore {
                 fullEntry += "You Loose"
             }
             else {
@@ -35,26 +47,15 @@ class HistoryCellViewController: UITableViewCell {
             }
             
             dataLabel.text = fullEntry;
-
-//            if let imageUrl = data?["profileImage"] {
-//                
-////                let imageUrl = 
-//                let qInt = Int(QOS_CLASS_USER_INTERACTIVE.rawValue)
-//                let queue = dispatch_get_global_queue(qInt, 0)
-//                
-//                dispatch_async(queue, { () -> Void in
-//                    
-//                    let imageData = NSData(contentsOfURL: imageUrl)
-//                    
-//                    if imageData != nil {
-//                        let image = UIImage(data: imageData!)
-//                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-//                            self.userAvatar.image = image
-//                        })
-//                    }
-//                })
-//                
-//            }
+            
+            let query = PFQuery(className: "_User")
+            query.whereKey("username", equalTo: opponentName)
+            
+            query.findObjectsInBackgroundWithBlock { (users, error) -> Void in
+                if users != nil {
+                    self.setUserProfileImage(userObject: users![0] as! PFUser)
+                }
+            }
         }
     }
     

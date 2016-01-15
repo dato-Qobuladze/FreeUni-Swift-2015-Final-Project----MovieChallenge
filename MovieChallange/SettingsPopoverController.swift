@@ -132,7 +132,8 @@ class SettingsPopoverController: UIViewController {
         let newPassword = passwordField.text!
         
         if let user = PFUser.currentUser() {
-            user.setObject(newEmail, forKey: "email")
+            user["email"] = newEmail
+//            user.setObject(newEmail, forKey: "email")
             user.setObject(newPassword, forKey: "password")
             
             user.saveInBackgroundWithBlock({ (isSave, error) -> Void in
