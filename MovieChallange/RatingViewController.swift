@@ -35,17 +35,25 @@ class RatingViewController: UITableViewController, UITextFieldDelegate  { // UIV
     var gamesEntry = [PFObject]()
     
     func findGameEntryOf(user: PFUser){
+        
+//        let username = user["username"] as! String
+//        gamesEntry = getQueryResultForTable("MultiplayHistory", columnName: "yourName", searchElem: username)
+//
+//        print(gamesEntry)
+//        gamesEntry += getQueryResultForTable("MultiplayHistory", columnName: "opponentName", searchElem: username)
+
+        
         let query = PFQuery(className: "MultiplayHistory")
         
         query.whereKey("yourName", equalTo: user["username"])
         do {
             gamesEntry = try query.findObjects() as [PFObject]
             
-            print("gamesEntry: \(gamesEntry)")
+//            print("gamesEntry: \(gamesEntry)")
         } catch  {
             print("error history")
         }
-        
+
         let query2 = PFQuery(className: "MultiplayHistory")
         query2.whereKey("opponentName", equalTo: user["username"])
         do {
@@ -53,10 +61,23 @@ class RatingViewController: UITableViewController, UITextFieldDelegate  { // UIV
             gamesEntry += other
 //            gamesEntry.appendContentsOf(other)
             
-            print("both: \(other)")
+//            print("both: \(other)")
         } catch  {
             print("error history")
         }
+    }
+    
+    func getQueryResultForTable(tableName: String, columnName: String, searchElem: String) -> [PFObject] {
+        let query = PFQuery(className: tableName)
+        
+        query.whereKey(columnName, equalTo: searchElem)
+        do {
+            let rowEntry = try query.findObjects() as [PFObject]
+            return rowEntry
+        } catch  {
+            print("error history")
+        }
+        return []
     }
     
     

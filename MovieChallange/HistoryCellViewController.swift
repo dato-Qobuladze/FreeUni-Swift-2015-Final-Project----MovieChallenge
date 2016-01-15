@@ -19,9 +19,13 @@ class HistoryCellViewController: UITableViewCell {
     var data: PFObject? {
         didSet{
             var opponentName = data?["opponentName"] as! String
-            let opponentScore = data?["opponentScore"] as! Double
+            let opponentScore = data?["opponentScore"] as? Double
             var yourName = data?["yourName"] as! String
             let yourScore = data?["yourScore"] as! Double
+            
+            if opponentScore == nil {
+                return
+            }
             
             if let currentUser = PFUser.currentUser() {
                 
