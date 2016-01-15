@@ -11,17 +11,13 @@ import Parse
 
 class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,UIPopoverPresentationControllerDelegate {
     
-    
-    
-    @IBOutlet weak var myPickerView: UIPickerView!
-    
-    @IBOutlet weak var SecondPicker: UIPickerView!
-    
     var pickerData: [String] = [String]()
     var pickerData1: [String] = [String]()
     var filmObjects: [PFObject]?
     var questObjects: [PFObject]?
     
+    @IBOutlet weak var myPickerView: UIPickerView!
+    @IBOutlet weak var SecondPicker: UIPickerView!
     @IBOutlet weak var Spinner: UIActivityIndicatorView!
 
     @IBAction func singlePlay(sender: UIButton) {
@@ -43,6 +39,7 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         self.myPickerView.dataSource = self
         self.SecondPicker.delegate = self
         self.SecondPicker.dataSource = self
+        
         Spinner.startAnimating()
         var query = PFQuery(className: "Films")
         query.whereKeyExists("film")
@@ -81,10 +78,6 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
-    
-    
     // The number of columns of data
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
@@ -103,7 +96,6 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         if pickerView == SecondPicker{
             return pickerData1[row]
         }
-        
         return pickerData[row]
     }
     
@@ -118,11 +110,9 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             dest.questId = questObjects?[questIndex].objectId
             
         }
-        
     }
     
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
-        
         return .None
     }
     
