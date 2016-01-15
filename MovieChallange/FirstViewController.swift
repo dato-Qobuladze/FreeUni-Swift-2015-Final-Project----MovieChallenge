@@ -102,8 +102,7 @@ class FirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let dest = segue.destinationViewController as! MultyPlayerViewController
-        if let popoverController = dest.popoverPresentationController
-        {
+        if let popoverController = dest.popoverPresentationController {
             popoverController.delegate = self
             let filmIndex = myPickerView.selectedRowInComponent(0)
             let questIndex = SecondPicker.selectedRowInComponent(0)
