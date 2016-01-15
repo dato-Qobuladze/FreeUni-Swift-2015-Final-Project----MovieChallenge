@@ -107,12 +107,13 @@ class QuestionsViewController: UIViewController, UIPageViewControllerDataSource,
         
         if challenge != nil{
             challenge!["opponentScore"] = score
+            challenge!["cancelled"] = false
             challenge?.saveInBackground()
             let updatedScore = (PFUser.currentUser()!["score"] as? Int ?? 0) + score
             PFUser.currentUser()!["score"] = updatedScore
             PFUser.currentUser()?.saveInBackground()
         }
-        let alertController = UIAlertController(title: "Finnished", message: "You have \(correctCounter)/\(questionViewControllers.count - unansweredCounter) answered correctly in \(timerLabel), Score: \(score)", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "Finnished", message: "You have \(correctCounter)/\(questionViewControllers.count - unansweredCounter) answered correctly in \(timerLabel), \nScore: \(score)", preferredStyle: .Alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action) in
             // go to home
             let vc = self.storyboard?.instantiateViewControllerWithIdentifier("home")
