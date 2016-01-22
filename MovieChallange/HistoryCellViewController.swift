@@ -35,16 +35,7 @@ class HistoryCellViewController: UITableViewCell {
                 }
             }
             
-            var fullEntry = opponentName + "   " + String(opponentScore) + "   " + String(yourScore) + "   "
-            if yourScore > opponentScore {
-                fullEntry += "You Win"
-            }
-            else if yourScore < opponentScore {
-                fullEntry += "You Loose"
-            }
-            else {
-                fullEntry += "Draw"
-            }
+            let fullEntry = opponentName + "  \(opponentScore!) VS \(yourScore)"
             
             dataLabel.text = fullEntry;
             
