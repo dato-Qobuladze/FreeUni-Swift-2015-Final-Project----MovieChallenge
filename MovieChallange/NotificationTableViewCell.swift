@@ -14,11 +14,6 @@ class NotificationTableViewCell: UITableViewCell {
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var avatar: UIImageView!
     
-    @IBAction func cancel(sender: UIButton) {
-        object?["cancelled"] = true
-        object?.saveInBackground()
-    }
-    
     var object: PFObject?{
         didSet{
             if object != nil && username != nil{

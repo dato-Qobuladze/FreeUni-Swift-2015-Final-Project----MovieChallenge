@@ -12,6 +12,7 @@ import Parse
 class NotificationsTableViewController: UITableViewController {
 
     var data: [PFObject]?
+    weak var counterOwner: SecondViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +54,20 @@ class NotificationsTableViewController: UITableViewController {
         let vc = storyboard?.instantiateViewControllerWithIdentifier("questions") as? QuestionsViewController
         vc?.challenge = data?[indexPath.row]
         presentViewController(vc!, animated: true, completion: nil)
+    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        let object = data?[indexPath.row]
+        object?["cancelled"] = true
+        object?.saveInBackground()
+        
+        data?.removeAtIndex(indexPath.row)
+        tableView.reloadData()
+        counterOwner?.notificationsCounter--;
     }
     
 }

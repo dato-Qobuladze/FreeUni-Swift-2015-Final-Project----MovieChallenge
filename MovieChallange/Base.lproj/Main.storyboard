@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pUH-0z-j4u">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pUH-0z-j4u">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -1079,21 +1079,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27t-oV-jsp">
-                                            <rect key="frame" x="51" y="0.0" width="482" height="35"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmF-Fy-lpZ">
-                                            <rect key="frame" x="541" y="0.0" width="51" height="35"/>
-                                            <animations/>
-                                            <state key="normal" title="Cancell"/>
-                                            <connections>
-                                                <action selector="cancel:" destination="rU0-0u-U52" eventType="touchUpInside" id="opt-1V-M9z"/>
-                                            </connections>
-                                        </button>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user168.png" translatesAutoresizingMaskIntoConstraints="NO" id="X4c-yg-i9v">
                                             <rect key="frame" x="8" y="0.0" width="35" height="35"/>
                                             <animations/>
@@ -1101,28 +1086,28 @@
                                                 <constraint firstAttribute="width" secondItem="X4c-yg-i9v" secondAttribute="height" multiplier="1:1" id="3lR-YT-Ak4"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27t-oV-jsp">
+                                            <rect key="frame" x="51" y="0.0" width="541" height="35"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <animations/>
                                     <constraints>
-                                        <constraint firstItem="gmF-Fy-lpZ" firstAttribute="leading" secondItem="27t-oV-jsp" secondAttribute="trailing" constant="8" symbolic="YES" id="437-XR-5SM"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="27t-oV-jsp" secondAttribute="leading" id="6EL-Ff-XnY"/>
                                         <constraint firstItem="27t-oV-jsp" firstAttribute="bottom" secondItem="X4c-yg-i9v" secondAttribute="bottom" id="MHB-6l-shz"/>
-                                        <constraint firstItem="27t-oV-jsp" firstAttribute="top" secondItem="gmF-Fy-lpZ" secondAttribute="top" id="VnL-zl-eUh"/>
-                                        <constraint firstItem="27t-oV-jsp" firstAttribute="bottom" secondItem="gmF-Fy-lpZ" secondAttribute="bottom" id="bT5-d3-JcO"/>
                                         <constraint firstItem="27t-oV-jsp" firstAttribute="leading" secondItem="X4c-yg-i9v" secondAttribute="trailing" constant="8" id="euF-6G-7qN"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="27t-oV-jsp" secondAttribute="trailing" id="h6i-wV-edj"/>
                                         <constraint firstItem="27t-oV-jsp" firstAttribute="top" secondItem="X4c-yg-i9v" secondAttribute="top" id="hFg-SF-aBL"/>
                                         <constraint firstAttribute="leadingMargin" secondItem="X4c-yg-i9v" secondAttribute="leading" id="m9B-Ty-Ebu"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="gmF-Fy-lpZ" secondAttribute="bottom" id="qHv-9p-l6m"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="X4c-yg-i9v" secondAttribute="bottom" id="qN9-9S-qcg"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="gmF-Fy-lpZ" secondAttribute="trailing" id="r4S-13-3yw"/>
                                         <constraint firstItem="X4c-yg-i9v" firstAttribute="top" secondItem="rl2-Xu-7sA" secondAttribute="topMargin" constant="-8" id="rRY-VV-S6X"/>
-                                        <constraint firstItem="gmF-Fy-lpZ" firstAttribute="top" secondItem="rl2-Xu-7sA" secondAttribute="topMargin" id="uXf-Qq-334"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="6EL-Ff-XnY"/>
-                                            <exclude reference="qHv-9p-l6m"/>
-                                            <exclude reference="uXf-Qq-334"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>

@@ -21,6 +21,14 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
     @IBOutlet weak var mailLabel: UILabel!
     
     @IBOutlet weak var notificationsButton: UIButton!
+    var notificationsCounter: Int {
+        get{
+            return Int((notificationsButton.titleLabel?.text)!)!
+        }
+        set{
+            notificationsButton.setTitle("\(newValue)", forState: .Normal)
+        }
+    }
     
     var notifications: [PFObject]? {
         didSet {
@@ -90,6 +98,7 @@ class SecondViewController: UIViewController, UIPopoverPresentationControllerDel
             if let notificationsTable = dest as? NotificationsTableViewController{
                 print("INFO: Table")
                 notificationsTable.data = notifications
+                notificationsTable.counterOwner = self
             }
             
         }
