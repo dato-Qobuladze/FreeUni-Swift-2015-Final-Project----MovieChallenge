@@ -66,6 +66,7 @@ class NotificationsTableViewController: UITableViewController {
         object?.saveInBackground()
         
         data?.removeAtIndex(indexPath.row)
+        counterOwner?.notifications?.removeAtIndex(indexPath.row)
         tableView.reloadData()
         counterOwner?.notificationsCounter--;
     }
